@@ -922,6 +922,7 @@ pre code {
   flex-grow: 1;
   list-style-type: none;
   border-radius: 0 0 0 0;
+  transition: all 0.2s ease-out;
 }
 @media (max-width: 413px) {
   .post-body .tabs ul.nav-tabs li.tab,
@@ -1093,6 +1094,15 @@ pre code {
 .post-body .note.danger h5,
 .post-body .note.danger h6 {
   color: #d9534f;
+}
+.pdfobject-container iframe,
+.pdfobject-container embed {
+  height: 500px;
+  width: 100%;
+}
+.mermaid {
+  margin-bottom: 20px;
+  text-align: center;
 }
 .pagination .prev,
 .pagination .next,
@@ -1374,6 +1384,7 @@ pre code {
   border: 2px solid #333;
   max-width: 96px;
   padding: 2px;
+  border-radius: 50%;
 }
 .site-author-name {
   color: #f5f5f5;
@@ -2188,6 +2199,13 @@ pre code {
 .post-block:last-of-type .post-eof {
   display: none;
 }
+.post-copyright ul {
+  list-style: none;
+  padding: 0.5em 1em;
+  background: var(--card-bg-color);
+  border-left: 3px solid #ff2a2a;
+  margin: 1em 0 0;
+}
 .post-tags {
   margin-top: 40px;
   text-align: center;
@@ -2741,7 +2759,7 @@ hr {
   padding: 10px 0;
 }
 .footer-inner {
-  text-align: left;
+  text-align: center;
 }
 @media (max-width: 767px) {
   .footer-inner {
@@ -2835,7 +2853,7 @@ hr {
   text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
 }
 .posts-expand.index .post-header {
-  text-align: left;
+  text-align: center;
 }
 @media (max-width: 767px) {
   .posts-expand.index .post-header {
@@ -2965,7 +2983,7 @@ hr {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #4b6357;
+  background: #fc0ada;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
