@@ -16,12 +16,12 @@
 
 
 
-<div style="width: 90%;margin: 0 auto">
-    <canvas id="chart4088" style="height: 300px"></canvas>
+<div style="width: 100%;margin: 0 auto">
+    <canvas id="chart6334" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart4088').getContext('2d');
+    var ctx = document.getElementById('chart6334').getContext('2d');
     var options =     {
     type: 'line',
     data: {
