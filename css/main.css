@@ -2727,7 +2727,7 @@ hr {
 .footer {
   background: var(--content-bg-color);
   color: var(--text-color);
-  padding: 10px 0;
+  padding: 8px 0;
 }
 .footer-inner {
   text-align: center;
@@ -2740,12 +2740,12 @@ hr {
 .header-inner {
   align-items: center;
   display: flex;
-  padding: 20px 0;
+  padding: 30px 0;
 }
 @media (max-width: 767px) {
   .header-inner {
     display: block;
-    padding: 10px 0;
+    padding: 15px 0;
   }
 }
 .site-meta {
@@ -2845,7 +2845,7 @@ hr {
   text-align: center;
 }
 .posts-expand .post-tags {
-  text-align: left;
+  text-align: center;
 }
 .posts-expand .post-tags a {
   background: var(--content-bg-color);
@@ -2954,7 +2954,7 @@ hr {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #127822;
+  background: #ff18ff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
