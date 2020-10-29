@@ -14,11 +14,11 @@
 
 
 
-<div id="echarts1842" style="width: 85%;height: 400px;margin: 0 auto"></div>
+<div id="echarts888" style="width: 85%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts1842'));
+        var myChart = echarts.init(document.getElementById('echarts888'));
         // 指定图表的配置项和数据
         var option = {
     tooltip : {
@@ -87,11 +87,11 @@
 
 
 <div style="width: 100%;margin: 0 auto">
-    <canvas id="chart1141" style="height: 300px"></canvas>
+    <canvas id="chart3014" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart1141').getContext('2d');
+    var ctx = document.getElementById('chart3014').getContext('2d');
     var options =     {
     type: 'line',
     data: {
