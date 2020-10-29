@@ -1353,7 +1353,7 @@ pre code {
 }
 .sidebar-inner {
   color: #999;
-  padding: 18px 10px;
+  padding: 18px 5px;
   text-align: center;
 }
 .cc-license {
@@ -2912,11 +2912,11 @@ hr {
 }
 @media (min-width: 992px) {
   .sidebar-active {
-    margin-right: 320px;
+    margin-right: 280px;
   }
 }
 .sidebar {
-  right: -320px;
+  right: -280px;
 }
 .sidebar-active .sidebar {
   right: 0;
@@ -2928,7 +2928,7 @@ hr {
   position: fixed;
   top: 0;
   transition: all 0.2s ease-out;
-  width: 320px;
+  width: 280px;
   z-index: 1200;
 }
 .sidebar a,
@@ -2954,7 +2954,7 @@ hr {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff18ff;
+  background: #7f1f77;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
