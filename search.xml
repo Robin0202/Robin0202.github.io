@@ -7,6 +7,9 @@
 <a id="more"></a>
 
 <h2 id="为什么要称为打榜电商呢？"><a href="#为什么要称为打榜电商呢？" class="headerlink" title="为什么要称为打榜电商呢？"></a>为什么要称为打榜电商呢？</h2><p>对于这种电商形式的最开始是从抖音平台了解到的，或许其他的娱乐直播平台也存在这种形式电商。在抖音等一些直播平台中存在一系列的所谓PK网红，在现在的社会中对于网红的这个概念大家非常熟悉，但是对于PK网红这个概念可能不是很了解；</p>
+<p>basic footnote<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup><br>here is an inline footnote<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup><br>and another one<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup><br>and another one<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">basic footnote<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></span><br><span class="line">here is an inline footnote[<span class="string">^2</span>](<span class="link">inline footnote</span>)</span><br><span class="line">and another one<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup></span><br><span class="line">and another one<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>PK网红可以说是由于抖音等这些娱乐直播平台创造的一个特殊的网红形式，在这些直播平台存在一个PK的功能，双方可以连线面对面的PK，就像打游戏一样双方有各自的“血条“；双方比的是什么呢？比的是哪一方上的票多，所谓的上票就是花钱买虚拟的礼物，礼物的价格从一毛钱到几千元不等。</p>
 <p>据我了解最贵的礼物是6666.6，特意去看了一下叫”皇家礼炮“，在抖音里面最出名的礼物大概叫做”嘉年华“价值3000元人民币。在抖音平台中存在一种虚拟币—音浪，而且你每送出的一元钱礼礼物（十个音浪）平台会提取0.53元而留给主播的是0.47元。</p>
 <iframe id="embed_dom" name="embed_dom" frameborder="0" style="display:block;width:700px; height:245px;" src="https://www.processon.com/embed/5f8f8a30f346fb06e1e10a2a"></iframe>
@@ -17,11 +20,11 @@
 <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
 </blockquote>
 
-<div id="echarts1370" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts164" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts1370'));
+        var myChart = echarts.init(document.getElementById('echarts164'));
         // 指定图表的配置项和数据
         var option = {
     title: {
@@ -166,11 +169,11 @@
         myChart.setOption(option);
 </script>
 
-<div id="echarts2067" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts2853" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts2067'));
+        var myChart = echarts.init(document.getElementById('echarts2853'));
         // 指定图表的配置项和数据
         var option = {
     tooltip : {
@@ -239,11 +242,11 @@
 
 
 <div style="width: 100%;margin: 0 auto">
-    <canvas id="chart1383" style="height: 300px"></canvas>
+    <canvas id="chart8866" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart1383').getContext('2d');
+    var ctx = document.getElementById('chart8866').getContext('2d');
     var options =     {
     type: 'line',
     data: {
@@ -281,7 +284,13 @@
 <p>对于打榜电商来说他们在短时间内获得了大额的投入必须要获得大额的利润，你会看到这些打榜电商卖货往往是一些品牌度低，对于绝大多数人来说甚至是没有听过的，但是他们往往会在一个及其低下的价格下卖。</p>
 <p>比如卖面膜：开始电商对某一款面膜叫一个较高的价格，然后主播与电商双方一般开始演戏，在演戏的过程中，电商会不断的送东西，刚开始是一盒面膜，后来说买一盒送一盒；再后来买一盒送四盒，不但送面膜还送牙膏，送洗发水等各种产品，最后在几十块钱的价格下，你会买回一大堆的东西，对于在直播间的人来说可能会感觉这是在线下购物不可思议的行为。</p>
 <p>在这样的销售模式下，这些电商卖的这些往往是低档品（并不是说这些产品是质量劣质的，或许可能会是），几乎不存在什么品牌投入的等一些大规模生产的超低成本的产品。对于这些产品利润空间小，但是对于很多消费者来说他们会非常喜欢，在PK主播打完PK后，直播间往往可能会有十多万人，甚至几十万人，所以在短时间内可以销售上万甚至几万单的产品。<br>这些工作其实有他的</p>
-]]></content>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="symbol">^1</span>]: <span class="link">basic footnote content</span></span><br><span class="line">[<span class="symbol">^3</span>]: <span class="link">paragraph</span></span><br><span class="line">footnote</span><br><span class="line">content</span><br><span class="line">[<span class="string">^4</span>]: footnote content with some [<span class="string">markdown</span>](<span class="link">https://en.wikipedia.org/wiki/Markdown</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;">basic footnote content</span><a href="#fnref:1" rev="footnote"> ↩</a></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">2.</span><span style="display: inline-block; vertical-align: top;">inline footnote</span><a href="#fnref:2" rev="footnote"> ↩</a></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">3.</span><span style="display: inline-block; vertical-align: top;">paragraph
+footnote
+content</span><a href="#fnref:3" rev="footnote"> ↩</a></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">4.</span><span style="display: inline-block; vertical-align: top;">footnote content with some <a href="https://en.wikipedia.org/wiki/Markdown">markdown</a></span><a href="#fnref:4" rev="footnote"> ↩</a></li></ol></div></div>]]></content>
       <tags>
         <tag>经济学</tag>
       </tags>
