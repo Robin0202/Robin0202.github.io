@@ -9,14 +9,19 @@
 <h2 id="为什么要称为打榜电商呢？"><a href="#为什么要称为打榜电商呢？" class="headerlink" title="为什么要称为打榜电商呢？"></a>为什么要称为打榜电商呢？</h2><p>对于这种电商形式的最开始是从抖音平台了解到的，或许其他的娱乐直播平台也存在这种形式电商。在抖音等一些直播平台中存在一系列的所谓PK网红，在现在的社会中对于网红的这个概念大家非常熟悉，但是对于PK网红这个概念可能不是很了解；</p>
 <p>PK网红可以说是由于抖音等这些娱乐直播平台创造的一个特殊的网红形式，在这些直播平台存在一个PK的功能，双方可以连线面对面的PK，就像打游戏一样双方有各自的“血条“；双方比的是什么呢？比的是哪一方上的票多，所谓的上票就是花钱买虚拟的礼物，礼物的价格从一毛钱到几千元不等。</p>
 <p>据我了解最贵的礼物是6666.6，特意去看了一下叫”皇家礼炮“，在抖音里面最出名的礼物大概叫做”嘉年华“价值3000元人民币。在抖音平台中存在一种虚拟币—音浪，而且你每送出的一元钱礼礼物（十个音浪）平台会提取0.53元而留给主播的是0.47元。</p>
+<iframe id="embed_dom" name="embed_dom" frameborder="0" style="display:block;width:700px; height:245px;" src="https://www.processon.com/embed/5f8f8a30f346fb06e1e10a2a"></iframe>
+
+<iframe title="碳排放" aria-label="chart" id="datawrapper-chart-KgXal" src="https://datawrapper.dwcdn.net/KgXal/1/" scrolling="no" frameborder="0" style="border: none;" width="400" height="476"></iframe>
+
+
 <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
 </blockquote>
 
-<div id="echarts454" style="width: 100%;height: 250px;margin: 0 auto"></div>
+<div id="echarts8227" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts454'));
+        var myChart = echarts.init(document.getElementById('echarts8227'));
         // 指定图表的配置项和数据
         var option = {
     title: {
@@ -57,7 +62,7 @@
             name: "半径模式",
             type: "pie",
             radius: [20, 90],
-            center: ["25%", 150],
+            center: ["25%", 100],
             roseType: "radius",
             itemStyle: {
                 normal: {
@@ -116,7 +121,7 @@
             name: "面积模式",
             type: "pie",
             radius: [30, 90],
-            center: ["75%", 150],
+            center: ["75%", 100],
             roseType: "area",
             data: [
                 {
@@ -161,11 +166,11 @@
         myChart.setOption(option);
 </script>
 
-<div id="echarts1668" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts3416" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts1668'));
+        var myChart = echarts.init(document.getElementById('echarts3416'));
         // 指定图表的配置项和数据
         var option = {
     tooltip : {
@@ -234,11 +239,11 @@
 
 
 <div style="width: 100%;margin: 0 auto">
-    <canvas id="chart3290" style="height: 300px"></canvas>
+    <canvas id="chart1152" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart3290').getContext('2d');
+    var ctx = document.getElementById('chart1152').getContext('2d');
     var options =     {
     type: 'line',
     data: {
