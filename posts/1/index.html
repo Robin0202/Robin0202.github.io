@@ -387,11 +387,11 @@
 <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
 </blockquote>
 
-<div id="echarts33" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts3786" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts33'));
+        var myChart = echarts.init(document.getElementById('echarts3786'));
         // 指定图表的配置项和数据
         var option = {
     title: {
@@ -536,11 +536,11 @@
         myChart.setOption(option);
 </script>
 
-<div id="echarts3308" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts2101" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts3308'));
+        var myChart = echarts.init(document.getElementById('echarts2101'));
         // 指定图表的配置项和数据
         var option = {
     tooltip : {
@@ -609,11 +609,11 @@
 
 
 <div style="width: 100%;margin: 0 auto">
-    <canvas id="chart455" style="height: 300px"></canvas>
+    <canvas id="chart8751" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart455').getContext('2d');
+    var ctx = document.getElementById('chart8751').getContext('2d');
     var options =     {
     type: 'line',
     data: {
@@ -735,18 +735,19 @@ content</span><a href="#fnref:3" rev="footnote"> ↩</a></li><li id="fn:4"><span
 
         
   <div class="addthis_inline_share_toolbox">
+  
     <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f9d11f44b46dd0e" async="async"></script>
   </div>
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/undefined/" rel="prev" title="看的见的统计学">
-                  <i class="fa fa-chevron-left"></i> 看的见的统计学
+                <a href="/posts/undefined/" rel="prev" title="BT下载那些事">
+                  <i class="fa fa-chevron-left"></i> BT下载那些事
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/undefined/" rel="next" title="BT下载那些事">
-                  BT下载那些事 <i class="fa fa-chevron-right"></i>
+                <a href="/posts/undefined/" rel="next" title="SQL的安装配置问题">
+                  SQL的安装配置问题 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -818,7 +819,32 @@ content</span><a href="#fnref:3" rev="footnote"> ↩</a></li><li id="fn:4"><span
 <div class="busuanzi-count">
 </div>
 
-
+<span>本站已运行<span id="showDays"></span></span>
+<script>
+  var seconds = 1000;
+  var minutes = seconds * 60;
+  var hours = minutes * 60;
+  var days = hours * 24;
+  var years = days * 365;
+  var birthDay = Date.UTC(2018,02,20,14,00,00); // 这里设置建站时间
+  setInterval(function() {
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    var now = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = now - birthDay;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+      document.getElementById('showDays').innerHTML=""+diffYears+"年"+diffDays+"天"+diffHours+"小时"+diffMinutes+"分钟"+diffSeconds+"秒";
+  }, 1000);
+</script>
     </div>
   </footer>
 
