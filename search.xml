@@ -1,51 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Mathtype的word插件问题</title>
-    <url>/2020/10/02/Mathtype%E7%9A%84word%E6%8F%92%E4%BB%B6%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjayd2dryj30lk0g70tf.jpg" alt="MathType_ISePxZfHMG.png"></p>
-<a id="more"></a>
-
-<p>Mathtype是一个数学编辑软件，非常小但是功能很全，用Words的会发现内置了数学公式编辑器，但是相对于Mathtype功能不太全也不太好用。</p>
-<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjb29xyz9j31540m775b.jpg" alt="WINWORD_Jm2w8obasx.png"></p>
-<p>上一次安装的Mathtype由于版本比较旧了，这一次换了一个新的版本，但是安装新版本之后你会发现在word的操作栏里面看不到Mathtype的插件，这个时候可以试一下手动的将Mathtype中的两个文件导入到Word的启动文档里面。</p>
-<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjb5bz0pij30wd0fvmz2.jpg" alt="123"></p>
-<p>一般来说安装的外部软件程序一般都默认的安装在下面的两个文件夹内<strong>Program Files (x86)**或</strong>Program Files**</p>
-<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">C:<span class="symbol">\P</span>rogram Files (x86)<span class="symbol">\M</span>athType<span class="symbol">\O</span>ffice Support<span class="symbol">\3</span>2</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjbtvxkt4j30wd0fvdh2.jpg" alt="explorer_94PwABjNCk.png"></p>
-<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">C:<span class="symbol">\P</span>rogram Files (x86)<span class="symbol">\M</span>athType<span class="symbol">\M</span>athPage<span class="symbol">\3</span>2</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>把这两个文件夹中的下面两个文件放到下面的文件计划中</p>
-<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjbxyircwj30wd0fv3zv.jpg" alt="explorer_KSvd3igPZv.png"></p>
-<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">C:<span class="symbol">\U</span>sers<span class="symbol">\S</span>weepingRobot<span class="symbol">\A</span>ppData<span class="symbol">\L</span>ocal<span class="symbol">\P</span>ackages<span class="symbol">\M</span>icrosoft.Office.Desktop_8wekyb3d8bbwe<span class="symbol">\L</span>ocalCache<span class="symbol">\R</span>oaming<span class="symbol">\M</span>icrosoft<span class="symbol">\W</span>ord<span class="symbol">\S</span>TARTUP</span><br></pre></td></tr></table></figure>
-
-<p>这个是Word的启动目录文件夹，把上面的两个文件放入到这个文件夹中，这个文件夹的路径比较特殊，刚开始找的时候找了很久，<strong>不同的电脑，windows系统不同的版本可能这个文件的路径有所不同</strong>，实在找不到</p>
-<ol>
-<li>可以直接搜索全部文件夹</li>
-</ol>
-<p><strong>此电脑 &gt; 搜索 &gt; STARTUP</strong></p>
-<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjc9gelq8j30wd0exabk.jpg" alt="explorer_AGyH54TFkP.png"></p>
-<ol start="2">
-<li>使用第三方文件搜索软件–<a href="https://www.voidtools.com/zh-cn/"><strong>Everything</strong></a></li>
-</ol>
-<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjcbffy3fj30xs056t8y.jpg" alt="explorer_XNw1aSaIuE.png"></p>
-<p>这个软件可以直接去<a href="https://www.voidtools.com/zh-cn/"><strong>官网</strong></a>下载，提供便携版和安装版，便携版可以放到U盘里面。</p>
-<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjchnbu40j30v60h70vx.jpg" alt="chrome_kdn8rCahLK.png"></p>
-<p>一般来说将这两个问价放到STARTUP文件夹中就打开Word就可以看到Mathtype出现在Word里面了</p>
-<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjcnd5mzij312x0p5759.jpg" alt="WINWORD_42s5W8fFB6.png"></p>
-<p><strong>注意</strong></p>
-<p><strong>在移动上面的两个文件的时候一定要看清楚自己的Word是什么位的，不要想当然的以为自己的电脑是64位的就因为Word也是64位的</strong></p>
-<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjd0paip4j312x0p5dh3.jpg" alt="WINWORD_HwtvhCt7Sj.png"></p>
-<p>在Word里面的<strong>账户</strong>旁边有个<strong>关于Word</strong>点击就可以看到有关于Word的信息。放错了打开Word就会报错，打开了Mathtype也是无法使用。</p>
-]]></content>
-      <tags>
-        <tag>经济学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SQL的安装配置问题</title>
-    <url>/2020/10/02/SQL%20server%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+    <url>//posts/undefined/</url>
     <content><![CDATA[<p>这个学期由于要学数据库原理，上课的时候要用到SQL server，所以花了一点时间研究了SQL server的安装与配置问题</p>
 <a id="more"></a>
 
@@ -145,13 +102,56 @@
 <p>MAC电脑可以在电脑中安装虚拟机</p>
 ]]></content>
       <tags>
-        <tag>经济学</tag>
         <tag>数据库</tag>
+        <tag>经济学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mathtype的word插件问题</title>
+    <url>//posts/undefined/</url>
+    <content><![CDATA[<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjayd2dryj30lk0g70tf.jpg" alt="MathType_ISePxZfHMG.png"></p>
+<a id="more"></a>
+
+<p>Mathtype是一个数学编辑软件，非常小但是功能很全，用Words的会发现内置了数学公式编辑器，但是相对于Mathtype功能不太全也不太好用。</p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjb29xyz9j31540m775b.jpg" alt="WINWORD_Jm2w8obasx.png"></p>
+<p>上一次安装的Mathtype由于版本比较旧了，这一次换了一个新的版本，但是安装新版本之后你会发现在word的操作栏里面看不到Mathtype的插件，这个时候可以试一下手动的将Mathtype中的两个文件导入到Word的启动文档里面。</p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjb5bz0pij30wd0fvmz2.jpg" alt="123"></p>
+<p>一般来说安装的外部软件程序一般都默认的安装在下面的两个文件夹内<strong>Program Files (x86)**或</strong>Program Files**</p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">C:<span class="symbol">\P</span>rogram Files (x86)<span class="symbol">\M</span>athType<span class="symbol">\O</span>ffice Support<span class="symbol">\3</span>2</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjbtvxkt4j30wd0fvdh2.jpg" alt="explorer_94PwABjNCk.png"></p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">C:<span class="symbol">\P</span>rogram Files (x86)<span class="symbol">\M</span>athType<span class="symbol">\M</span>athPage<span class="symbol">\3</span>2</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>把这两个文件夹中的下面两个文件放到下面的文件计划中</p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjbxyircwj30wd0fv3zv.jpg" alt="explorer_KSvd3igPZv.png"></p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">C:<span class="symbol">\U</span>sers<span class="symbol">\S</span>weepingRobot<span class="symbol">\A</span>ppData<span class="symbol">\L</span>ocal<span class="symbol">\P</span>ackages<span class="symbol">\M</span>icrosoft.Office.Desktop_8wekyb3d8bbwe<span class="symbol">\L</span>ocalCache<span class="symbol">\R</span>oaming<span class="symbol">\M</span>icrosoft<span class="symbol">\W</span>ord<span class="symbol">\S</span>TARTUP</span><br></pre></td></tr></table></figure>
+
+<p>这个是Word的启动目录文件夹，把上面的两个文件放入到这个文件夹中，这个文件夹的路径比较特殊，刚开始找的时候找了很久，<strong>不同的电脑，windows系统不同的版本可能这个文件的路径有所不同</strong>，实在找不到</p>
+<ol>
+<li>可以直接搜索全部文件夹</li>
+</ol>
+<p><strong>此电脑 &gt; 搜索 &gt; STARTUP</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjc9gelq8j30wd0exabk.jpg" alt="explorer_AGyH54TFkP.png"></p>
+<ol start="2">
+<li>使用第三方文件搜索软件–<a href="https://www.voidtools.com/zh-cn/"><strong>Everything</strong></a></li>
+</ol>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjcbffy3fj30xs056t8y.jpg" alt="explorer_XNw1aSaIuE.png"></p>
+<p>这个软件可以直接去<a href="https://www.voidtools.com/zh-cn/"><strong>官网</strong></a>下载，提供便携版和安装版，便携版可以放到U盘里面。</p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjchnbu40j30v60h70vx.jpg" alt="chrome_kdn8rCahLK.png"></p>
+<p>一般来说将这两个问价放到STARTUP文件夹中就打开Word就可以看到Mathtype出现在Word里面了</p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjcnd5mzij312x0p5759.jpg" alt="WINWORD_42s5W8fFB6.png"></p>
+<p><strong>注意</strong></p>
+<p><strong>在移动上面的两个文件的时候一定要看清楚自己的Word是什么位的，不要想当然的以为自己的电脑是64位的就因为Word也是64位的</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcjd0paip4j312x0p5dh3.jpg" alt="WINWORD_HwtvhCt7Sj.png"></p>
+<p>在Word里面的<strong>账户</strong>旁边有个<strong>关于Word</strong>点击就可以看到有关于Word的信息。放错了打开Word就会报错，打开了Mathtype也是无法使用。</p>
+]]></content>
+      <tags>
+        <tag>经济学</tag>
       </tags>
   </entry>
   <entry>
     <title>BT下载那些事</title>
-    <url>/2020/10/02/%E5%88%9B%E9%80%A0%E8%80%85%E2%80%94%E2%80%94%E5%B8%83%E8%8E%B1%E5%A7%86%C2%B7%E7%A7%91%E6%81%A9/</url>
+    <url>//posts/undefined/</url>
     <content><![CDATA[<blockquote>
 <p>BitTorrent协议（简称BT，俗称比特洪流、BT下载）是用在对等网络中文件分享的网络协议程序。和点对点（point-to-point）的协议程序不同，它是用户群对用户群（peer-to-peer），而且用户越多，下载同一文件的人越多，下载该文件的速度越快。且下载后，继续维持上传的状态，就可以“分享”，成为其用户端节点下载的种子文件（.torrent），同时上传及下载。<br> ————wiki百科</p>
 </blockquote>
@@ -189,7 +189,7 @@
   </entry>
   <entry>
     <title>有关打榜电商的思考</title>
-    <url>/2020/10/02/%E5%9B%BD%E5%AE%B6/</url>
+    <url>//posts/undefined/</url>
     <content><![CDATA[<p>随着疫情的发展，实体经济在今年在很大程度上遭受了巨大的打击，特别是对于很多的餐饮企业来说可以说是毁灭性的打击，但是同时也有一些很“奇怪”的行业—电商兴起了！<br>今天想要聊的是有关于电商中的一种特殊的电商形式—[[打榜电商]]</p>
 <a id="more"></a>
 
@@ -208,11 +208,11 @@
 <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
 </blockquote>
 
-<div id="echarts9421" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts228" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts9421'));
+        var myChart = echarts.init(document.getElementById('echarts228'));
         // 指定图表的配置项和数据
         var option = {
     title: {
@@ -357,11 +357,11 @@
         myChart.setOption(option);
 </script>
 
-<div id="echarts2082" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts1760" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts2082'));
+        var myChart = echarts.init(document.getElementById('echarts1760'));
         // 指定图表的配置项和数据
         var option = {
     tooltip : {
@@ -430,11 +430,11 @@
 
 
 <div style="width: 100%;margin: 0 auto">
-    <canvas id="chart8636" style="height: 300px"></canvas>
+    <canvas id="chart2948" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart8636').getContext('2d');
+    var ctx = document.getElementById('chart2948').getContext('2d');
     var options =     {
     type: 'line',
     data: {
@@ -485,7 +485,7 @@ content</span><a href="#fnref:3" rev="footnote"> ↩</a></li><li id="fn:4"><span
   </entry>
   <entry>
     <title>看的见的统计学</title>
-    <url>/2020/10/02/%E7%9C%8B%E7%9A%84%E8%A7%81%E7%9A%84%E7%BB%9F%E8%AE%A1%E5%AD%A6/</url>
+    <url>//posts/undefined/</url>
     <content><![CDATA[<p>在生活中充满了许多的随机性，往往没有任何的一件是肯定会发生，往往也没有任何一件事是肯定不会发生</p>
 <figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">老师：<span class="keyword">SweepingRobot同学，你来回答一个问题，在听课吗？</span></span><br><span class="line"><span class="keyword">······安静的几秒钟</span></span><br><span class="line"><span class="keyword">SR同学：在，在，老师您说</span></span><br><span class="line"><span class="keyword"></span></span><br></pre></td></tr></table></figure>
 
