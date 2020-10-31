@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="fonts.googleapis.com/css?family=EB+Garamond:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"modernhero.cc","root":"/","scheme":"Mist","version":"8.0.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="随着疫情的发展，实体经济在今年在很大程度上遭受了巨大的打击，特别是对于很多的餐饮企业来说可以说是毁灭性的打击，但是同时也有一些很“奇怪”的行业—电商兴起了！ 今天想要聊的是有关于电商中的一种特殊的电商形式—[[打榜电商]]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="有关打榜电商的思考">
+<meta property="og:url" content="https://modernhero.cc/posts/1/index.html">
+<meta property="og:site_name" content="ModernHero">
+<meta property="og:description" content="随着疫情的发展，实体经济在今年在很大程度上遭受了巨大的打击，特别是对于很多的餐饮企业来说可以说是毁灭性的打击，但是同时也有一些很“奇怪”的行业—电商兴起了！ 今天想要聊的是有关于电商中的一种特殊的电商形式—[[打榜电商]]">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-10-01T22:37:30.000Z">
+<meta property="article:modified_time" content="2020-10-31T07:23:36.268Z">
+<meta property="article:author" content="Robin Li">
+<meta property="article:tag" content="经济学">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://modernhero.cc/posts/1/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <title>有关打榜电商的思考 | ModernHero</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="ModernHero" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ModernHero</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">大师在流浪，小丑在殿堂！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>本站首页</a>
+
+  </li>
+        
+            
+  <li class="menu-item menu-item-overview">
+
+    <a href="/overview/" rel="section"><i class="fas fa-th fa-fw"></i>本站总览</a>
+
+  </li>
+
+
+      
+        <li class="menu-item menu-item-reading">
+
+    <a href="/reading" rel="section"><i class="fas fa-book-reader fa-fw"></i>阅读</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%A7%B0%E4%B8%BA%E6%89%93%E6%A6%9C%E7%94%B5%E5%95%86%E5%91%A2%EF%BC%9F"><span class="nav-text">为什么要称为打榜电商呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E6%A6%9C%E7%94%B5%E5%95%86%E6%98%AF%E6%80%8E%E4%B9%88%E5%8D%96%E8%B4%A7%E7%9A%84%E5%91%A2%EF%BC%9F"><span class="nav-text">打榜电商是怎么卖货的呢？</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Robin Li"
+      src="/uploads/avatar.png">
+  <p class="site-author-name" itemprop="name">Robin Li</p>
+  <div class="site-description" itemprop="description">初行路：读书、写字、看世界！</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/overview/timeline">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/overview/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="mailto:vocabers@gmail.com" title="E-Mail → mailto:vocabers@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Robinli8888" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Robinli8888" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Sweepingrobot" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Sweepingrobot" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.douban.com/people/179962345?dt_dapp=1" title="DouBan → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;179962345?dt_dapp&#x3D;1" rel="noopener" target="_blank"><i class="fas fa-book fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/posts/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.png">
+      <meta itemprop="name" content="Robin Li">
+      <meta itemprop="description" content="初行路：读书、写字、看世界！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ModernHero">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          有关打榜电商的思考
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">创建于</span>
+
+      <time title="创建时间：2020-10-02 06:37:30" itemprop="dateCreated datePublished" datetime="2020-10-02T06:37:30+08:00">2020-10-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-10-31 15:23:36" itemprop="dateModified" datetime="2020-10-31T15:23:36+08:00">2020-10-31</time>
+      </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/1/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">随着疫情的发展，实体经济在今年在很大程度上遭受了巨大的打击，特别是对于很多的餐饮企业来说可以说是毁灭性的打击，但是同时也有一些很“奇怪”的行业—电商兴起了！ 今天想要聊的是有关于电商中的一种特殊的电商形式—[[打榜电商]]</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="为什么要称为打榜电商呢？"><a href="#为什么要称为打榜电商呢？" class="headerlink" title="为什么要称为打榜电商呢？"></a>为什么要称为打榜电商呢？</h2><p>对于这种电商形式的最开始是从抖音平台了解到的，或许其他的娱乐直播平台也存在这种形式电商。在抖音等一些直播平台中存在一系列的所谓PK网红，在现在的社会中对于网红的这个概念大家非常熟悉，但是对于PK网红这个概念可能不是很了解；</p>
+<p><span class="github-emoji" alias="cry" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8">&#x1f622;</span> <span class="github-emoji" alias="triumph" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f624.png?v8">&#x1f624;</span></p>
+<p>basic footnote<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup><br>here is an inline footnote<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup><br>and another one<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup><br>and another one<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">basic footnote<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></span><br><span class="line">here is an inline footnote[<span class="string">^2</span>](<span class="link">inline footnote</span>)</span><br><span class="line">and another one<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup></span><br><span class="line">and another one<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>PK网红可以说是由于抖音等这些娱乐直播平台创造的一个特殊的网红形式，在这些直播平台存在一个PK的功能，双方可以连线面对面的PK，就像打游戏一样双方有各自的“血条“；双方比的是什么呢？比的是哪一方上的票多，所谓的上票就是花钱买虚拟的礼物，礼物的价格从一毛钱到几千元不等。</p>
+<p>据我了解最贵的礼物是6666.6，特意去看了一下叫”皇家礼炮“，在抖音里面最出名的礼物大概叫做”嘉年华“价值3000元人民币。在抖音平台中存在一种虚拟币—音浪，而且你每送出的一元钱礼礼物（十个音浪）平台会提取0.53元而留给主播的是0.47元。</p>
+<iframe id="embed_dom" name="embed_dom" frameborder="0" style="display:block;width:700px; height:245px;" src="https://www.processon.com/embed/5f8f8a30f346fb06e1e10a2a"></iframe>
+
+<iframe title="碳排放" aria-label="chart" id="datawrapper-chart-KgXal" src="https://datawrapper.dwcdn.net/KgXal/1/" scrolling="no" frameborder="0" style="border: none;" width="400" height="476"></iframe>
+
+
+<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
+</blockquote>
+
+<div id="echarts1413" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts1413'));
+        // 指定图表的配置项和数据
+        var option = {
+    title: {
+        text: "南丁格尔玫瑰图",
+        subtext: "纯属虚构",
+        x: "center"
+    },
+    tooltip: {
+        trigger: "item",
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        x: "center",
+        y: "bottom",
+        data: ["rose1", "rose2", "rose3", "rose4", "rose5", "rose6", "rose7", "rose8"]
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            mark: {
+                show: true
+            },
+            dataView: {
+                show: true,
+                readOnly: true
+            },
+            restore: {
+                show: true
+            },
+            saveAsImage: {
+                show: true
+            }
+        }
+    },
+    calculable: true,
+    series: [
+        {
+            name: "半径模式",
+            type: "pie",
+            radius: [20, 90],
+            center: ["25%", 100],
+            roseType: "radius",
+            itemStyle: {
+                normal: {
+                    label: {
+                        show: false
+                    },
+                    labelLine: {
+                        show: false
+                    }
+                },
+                emphasis: {
+                    label: {
+                        show: true
+                    },
+                    labelLine: {
+                        show: true
+                    }
+                }
+            },
+            data: [
+                {
+                    value: 10,
+                    name: "rose1"
+                },
+                {
+                    value: 5,
+                    name: "rose2"
+                },
+                {
+                    value: 15,
+                    name: "rose3"
+                },
+                {
+                    value: 25,
+                    name: "rose4"
+                },
+                {
+                    value: 20,
+                    name: "rose5"
+                },
+                {
+                    value: 35,
+                    name: "rose6"
+                },
+                {
+                    value: 30,
+                    name: "rose7"
+                },
+                {
+                    value: 40,
+                    name: "rose8"
+                }
+            ]
+        },
+        {
+            name: "面积模式",
+            type: "pie",
+            radius: [30, 90],
+            center: ["75%", 100],
+            roseType: "area",
+            data: [
+                {
+                    value: 10,
+                    name: "rose1"
+                },
+                {
+                    value: 5,
+                    name: "rose2"
+                },
+                {
+                    value: 15,
+                    name: "rose3"
+                },
+                {
+                    value: 25,
+                    name: "rose4"
+                },
+                {
+                    value: 20,
+                    name: "rose5"
+                },
+                {
+                    value: 35,
+                    name: "rose6"
+                },
+                {
+                    value: 30,
+                    name: "rose7"
+                },
+                {
+                    value: 40,
+                    name: "rose8"
+                }
+            ]
+        }
+    ],
+    backgroundColor: "rgb(255, 255, 255)",
+    color: ["rgb(255, 255, 255)", "rgb(135, 206, 250)", "#da70d6", "#32cd32", "#6495ed", "#ff69b4", "#ba55d3", "#cd5c5c", "#ffa500", "#40e0d0", "#1e90ff", "#ff6347", "#7b68ee", "#00fa9a", "#ffd700", "#6699FF", "#ff6666", "#3cb371", "#b8860b", "#30e0e0"]
+}
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+
+<div id="echarts693" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts693'));
+        // 指定图表的配置项和数据
+        var option = {
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data:['利润', '支出', '收入']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    yAxis : [
+        {
+            type : 'category',
+            axisTick : {show: false},
+            data : ['周一','周二','周三','周四','周五','周六','周日']
+        }
+    ],
+    series : [
+        {
+            name:'利润',
+            type:'bar',
+            itemStyle : {
+                normal: {
+                    label: {show: true, position: 'inside'}
+                }
+            },
+            data:[200, 170, 240, 244, 200, 220, 210]
+        },
+        {
+            name:'收入',
+            type:'bar',
+            stack: '总量',
+            itemStyle: {
+                normal: {
+                    label : {show: true}
+                }
+            },
+            data:[320, 302, 341, 374, 390, 450, 420]
+        },
+        {
+            name:'支出',
+            type:'bar',
+            stack: '总量',
+            itemStyle: {normal: {
+                label : {show: true, position: 'left'}
+            }},
+            data:[-120, -132, -101, -134, -190, -230, -210]
+        }
+    ]
+};
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+
+
+<div style="width: 100%;margin: 0 auto">
+    <canvas id="chart9619" style="height: 300px"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script type="text/javascript">
+    var ctx = document.getElementById('chart9619').getContext('2d');
+    var options =     {
+    type: 'line',
+    data: {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [0, 10, 5, 2, 20, 30, 45]
+        }]
+    },
+    options: {
+        responsive: true,
+        title: {
+        display: true,
+        text: 'Chart.js Line Chart'
+        }
+    }
+};
+    new Chart(ctx, options);
+</script>
+
+
+
+<p>在主播PK的时候每一方都会有很多人在观看，上票打赏，为了让更多的人上票，或者是让给多的人观看他的直播，你会看到这些网红会定下特别的惩罚，输的一方就要接受惩罚，比如说吃许多个柠檬，喝许多瓶水等，可能还会要你去做一些事情：比如说要里在地下爬。</p>
+<p>这些处罚很多时候还是不足以留下更多的观众，于是双方会”演戏“：吵架，所谓的”拉仇恨“。总而言之就是用各种办法去吸引一些人留下来观看，对于一些人来说每天成为一种习惯，就像追电视剧一样。</p>
+<p>但是有时网红打Pk会出现另外一种情况，那些网红或许会口口声声说：“家人们，不要你们上票，你们赚钱不容易”但是PK还是要打，怎么办呢？这时打榜电商出场！他们会送礼物去为各自的主播打PK，往往根据人气的高低（以便后面卖货），会送出价值不等的礼物，有时会在短短的几分钟送几十万元人民币的礼物，有时可能直接送出一百多万甚至更多的礼物，在主播的礼物榜上占据榜一。</p>
+<p>在打完Pk后往往直播间会有大量的人，然后通过抖音的这个平台与主播连线，然后推销商品直接卖货。或许这就是打榜电商的由来！</p>
+<p>从上面可以看到打榜电商在很短的时间一般是5分钟内是需要较大的一笔初始投入：几十万到几百万不等。而这笔钱到哪里去了：这笔钱用于购买所谓的礼物了，所以这笔钱中有53%流入了抖音平台还有47%属于主播的收益。那打榜电商的收益来自于稍后与主播的连线卖货！</p>
+<h2 id="打榜电商是怎么卖货的呢？"><a href="#打榜电商是怎么卖货的呢？" class="headerlink" title="打榜电商是怎么卖货的呢？"></a>打榜电商是怎么卖货的呢？</h2><p>对于打榜电商的卖货形式也是非常的有意思的，一般来说（这里是指一般的电商，并没有说所有的电商都是这个做法）他们有两种方法获利：</p>
+<ol>
+<li>低档品，超低定价，超高的销售量。</li>
+<li>低档品，高定价，超高的利润空间。</li>
+</ol>
+<p>对于打榜电商来说他们在短时间内获得了大额的投入必须要获得大额的利润，你会看到这些打榜电商卖货往往是一些品牌度低，对于绝大多数人来说甚至是没有听过的，但是他们往往会在一个及其低下的价格下卖。</p>
+<p>比如卖面膜：开始电商对某一款面膜叫一个较高的价格，然后主播与电商双方一般开始演戏，在演戏的过程中，电商会不断的送东西，刚开始是一盒面膜，后来说买一盒送一盒；再后来买一盒送四盒，不但送面膜还送牙膏，送洗发水等各种产品，最后在几十块钱的价格下，你会买回一大堆的东西，对于在直播间的人来说可能会感觉这是在线下购物不可思议的行为。</p>
+<p>在这样的销售模式下，这些电商卖的这些往往是低档品（并不是说这些产品是质量劣质的，或许可能会是），几乎不存在什么品牌投入的等一些大规模生产的超低成本的产品。对于这些产品利润空间小，但是对于很多消费者来说他们会非常喜欢，在PK主播打完PK后，直播间往往可能会有十多万人，甚至几十万人，所以在短时间内可以销售上万甚至几万单的产品。<br>这些工作其实有他的</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="symbol">^1</span>]: <span class="link">basic footnote content</span></span><br><span class="line">[<span class="symbol">^3</span>]: <span class="link">paragraph</span></span><br><span class="line">footnote</span><br><span class="line">content</span><br><span class="line">[<span class="string">^4</span>]: footnote content with some [<span class="string">markdown</span>](<span class="link">https://en.wikipedia.org/wiki/Markdown</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;">basic footnote content</span><a href="#fnref:1" rev="footnote"> ↩</a></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">2.</span><span style="display: inline-block; vertical-align: top;">inline footnote</span><a href="#fnref:2" rev="footnote"> ↩</a></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">3.</span><span style="display: inline-block; vertical-align: top;">paragraph
+footnote
+content</span><a href="#fnref:3" rev="footnote"> ↩</a></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">4.</span><span style="display: inline-block; vertical-align: top;">footnote content with some <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Markdown">markdown</a></span><a href="#fnref:4" rev="footnote"> ↩</a></li></ol></div></div>
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\undefined\" rel="bookmark">看的见的统计学</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Robin Li
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://modernhero.cc/posts/1/" title="有关打榜电商的思考">https://modernhero.cc/posts/1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          
+
+  <div class="followme">
+    <span>欢迎关注我的其它发布渠道</span>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/Robinli8888">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/Sweepingrobot">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fas fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+          <div class="post-tags">
+              <a href="/overview/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag"><i class="fa fa-tag"></i> 经济学</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/undefined/" rel="prev" title="看的见的统计学">
+                  <i class="fa fa-chevron-left"></i> 看的见的统计学
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/undefined/" rel="next" title="BT下载那些事">
+                  BT下载那些事 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Robin Li</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">16k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">14 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+  <div class="addthis_inline_share_toolbox">
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f9d11f44b46dd0e" async="async"></script>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.15.0/dist/lozad.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+  
+
+  
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: "/posts/1/",
+    }, {"enable":true,"appId":"OqcLraGyUGkWL0MAnPAp6sNn-MdYXbMMI","appKey":"8RfHAJOzCSRCM7gFgw1JQHzv","placeholder":"大师留言，小丑靠边！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":false,"recordIP":false,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
+    ));
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
