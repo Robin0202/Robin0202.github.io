@@ -2850,7 +2850,7 @@ hr {
   display: none;
 }
 .posts-expand .post-block:not(:first-child) {
-  margin-top: 120px;
+  margin-top: 0px;
 }
 .posts-expand .post-header {
   margin-bottom: 20px;
@@ -2966,7 +2966,7 @@ hr {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #9c82e7;
+  background: #66ff75;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
