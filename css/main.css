@@ -2072,7 +2072,7 @@ pre code {
   text-align: center;
 }
 .posts-expand .post-title {
-  font-size: 1.5em;
+  font-size: 1.125em;
   font-weight: normal;
   margin: initial;
   overflow-wrap: break-word;
@@ -2850,7 +2850,7 @@ hr {
   display: none;
 }
 .posts-expand .post-block:not(:first-child) {
-  margin-top: 0px;
+  margin-top: 2em;
 }
 .posts-expand .post-header {
   margin-bottom: 20px;
@@ -2872,7 +2872,7 @@ hr {
 }
 .post-button {
   margin-top: 20px;
-  text-align: left;
+  text-align: center;
 }
 .post-button .btn {
   background: none;
@@ -2919,7 +2919,7 @@ hr {
 }
 @media (max-width: 767px) {
   .post-block:first-of-type {
-    padding-top: 60px;
+    padding-top: 2em;
   }
 }
 @media (min-width: 992px) {
@@ -2966,7 +2966,7 @@ hr {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #66ff75;
+  background: #f1f;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
