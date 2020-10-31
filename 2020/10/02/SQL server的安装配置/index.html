@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="fonts.googleapis.com/css?family=EB+Garamond:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"modernhero.cc","root":"/","scheme":"Mist","version":"8.0.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="这个学期由于要学数据库原理，上课的时候要用到SQL server，所以花了一点时间研究了SQL server的安装与配置问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL的安装配置问题">
+<meta property="og:url" content="https://modernhero.cc/2020/10/02/SQL%20server%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="ModernHero">
+<meta property="og:description" content="这个学期由于要学数据库原理，上课的时候要用到SQL server，所以花了一点时间研究了SQL server的安装与配置问题">
+<meta property="og:locale">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckhhulk2jj30v60h7dh7.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckhfod35jj30ex0dwabe.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckhmtvdp7j30ol0jqtaa.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckhpfz8jtj30ol0jqabf.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckhqpghi8j30ol0jqt9c.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckhtv9sd9j30ol0jqaas.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckhudva32j30ol0jq3zk.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gcki6a6otqj31bf0hf3zp.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckiau3ho7j30kf0hsjru.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckina4bj1j30re0kzt9e.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckipa632bj30re0kzjrx.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckiwfwmtxj30mw0k0gt8.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckizekiupj30nl0csweq.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckj1q8w6aj30ed099mx9.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckj8v86rrj30wd0exabh.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckjiyng8pj31d40r43zs.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckjlbb5znj30ka0h7wez.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckjrm39cbj30ka0h7mxn.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckina4bj1j30re0kzt9e.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckjzedlzhj31d40r2abm.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckk660n5sj30ka0h7mxo.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckk8f8y0pj30ka0h7dg5.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckj1q8w6aj30ed099mx9.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckkjh5b3oj31d40r2mye.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckl8etddlj30ka0h7t93.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckl6l6wjzj30o80gfjrx.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gcklcndok0j30re0h2wf6.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gcklzbjgk3j30rj0h0wf7.jpg">
+<meta property="article:published_time" content="2020-10-01T22:37:30.000Z">
+<meta property="article:modified_time" content="2020-10-31T01:39:33.828Z">
+<meta property="article:author" content="Robin Li">
+<meta property="article:tag" content="经济学">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/0084YcZKgy1gckhhulk2jj30v60h7dh7.jpg">
+
+
+<link rel="canonical" href="https://modernhero.cc/2020/10/02/SQL%20server%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <title>SQL的安装配置问题 | ModernHero</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="ModernHero" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ModernHero</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-reading">
+
+    <a href="/reading" rel="section"><i class="fas fa-book-reader fa-fw"></i>阅读</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFSQL-server"><span class="nav-text">什么是SQL server</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85SQL-server"><span class="nav-text">安装SQL server</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">两个版本的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E6%AD%A5%E9%AA%A4"><span class="nav-text">下载步骤</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL-server-%E9%85%8D%E7%BD%AE"><span class="nav-text">SQL server 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8TCP-IP%E5%8D%8F%E8%AE%AE"><span class="nav-text">启动TCP&#x2F;IP协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8"><span class="nav-text">开始使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-text">创建一个数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MAC-SQL-server%E7%9A%84%E5%AE%89%E8%A3%85"><span class="nav-text">MAC SQL server的安装</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Robin Li"
+      src="/uploads/avatar.png">
+  <p class="site-author-name" itemprop="name">Robin Li</p>
+  <div class="site-description" itemprop="description">大师在流浪，小丑在殿堂！</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="mailto:vocabers@gmail.com" title="E-Mail → mailto:vocabers@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Robinli8888" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Robinli8888" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Sweepingrobot" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Sweepingrobot" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.douban.com/people/179962345?dt_dapp=1" title="DouBan → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;179962345?dt_dapp&#x3D;1" rel="noopener" target="_blank"><i class="fas fa-book fa-fw"></i>DouBan</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/2020/10/02/SQL%20server%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.png">
+      <meta itemprop="name" content="Robin Li">
+      <meta itemprop="description" content="大师在流浪，小丑在殿堂！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ModernHero">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SQL的安装配置问题
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">创建于</span>
+
+      <time title="创建时间：2020-10-02 06:37:30" itemprop="dateCreated datePublished" datetime="2020-10-02T06:37:30+08:00">2020-10-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-10-31 09:39:33" itemprop="dateModified" datetime="2020-10-31T09:39:33+08:00">2020-10-31</time>
+      </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/10/02/SQL%20server%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/02/SQL%20server%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>这个学期由于要学数据库原理，上课的时候要用到SQL server，所以花了一点时间研究了SQL server的安装与配置问题</p>
+<a id="more"></a>
+
+<h1 id="什么是SQL-server"><a href="#什么是SQL-server" class="headerlink" title="什么是SQL server"></a>什么是SQL server</h1><blockquote>
+<p>Microsoft SQL Server(微软结构化查询语言服务器)是由美国微软公司所推出的关系数据库解决方案，最新的版本是SQL Server 2019，已在美国时间2019年11月3日发布。<br>数据库的内置语言原本是采用美国标准局和国际标准组织所定义的SQL语言，但是微软公司对它进行了部分扩充而成为作业用SQL。<br>几个初始版本适用于中小企业的数据库管理，但是近年来它的应用范围有所扩展，已经触及到大型、跨国企业的数据库管理。</p>
+</blockquote>
+<p>SQL server是一种关系型数据库管理软件，是由微软公司开发的，所以对于很多使用MAC的朋友，你们是无法直接去安装SQL server，当然也可以安装，我也发现三种使用方法，后面在说吧，我现在使用的是Windows 10的电脑。</p>
+<h1 id="安装SQL-server"><a href="#安装SQL-server" class="headerlink" title="安装SQL server"></a>安装SQL server</h1><p>SQL server的安装可以直接去<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/sql-server/sql-server-downloads">官网</a>下载,也可以直接点击进入<a target="_blank" rel="noopener" href="https://go.microsoft.com/fwlink/?linkid=853016">下载页面</a>，官网提供了两个版本的下载分别是<strong>Developer版本和EXpress</strong>版本供使用下载。</p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckhhulk2jj30v60h7dh7.jpg" alt="chrome_EXt7cKYJIL.png"></p>
+<p><strong>2017版直接下载链接</strong><br><strong><a target="_blank" rel="noopener" href="https://go.microsoft.com/fwlink/?linkid=853016">https://go.microsoft.com/fwlink/?linkid=853016</a></strong></p>
+<h2 id="两个版本的区别"><a href="#两个版本的区别" class="headerlink" title="两个版本的区别"></a>两个版本的区别</h2><p>那么这两个版本有什么区别呢：</p>
+<ul>
+<li>Developer版本</li>
+</ul>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL<span class="built_in"> Server </span>2019 Developer is a full-featured free edition, licensed <span class="keyword">for</span> use as a development <span class="keyword">and</span> test database <span class="keyword">in</span> a non-production environment.</span><br></pre></td></tr></table></figure>
+
+<p>这是官网对这个版本的描述，也就是说这个版本是一个完全免费的版本，这个版本可以用来作为一个卡法和测试的工具，但是不能用来生产环境</p>
+<ul>
+<li>Express版本</li>
+</ul>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL<span class="built_in"> Server </span>2019 Express is a free edition of SQL Server, ideal <span class="keyword">for</span> development <span class="keyword">and</span> production <span class="keyword">for</span> desktop, web, <span class="keyword">and</span> small<span class="built_in"> server </span>applications.</span><br></pre></td></tr></table></figure>
+<p>SQL Server 2019 Express 是免费的SQL Server 版本，这个版本很适合用来开发和生产桌面、Web 与小型伺服器应用程式，所以这个版本是可以用在生产环境的</p>
+<p>对于这两者功能上的其他区别官网给了一种对比图，这是2017版的两个版本的区别</p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckhfod35jj30ex0dwabe.jpg" alt="undefined"></p>
+<p>至于使用的功能上其实两个版本是没有什么区别的，作为学生使用下载两个应该版本都可以，官网上提供的是SQL server 2019的，但是这个版本是一个测试版本，我这里下载的是2017版的，这个版本的Developer版，点击上面的直接下载链接进入的也是2017版的下载界面。</p>
+<h2 id="下载步骤"><a href="#下载步骤" class="headerlink" title="下载步骤"></a>下载步骤</h2><p>点击下载2017的之后，出现了下面的界面：</p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckhmtvdp7j30ol0jqtaa.jpg" alt="SQLServer2017-SSEI-Dev_DRNSK25T6K.png"></p>
+<p>这里可以进行一个选择，对于学生来说一般选择基本的就是帮你按默认的配置好了SQL server搜索引擎，当然选自定义的也可以，不过麻烦一点，我这里选择的是<strong>基本（B）</strong></p>
+<p><strong>稍等片刻</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckhpfz8jtj30ol0jqabf.jpg" alt="SQLServer2017-SSEI-Dev_kus9cQ90yZ.png"></p>
+<p><strong>接受</strong>协议，<strong>继续稍等片刻</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckhqpghi8j30ol0jqt9c.jpg" alt="SQLServer2017-SSEI-Dev_OKFroXFClr.png"></p>
+<p><strong>选择安装路径，一般来说C盘空间够用的话，可以使用默认位置，点击安装</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckhtv9sd9j30ol0jqaas.jpg" alt="SQLServer2017-SSEI-Dev_bcnARh4NgW.png"></p>
+<p><strong>迎来漫长的等待</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckhudva32j30ol0jq3zk.jpg" alt="SQLServer2017-SSEI-Dev_4fecSPEnpx.png"></p>
+<p>终于安装完成了，这个时候可以先不要关掉重新启动，倒不是说不可以关掉，其实网上说这个时候关机重新启动后面的无法配置了什么的，经过我的测试其实就算这个时候关掉重新启动貌似也是可以的，就现在用起来来说，当然你们在安装的过程中现在没有必要关机重新启动，因为还要下载一个东西。</p>
+<p>这个时候SQL server已经安装好了，但是这个时候操作SQL server是很不方便的，你要使用命令行操作，当然也可以操作，只是不太方便，这个时候就可以安装SSMS，<strong>SSMS是SQL server的一个客户端工具，其实也就是一个图形化界面，可以更好的管理数据库，可以不用命令行去创建一个表，去进行查询操作啊什么的，对于初级使用者是很重要的</strong>，我还不知道我们老师要不要我们安装这个东西，说不定他要我们命令行操作，应该不会，先安装再说吧，点击有下面的<strong>安装SSMS</strong>。<strong>如果你关掉了这个页面，也可以直接去官网点击下载SSMS</strong>。</p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcki6a6otqj31bf0hf3zp.jpg" alt="chrome_75cShqiSEP.png"></p>
+<p>工具的下面有一个<a target="_blank" rel="noopener" href="https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms">下载SQL Server Management Studio (SSMS) </a></p>
+<p><strong>下载开始，又进入漫长的等待</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckiau3ho7j30kf0hsjru.jpg" alt="SSMS-Setup-CHS_fThyKMhHL6.png"></p>
+<p>安装完了之后直接完成，这个安装教简单。</p>
+<h1 id="SQL-server-配置"><a href="#SQL-server-配置" class="headerlink" title="SQL server 配置"></a>SQL server 配置</h1><p>该安装的都安装了，这个时候就开始配置</p>
+<h2 id="启动TCP-IP协议"><a href="#启动TCP-IP协议" class="headerlink" title="启动TCP/IP协议"></a>启动TCP/IP协议</h2><ol>
+<li><strong>点击菜单中的SQL server 2017配置管理器，启动配置管理器</strong></li>
+</ol>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckina4bj1j30re0kzt9e.jpg" alt="mmc_3VmPNFcmAX.png"></p>
+<p><strong>打开之后，先点击SQL Server服务，看鼠标点的第一项是否启动，没有启动就右键打开启动。</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckipa632bj30re0kzjrx.jpg" alt="mmc_9Cejpis8ey.png"></p>
+<p><strong>然后点击SQL server 网络配置，将右边的TCP/IP和上面的Named Pipes没有启动的启动</strong>。</p>
+<ol start="2">
+<li><strong>配置SSMS</strong></li>
+</ol>
+<p><strong>打开菜单中的Microsoft SQL Server Management Studio 18</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckiwfwmtxj30mw0k0gt8.jpg" alt="SearchUI_G2HMytoLf9.png"></p>
+<p><strong>打开Microsoft SQL Server Management Studio 18，第一次打开可能有点慢</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckizekiupj30nl0csweq.jpg" alt="wF5lX45uk6.png"></p>
+<p><strong>打开之后进入登入界面</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckj1q8w6aj30ed099mx9.jpg" alt="Ssms_69af6Qfy1p.png"></p>
+<p><strong>这个登入界面的服务器名称第一次登入可以填入计算机名称，或者直接输入localhost，计算机名字可以从下面找</strong>。</p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckj8v86rrj30wd0exabh.jpg" alt="explorer_M8UAiuEO0M.png"></p>
+<p><strong>打开文档，右击计算机（我的电脑是此电脑）下面有一个属性，这里看不到，点击属性,然后高级系统设置 &gt; 计算机名。就可以看到计算机名了，这里涉及一些东西就不发照片了。</strong></p>
+<p><strong>填入计算机名字之后就可以点击连接了，理论可以直接使用了，这个时候你会发现你的数据库不用密码也可以登入，这时登入的是整个大的数据库系统，但是我们在使用的时候每一个用户可能都会建立一个具体的库，这是我们可以为这个具体的库设置登入密码与账号</strong>。</p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckjiyng8pj31d40r43zs.jpg" alt="Ssms_wo5GNbOiku.png"></p>
+<p><strong>点击第一个，右击属性 &gt; 安全性 &gt; 连接</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckjlbb5znj30ka0h7wez.jpg" alt="Ssms_hhAMadtf8y.png"></p>
+<p><strong>打开服务器身份验证的第二个选项，SQL server和Windows 身份验证模式，下面启用服务器代理账户可以设置账户密码</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckjrm39cbj30ka0h7mxn.jpg" alt="Ssms_STQvsF5Eqe.png"></p>
+<p><strong>将连接界面的允许远程连接到此服务器打开</strong></p>
+<p><strong>点击确定之后会要求你重新启动服务器，下面这个界面</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckina4bj1j30re0kzt9e.jpg" alt="mmc_3VmPNFcmAX.png"></p>
+<p><strong>鼠标处右键，有重新启动选项，点击重新启动</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckjzedlzhj31d40r2abm.jpg" alt="Ssms_Yv608xpFGj.png"></p>
+<p><strong>点击 安全性  &gt; 登入名 &gt; sa &gt; 常规 &gt; 状态 右键属性</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckk660n5sj30ka0h7mxo.jpg" alt="Ssms_F4LDHekuH5.png"></p>
+<p><strong>上面是常规界面，可以设置密码，这就是为sa这个用户设置密码</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckk8f8y0pj30ka0h7dg5.jpg" alt="Ssms_vQxymZxNMg.png"></p>
+<p><strong>上面是状态界面，将第一项授予，第二项启用</strong></p>
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><h3 id="创建一个数据库"><a href="#创建一个数据库" class="headerlink" title="创建一个数据库"></a>创建一个数据库</h3><p><strong>上面设置好以后，就可以用你自己设置的账号进行登入了，在身份验证处选择使用SQL server验证，在下面填入你刚才设置的密码登入</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckj1q8w6aj30ed099mx9.jpg" alt="Ssms_69af6Qfy1p.png"></p>
+<p><strong>登入之后，就可以创建一个具体的库</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckkjh5b3oj31d40r2mye.jpg" alt="Ssms_1967qTrytu.png"></p>
+<p>**点击 数据库 &gt; 新建数据库 &gt; 设置数据库的名字 &gt; 确定 ，这里创建一个==SweepingRobot数据库==**，数据库名字下面还可以在下面进行具体的一些设置，这里就不设置了，简单的创建一个数据库。</p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckl8etddlj30ka0h7t93.jpg" alt="Ssms_aolGRu3AmF.png"></p>
+<p><strong>在创建的SweepingRobot数据库下面可以创建一个表（关系）</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gckl6l6wjzj30o80gfjrx.jpg" alt="Ssms_9D8CleqvtE.png"></p>
+<p><strong>数据库 &gt; SweepingRobot &gt; 右键表 &gt; 新建表 &gt; 表</strong> </p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcklcndok0j30re0h2wf6.jpg" alt="Ssms_dxoJynO0S5.png"></p>
+<p><strong>在表中可以创建列，属性</strong></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/0084YcZKgy1gcklzbjgk3j30rj0h0wf7.jpg" alt="Ssms_LSTFxhNywA.png"></p>
+<p><strong>学习不精，还在学习的路上，哈哈，就说那么多了</strong></p>
+<h2 id="MAC-SQL-server的安装"><a href="#MAC-SQL-server的安装" class="headerlink" title="MAC SQL server的安装"></a>MAC SQL server的安装</h2><p>由于SQL server是微软开发的，所以MAC是不可以直接安装的，但是也是可以安装使用的</p>
+<ol>
+<li>安装虚拟机</li>
+</ol>
+<p>MAC电脑可以在电脑中安装虚拟机</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\10\02\Mathtype的word插件问题\" rel="bookmark">Mathtype的word插件问题</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\10\02\国家\" rel="bookmark">有关打榜电商的思考</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer"><div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Robin Li
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://modernhero.cc/2020/10/02/SQL%20server%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="SQL的安装配置问题">https://modernhero.cc/2020/10/02/SQL server的安装配置/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          
+
+  <div class="followme">
+    <span>欢迎关注我的其它发布渠道</span>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/Robinli8888">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/Sweepingrobot">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fas fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+          <div class="post-tags">
+              <a href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag"><i class="fa fa-tag"></i> 经济学</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"><i class="fa fa-tag"></i> 数据库</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/10/02/%E5%88%9B%E9%80%A0%E8%80%85%E2%80%94%E2%80%94%E5%B8%83%E8%8E%B1%E5%A7%86%C2%B7%E7%A7%91%E6%81%A9/" rel="prev" title="BT下载那些事">
+                  <i class="fa fa-chevron-left"></i> BT下载那些事
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/10/02/Mathtype%E7%9A%84word%E6%8F%92%E4%BB%B6%E9%97%AE%E9%A2%98/" rel="next" title="Mathtype的word插件问题">
+                  Mathtype的word插件问题 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Robin Li</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">16k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">14 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.15.0/dist/lozad.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+  
+
+  
+<!-- calendar widget -->
+
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js"></script>
+    <script>
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script><script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: "/2020/10/02/SQL%20server%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/",
+    }, {"enable":true,"appId":"OqcLraGyUGkWL0MAnPAp6sNn-MdYXbMMI","appKey":"8RfHAJOzCSRCM7gFgw1JQHzv","placeholder":"大师留言，小丑靠边！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":false,"recordIP":false,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
+    ));
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
