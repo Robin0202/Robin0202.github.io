@@ -3,9 +3,13 @@
   <entry>
     <title>基于Rvest的爬虫</title>
     <url>//posts/rvest/</url>
-    <content><![CDATA[<h2 id="关于rvest包"><a href="#关于rvest包" class="headerlink" title="关于rvest包"></a>关于rvest包</h2><p><code>rvest</code> 包是Hadley Wickham开发的一个能够非常容易的从网页获取数据的包，这个包使用起来非常的容易，<code>rvest</code>的灵感来源于<code>BeautifulSoup</code>（<code>python</code>中的一个非常有名的解析库）。</p>
+    <content><![CDATA[<img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gk9qsre6j9j306o07qmxq.jpg" width="20%" height="20%" title="◎ rvest" alt="rvest"/>
+
+
+
 <a id="more"></a>
 
+<h2 id="关于rvest包"><a href="#关于rvest包" class="headerlink" title="关于rvest包"></a>关于rvest包</h2><p><code>rvest</code> 包是Hadley Wickham开发的一个能够非常容易的从网页获取数据的包，这个包使用起来非常的容易，<code>rvest</code>的灵感来源于<code>BeautifulSoup</code>（<code>python</code>中的一个非常有名的解析库）。</p>
 <p>但是我的理解是这个包实际上不能直接从网络中获取<code>HTML</code>文件，而是通过<code>xml2</code> 包中的<code>read_html()</code> 获取<code>HTML</code>文件或者是通过其他的方式获取了<code>html</code>文件之后再转给<code>rvest</code>，用<code>rvest</code>包中的函数来非常方便的去提取数据。加载<code>rvest</code>的同时也会加载<code>xml2</code>包。</p>
 <p><code>read_html()</code> 函数：</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">read_html(x, encoding = <span class="string">&quot;&quot;</span>, ..., options = <span class="built_in">c</span>(<span class="string">&quot;RECOVER&quot;</span>, <span class="string">&quot;NOERROR&quot;</span>, <span class="string">&quot;NOBLANKS&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个函数可以从互联网中获取网页内容，x为网页的URL，encoding是指定网页的编码方式。</span></span><br></pre></td></tr></table></figure>

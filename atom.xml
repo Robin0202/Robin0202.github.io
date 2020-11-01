@@ -6,7 +6,7 @@
   <link href="https://modernhero.cc/atom.xml" rel="self"/>
   
   <link href="https://modernhero.cc/"/>
-  <updated>2020-11-01T07:24:20.719Z</updated>
+  <updated>2020-11-01T08:33:14.485Z</updated>
   <id>https://modernhero.cc/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="https://modernhero.cc/posts/rvest/"/>
     <id>https://modernhero.cc/posts/rvest/</id>
     <published>2020-11-01T06:33:39.000Z</published>
-    <updated>2020-11-01T07:24:20.719Z</updated>
+    <updated>2020-11-01T08:33:14.485Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;关于rvest包&quot;&gt;&lt;a href=&quot;#关于rvest包&quot; class=&quot;headerlink&quot; title=&quot;关于rvest包&quot;&gt;&lt;/a&gt;关于rvest包&lt;/h2&gt;&lt;p&gt;&lt;code&gt;rvest&lt;/code&gt; 包是Hadley Wickham开发的一个能够非常容易的从网页获取数据的包，这个包使用起来非常的容易，&lt;code&gt;rvest&lt;/code&gt;的灵感来源于&lt;code&gt;BeautifulSoup&lt;/code&gt;（&lt;code&gt;python&lt;/code&gt;中的一个非常有名的解析库）。&lt;/p&gt;</summary>
+    <summary type="html">&lt;img src=&quot;http://ww1.sinaimg.cn/large/007DtFxUly1gk9qsre6j9j306o07qmxq.jpg&quot; width=&quot;20%&quot; height=&quot;20%&quot; title=&quot;◎ rvest&quot; alt=&quot;rvest&quot;/&gt;</summary>
     
     
     
