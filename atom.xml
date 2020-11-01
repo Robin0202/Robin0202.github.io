@@ -6,7 +6,7 @@
   <link href="https://modernhero.cc/atom.xml" rel="self"/>
   
   <link href="https://modernhero.cc/"/>
-  <updated>2020-10-31T01:38:16.654Z</updated>
+  <updated>2020-11-01T07:24:20.719Z</updated>
   <id>https://modernhero.cc/</id>
   
   <author>
@@ -17,103 +17,25 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>BT下载那些事</title>
-    <link href="https://modernhero.cc/posts/undefined/"/>
-    <id>https://modernhero.cc/posts/undefined/</id>
-    <published>2020-10-01T22:37:30.000Z</published>
-    <updated>2020-10-31T01:38:16.654Z</updated>
+    <title>基于Rvest的爬虫</title>
+    <link href="https://modernhero.cc/posts/rvest/"/>
+    <id>https://modernhero.cc/posts/rvest/</id>
+    <published>2020-11-01T06:33:39.000Z</published>
+    <updated>2020-11-01T07:24:20.719Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;BitTorrent协议（简称BT，俗称比特洪流、BT下载）是用在对等网络中文件分享的网络协议程序。和点对点（point-to-point）的协议程序不同，它是用户群对用户群（peer-to-peer），而且用户越多，下载同一文件的人越多，下载该文</summary>
-        
-      
+    <summary type="html">&lt;h2 id=&quot;关于rvest包&quot;&gt;&lt;a href=&quot;#关于rvest包&quot; class=&quot;headerlink&quot; title=&quot;关于rvest包&quot;&gt;&lt;/a&gt;关于rvest包&lt;/h2&gt;&lt;p&gt;&lt;code&gt;rvest&lt;/code&gt; 包是Hadley Wickham开发的一个能够非常容易的从网页获取数据的包，这个包使用起来非常的容易，&lt;code&gt;rvest&lt;/code&gt;的灵感来源于&lt;code&gt;BeautifulSoup&lt;/code&gt;（&lt;code&gt;python&lt;/code&gt;中的一个非常有名的解析库）。&lt;/p&gt;</summary>
     
     
     
+    <category term="R语言" scheme="https://modernhero.cc/categorys/R%E8%AF%AD%E8%A8%80/"/>
     
-    <category term="BT下载" scheme="https://modernhero.cc/tags/BT%E4%B8%8B%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mathtype的word插件问题</title>
-    <link href="https://modernhero.cc/posts/undefined/"/>
-    <id>https://modernhero.cc/posts/undefined/</id>
-    <published>2020-10-01T22:37:30.000Z</published>
-    <updated>2020-10-31T01:41:08.252Z</updated>
+    <category term="爬虫" scheme="https://modernhero.cc/categorys/R%E8%AF%AD%E8%A8%80/%E7%88%AC%E8%99%AB/"/>
     
     
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/0084YcZKgy1gcjayd2dryj30lk0g70tf.jpg&quot; alt=&quot;MathType_ISePxZfHMG.png&quot;&gt;&lt;/p&gt;</summary>
+    <category term="R语言" scheme="https://modernhero.cc/tags/R%E8%AF%AD%E8%A8%80/"/>
     
-    
-    
-    
-    <category term="经济学" scheme="https://modernhero.cc/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SQL的安装配置问题</title>
-    <link href="https://modernhero.cc/posts/undefined/"/>
-    <id>https://modernhero.cc/posts/undefined/</id>
-    <published>2020-10-01T22:37:30.000Z</published>
-    <updated>2020-10-31T01:39:33.828Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;这个学期由于要学数据库原理，上课的时候要用到SQL server，所以花了一点时间研究了SQL server的安装与配置问题&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="经济学" scheme="https://modernhero.cc/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
-    
-    <category term="数据库" scheme="https://modernhero.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>有关打榜电商的思考</title>
-    <link href="https://modernhero.cc/posts/1/"/>
-    <id>https://modernhero.cc/posts/1/</id>
-    <published>2020-10-01T22:37:30.000Z</published>
-    <updated>2020-10-31T07:23:36.268Z</updated>
-    
-    
-    <summary type="html">随着疫情的发展，实体经济在今年在很大程度上遭受了巨大的打击，特别是对于很多的餐饮企业来说可以说是毁灭性的打击，但是同时也有一些很“奇怪”的行业—电商兴起了！ 今天想要聊的是有关于电商中的一种特殊的电商形式—[[打榜电商]]</summary>
-    
-    
-    
-    
-    <category term="经济学" scheme="https://modernhero.cc/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>看的见的统计学</title>
-    <link href="https://modernhero.cc/posts/undefined/"/>
-    <id>https://modernhero.cc/posts/undefined/</id>
-    <published>2020-10-01T22:37:30.000Z</published>
-    <updated>2020-10-31T01:36:56.478Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;在生活中充满了许多的随机性，往往没有任何的一件是肯定会发生，往往也没有任何一件事是肯定不会发生&lt;/p&gt;
-&lt;figure class=&quot;highlight mipsasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
-        
-      
-    
-    
-    
-    
-    <category term="统计学" scheme="https://modernhero.cc/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/"/>
+    <category term="爬虫" scheme="https://modernhero.cc/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="fonts.googleapis.com/css?family=EB+Garamond:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"modernhero.cc","root":"/","scheme":"Mist","version":"8.0.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="关于rvest包rvest 包是Hadley Wickham开发的一个能够非常容易的从网页获取数据的包，这个包使用起来非常的容易，rvest的灵感来源于BeautifulSoup（python中的一个非常有名的解析库）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于Rvest的爬虫">
+<meta property="og:url" content="https://modernhero.cc/posts/rvest/index.html">
+<meta property="og:site_name" content="ModernHero">
+<meta property="og:description" content="关于rvest包rvest 包是Hadley Wickham开发的一个能够非常容易的从网页获取数据的包，这个包使用起来非常的容易，rvest的灵感来源于BeautifulSoup（python中的一个非常有名的解析库）。">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-11-01T06:33:39.000Z">
+<meta property="article:modified_time" content="2020-11-01T07:24:20.719Z">
+<meta property="article:author" content="Robin Li">
+<meta property="article:tag" content="R语言">
+<meta property="article:tag" content="爬虫">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://modernhero.cc/posts/rvest/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <title>基于Rvest的爬虫 | ModernHero</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="ModernHero" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ModernHero</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">大师在流浪，小丑在殿堂！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>本站首页</a>
+
+  </li>
+        <li class="menu-item menu-item-digitalgarden">
+
+    <a href="/digitalgarden.html" rel="section"><i class="fas fa-pen fa-fw"></i>数字花园</a>
+
+  </li>
+        <li class="menu-item menu-item-reading">
+
+    <a href="/reading/" rel="section"><i class="fas fa-book-reader fa-fw"></i>阅读书单</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>文章分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>各种标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于博主</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Ervest%E5%8C%85"><span class="nav-text">关于rvest包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96%E6%AD%A5%E9%AA%A4"><span class="nav-text">数据爬取步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#xpath%E5%AE%9A%E4%BD%8D"><span class="nav-text">xpath定位</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Robin Li"
+      src="/uploads/avatar.png">
+  <p class="site-author-name" itemprop="name">Robin Li</p>
+  <div class="site-description" itemprop="description">初行路：读书、写字、看世界！</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="mailto:vocabers@gmail.com" title="E-Mail → mailto:vocabers@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Robinli8888" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Robinli8888" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Sweepingrobot" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Sweepingrobot" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.douban.com/people/179962345?dt_dapp=1" title="DouBan → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;179962345?dt_dapp&#x3D;1" rel="noopener" target="_blank"><i class="fas fa-book fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/posts/rvest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.png">
+      <meta itemprop="name" content="Robin Li">
+      <meta itemprop="description" content="初行路：读书、写字、看世界！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ModernHero">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          基于Rvest的爬虫
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">创建于</span>
+      
+
+      <time title="创建时间：2020-11-01 14:33:39 / 修改时间：15:24:20" itemprop="dateCreated datePublished" datetime="2020-11-01T14:33:39+08:00">2020-11-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categorys/R%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">R语言</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categorys/R%E8%AF%AD%E8%A8%80/%E7%88%AC%E8%99%AB/" itemprop="url" rel="index"><span itemprop="name">爬虫</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/rvest/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/rvest/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="关于rvest包"><a href="#关于rvest包" class="headerlink" title="关于rvest包"></a>关于rvest包</h2><p><code>rvest</code> 包是Hadley Wickham开发的一个能够非常容易的从网页获取数据的包，这个包使用起来非常的容易，<code>rvest</code>的灵感来源于<code>BeautifulSoup</code>（<code>python</code>中的一个非常有名的解析库）。</p>
+<a id="more"></a>
+
+<p>但是我的理解是这个包实际上不能直接从网络中获取<code>HTML</code>文件，而是通过<code>xml2</code> 包中的<code>read_html()</code> 获取<code>HTML</code>文件或者是通过其他的方式获取了<code>html</code>文件之后再转给<code>rvest</code>，用<code>rvest</code>包中的函数来非常方便的去提取数据。加载<code>rvest</code>的同时也会加载<code>xml2</code>包。</p>
+<p><code>read_html()</code> 函数：</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">read_html(x, encoding = <span class="string">&quot;&quot;</span>, ..., options = <span class="built_in">c</span>(<span class="string">&quot;RECOVER&quot;</span>, <span class="string">&quot;NOERROR&quot;</span>, <span class="string">&quot;NOBLANKS&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个函数可以从互联网中获取网页内容，x为网页的URL，encoding是指定网页的编码方式。</span></span><br></pre></td></tr></table></figure>
+
+<p>这个函数获取<code>html</code>文件的功能是非常的有限的，因为他没有伪装，无法获取动态网页的全部内容，有些网页中存在异步加载，文件中包含js脚本，浏览器可以通过加载js脚本去更新数据，但是用R这种方式获取<code>html</code>文件是无法获取所有的内容的。必须要使用<code>rselenium</code>包通过虚拟浏览器的方式去进行获取。</p>
+<p><code>rvest</code>包中存在下面这些函数：</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">back	History navigation tools</span><br><span class="line">encoding	Guess and repair faulty character encoding.</span><br><span class="line">follow_link	Navigate to a new url.</span><br><span class="line">google_form	Make link to google form given id</span><br><span class="line">guess_encoding	Guess and repair faulty character encoding.</span><br><span class="line">html	Parse an HTML page.</span><br><span class="line">html_attr	Extract attributes, text and tag name from html.</span><br><span class="line">html_attrs	Extract attributes, text and tag name from html.</span><br><span class="line">html_children	Extract attributes, text and tag name from html.</span><br><span class="line">html_form	Parse forms <span class="keyword">in</span> a page.</span><br><span class="line">html_name	Extract attributes, text and tag name from html.</span><br><span class="line">html_node	Select nodes from an HTML document</span><br><span class="line">html_nodes	Select nodes from an HTML document</span><br><span class="line">html_session	Simulate a session <span class="keyword">in</span> an html browser.</span><br><span class="line">html_table	Parse an html table into a data frame.</span><br><span class="line">html_text	Extract attributes, text and tag name from html.</span><br><span class="line">is.session	Simulate a session <span class="keyword">in</span> an html browser.</span><br><span class="line">jump_to	Navigate to a new url.</span><br><span class="line">pluck	Extract elements of a <span class="built_in">list</span> by position.</span><br><span class="line">read_xml.session	Parse an HTML page.</span><br><span class="line">repair_encoding	Guess and repair faulty character encoding.</span><br><span class="line">session_history	History navigation tools</span><br><span class="line">set_values	Set values <span class="keyword">in</span> a form.</span><br><span class="line">submit_form	Submit a form back to the server.</span><br></pre></td></tr></table></figure>
+
+<p><code>rvest</code>包中经常使用的有下面几个：</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">html_nodes(x, css, xpath)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个函数用于从html文件中去定位到需要的内容的节点的位置；</span></span><br><span class="line"><span class="comment">#定位的方式有两种一种是通过xpath定位一种是通过css进行定位</span></span><br><span class="line"></span><br><span class="line">html_node(x, css, xpath)</span><br><span class="line"></span><br><span class="line"><span class="comment">#只是输出一个元素</span></span><br><span class="line">----</span><br><span class="line">html_text(x, trim = <span class="literal">FALSE</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个包用来获取html文件中的文本数据。x是定位到的文本所在的节点；trim参数可以去掉文本前后的空格</span></span><br><span class="line"></span><br><span class="line">----</span><br><span class="line">html_table(x, header = <span class="literal">NA</span>, trim = <span class="literal">TRUE</span>, fill = <span class="literal">FALSE</span>, dec = <span class="string">&quot;.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个函数用来读取网页中的表格，转化为数据框</span></span><br><span class="line"><span class="comment">#x：一个html文件、或者是一个节点、节点集。 </span></span><br><span class="line"><span class="comment">#header：是否将第一行设为表头？如果为NA，则默认的是当含有&lt;th&gt;标签时，将以第一行作为表头。</span></span><br><span class="line"><span class="comment">#trim：去掉内容中前后的空格</span></span><br><span class="line"><span class="comment">#fill：缺失值是否自动填充</span></span><br><span class="line"><span class="comment">#dec：转化为十进制</span></span><br><span class="line"></span><br><span class="line">----</span><br><span class="line">html_attr(x, name, default = <span class="literal">NA_character_</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取属性内容，x是节点，name获取节点中哪个属性的值。</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数据爬取步骤"><a href="#数据爬取步骤" class="headerlink" title="数据爬取步骤"></a>数据爬取步骤</h2><p><code>rvest</code>爬取数据的步骤非常的简单，一般来说是三步：</p>
+<ol>
+<li>读取网页：借助<code>read_html()</code>函数去读取网页</li>
+<li>爬取内容：从读取下来的网页中获取想要的内容：<ol>
+<li>定位：从html节点文件中找到目标数据的位置，用<code>html_nodes()</code> 读取节点</li>
+<li>解析，获取数据：用html_text()等函数获取定位到的节点的数据。</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#爬取静态网站pubmed示例</span></span><br><span class="line"><span class="comment">#调用包</span></span><br><span class="line">library(<span class="string">&quot;rvest&quot;</span>)</span><br><span class="line"><span class="comment">#第一步、读取网页。</span></span><br><span class="line">page_content &lt;- read_html( x= <span class="string">&quot;&lt;http://www.stats.gov.cn/tjsj/zxfb/202010/t20201027_1796416.html&gt;&quot;</span> )</span><br><span class="line"><span class="comment">#第二步、爬取内容。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#2.1、定位</span></span><br><span class="line"><span class="comment">#xpath:使用xpat定位</span></span><br><span class="line"><span class="comment">#css：优点：简洁 缺点：定位可能不精确。</span></span><br><span class="line">node &lt;- <span class="string">&#x27;//*[@id=&quot;search-results&quot;]/section/div[1]/div/article[1]/div[2]/div[1]/a&#x27;</span></span><br><span class="line">nodes_content &lt;- html_nodes(x = page_content,xpath = node)</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.2、爬起数据</span></span><br><span class="line">html_text(x = nodes_content,trim = <span class="built_in">T</span>)</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a> 是一个免费的搜索引擎，提供生物医学方面的论文搜索以及摘要。</p>
+<p>上面用的是<code>xpath</code> 进行定位，也可以使用<code>css</code>进行定位；这两种定位各有各的优缺点。</p>
+<h3 id="xpath定位"><a href="#xpath定位" class="headerlink" title="xpath定位"></a>xpath定位</h3><p><code>xpath</code>简单的来说是直接通过路径来进行定位，如：</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//*[@id=<span class="string">&quot;search-results&quot;</span>]/section/div[<span class="number">1</span>]/div/article[<span class="number">1</span>]/div[<span class="number">2</span>]/div[<span class="number">1</span>]/a</span><br></pre></td></tr></table></figure>
+
+<p>这种形式就类似于我们文件夹中的路径，有两种路径：</p>
+<ol>
+<li>绝对路径：路径以<code>/</code>符号分隔，非常精确的定位到节点所在的位置</li>
+<li>相对路径：路径中用<code>//</code> 来进行表示相对的路径</li>
+</ol>
+<p>例如有两个小区，每个小区两栋楼一单元与二单元，每一栋楼有五层。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">一号小区/一单元/二楼  </span><br><span class="line"><span class="comment">#绝对定位，一号小区一单元二楼</span></span><br><span class="line"></span><br><span class="line">一号小区//二楼</span><br><span class="line"><span class="comment">#采用了相对路径，一号小区所有的二楼，既包括一单元的也包括二单元的二楼</span></span><br><span class="line"></span><br><span class="line">//二楼</span><br><span class="line"><span class="comment">#相对路径，各个小区各个单元的二楼</span></span><br></pre></td></tr></table></figure>
+
+<p>在谷歌浏览器中可以直接在浏览器中检查源代码（F12），定位到节点复制xpath地址，使用起来非常的简单。</p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Robin Li
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://modernhero.cc/posts/rvest/" title="基于Rvest的爬虫">https://modernhero.cc/posts/rvest/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          
+
+  <div class="followme">
+    <span>欢迎关注我的其它发布渠道</span>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/Robinli8888">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/Sweepingrobot">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fas fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+          <div class="post-tags">
+              <a href="/tags/R%E8%AF%AD%E8%A8%80/" rel="tag"><i class="fa fa-tag"></i> R语言</a>
+              <a href="/tags/%E7%88%AC%E8%99%AB/" rel="tag"><i class="fa fa-tag"></i> 爬虫</a>
+          </div>
+
+        
+  <div class="addthis_inline_share_toolbox">
+  
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f9d11f44b46dd0e" async="async"></script>
+  </div>
+
+    </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Robin Li</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">3k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+</div>
+
+<span>本站已运行<span id="showDays"></span></span>
+<script>
+  var seconds = 1000;
+  var minutes = seconds * 60;
+  var hours = minutes * 60;
+  var days = hours * 24;
+  var years = days * 365;
+  var birthDay = Date.UTC(2020,11,1,00,00,00); // 这里设置建站时间
+  setInterval(function() {
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    var now = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = now - birthDay;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+      document.getElementById('showDays').innerHTML=""+diffYears+"年"+diffDays+"天"+diffHours+"小时"+diffMinutes+"分钟"+diffSeconds+"秒";
+  }, 1000);
+</script>
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.15.0/dist/lozad.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+  
+
+  
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: "/posts/rvest/",
+    }, {"enable":true,"appId":"OqcLraGyUGkWL0MAnPAp6sNn-MdYXbMMI","appKey":"8RfHAJOzCSRCM7gFgw1JQHzv","placeholder":"大师留言，小丑靠边！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":false,"recordIP":false,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
+    ));
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
