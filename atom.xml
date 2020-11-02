@@ -6,7 +6,7 @@
   <link href="https://modernhero.cc/atom.xml" rel="self"/>
   
   <link href="https://modernhero.cc/"/>
-  <updated>2020-11-02T02:07:22.036Z</updated>
+  <updated>2020-11-02T03:13:49.755Z</updated>
   <id>https://modernhero.cc/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>R语言数据创建与导入</title>
+    <link href="https://modernhero.cc/posts/1/"/>
+    <id>https://modernhero.cc/posts/1/</id>
+    <published>2020-11-02T03:05:15.000Z</published>
+    <updated>2020-11-02T03:13:49.755Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;http://ww1.sinaimg.cn/large/007DtFxUly1gkangqreppj307305i3ye.jpg&quot; width=&quot;20%&quot; height=&quot;20%&quot; title=&quot; &quot; alt=&quot;&quot;/&gt;</summary>
+    
+    
+    
+    <category term="R语言" scheme="https://modernhero.cc/categorys/R%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="数据操作" scheme="https://modernhero.cc/categorys/R%E8%AF%AD%E8%A8%80/%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/"/>
+    
+    
+    <category term="R语言" scheme="https://modernhero.cc/tags/R%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
   
   <entry>
     <title>理想中的学者</title>
