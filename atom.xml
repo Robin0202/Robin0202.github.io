@@ -6,7 +6,7 @@
   <link href="https://modernhero.cc/atom.xml" rel="self"/>
   
   <link href="https://modernhero.cc/"/>
-  <updated>2020-11-02T07:10:56.548Z</updated>
+  <updated>2020-11-07T07:19:59.560Z</updated>
   <id>https://modernhero.cc/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>真的有理想的工作吗？</title>
+    <link href="https://modernhero.cc/posts/5/"/>
+    <id>https://modernhero.cc/posts/5/</id>
+    <published>2020-11-07T05:43:17.000Z</published>
+    <updated>2020-11-07T07:19:59.560Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote class=&quot;blockquote-center&quot;&gt;
+&lt;p&gt;最理想的一个工作状态就是我可以去做我想做的事情，你不要去问我想做什么，因为我自己也不知道。&lt;/p&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;今天周末休息半天，没事在吃饭的时候边吃边在看 YouTube 上的一个系列视频 – 。一句话简单的评价就是这是一个很接地气的视频节目。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="闲言碎语" scheme="https://modernhero.cc/categorys/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
+    
+    <category term="社会" scheme="https://modernhero.cc/categorys/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/%E7%A4%BE%E4%BC%9A/"/>
+    
+    
+    <category term="日常生活" scheme="https://modernhero.cc/tags/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>R语言中的条件与循环结构</title>
@@ -94,7 +120,7 @@
     <link href="https://modernhero.cc/posts/rvest/"/>
     <id>https://modernhero.cc/posts/rvest/</id>
     <published>2020-11-01T06:33:39.000Z</published>
-    <updated>2020-11-01T08:33:14.485Z</updated>
+    <updated>2020-11-07T07:07:44.076Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;http://ww1.sinaimg.cn/large/007DtFxUly1gk9qsre6j9j306o07qmxq.jpg&quot; width=&quot;20%&quot; height=&quot;20%&quot; title=&quot;◎ rvest&quot; alt=&quot;rvest&quot;/&gt;</summary>
