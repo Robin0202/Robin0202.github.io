@@ -6,7 +6,7 @@
   <link href="https://modernhero.cc/atom.xml" rel="self"/>
   
   <link href="https://modernhero.cc/"/>
-  <updated>2020-11-07T14:32:46.273Z</updated>
+  <updated>2020-11-10T07:54:06.623Z</updated>
   <id>https://modernhero.cc/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>R语言中有关于概率分布的函数</title>
+    <link href="https://modernhero.cc/posts/6/"/>
+    <id>https://modernhero.cc/posts/6/</id>
+    <published>2020-11-10T07:52:34.000Z</published>
+    <updated>2020-11-10T07:54:06.623Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在R语言中，提供非常全面的统计函数。其中包括概率分布的分布函数（ the cumulative distribution function ）、概率密度函数（ the probability density function）、以及&lt;strong&gt;下分位点&lt;/strong&gt;函数（the quantile function）。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="R语言" scheme="https://modernhero.cc/categorys/R%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="统计应用" scheme="https://modernhero.cc/categorys/R%E8%AF%AD%E8%A8%80/%E7%BB%9F%E8%AE%A1%E5%BA%94%E7%94%A8/"/>
+    
+    
+    <category term="R语言" scheme="https://modernhero.cc/tags/R%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="统计学" scheme="https://modernhero.cc/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>真的有理想的工作吗？</title>

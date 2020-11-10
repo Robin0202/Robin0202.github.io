@@ -25,24 +25,22 @@
     var CONFIG = {"hostname":"modernhero.cc","root":"/","scheme":"Mist","version":"8.0.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="今天的内卷是一个陀螺式的死循环 项飙     今天的内卷是一个陀螺式的死循环，我们要不断的要抽打自己，让自己就这么空转，每天要不断地自己动员自己是吧？所以它是一个高度动态的陷阱，所以非常耗能的。[1]">
+  <meta name="description" content="在R语言中，提供非常全面的统计函数。其中包括概率分布的分布函数（ the cumulative distribution function ）、概率密度函数（ the probability density function）、以及下分位点函数（the quantile function）。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="理想中的学者">
-<meta property="og:url" content="https://modernhero.cc/posts/2/index.html">
+<meta property="og:title" content="R语言中有关于概率分布的函数">
+<meta property="og:url" content="https://modernhero.cc/posts/6/index.html">
 <meta property="og:site_name" content="ModernHero">
-<meta property="og:description" content="今天的内卷是一个陀螺式的死循环 项飙     今天的内卷是一个陀螺式的死循环，我们要不断的要抽打自己，让自己就这么空转，每天要不断地自己动员自己是吧？所以它是一个高度动态的陷阱，所以非常耗能的。[1]">
+<meta property="og:description" content="在R语言中，提供非常全面的统计函数。其中包括概率分布的分布函数（ the cumulative distribution function ）、概率密度函数（ the probability density function）、以及下分位点函数（the quantile function）。">
 <meta property="og:locale">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007DtFxUly1gkakmilwh4j30u00gw3z3.jpg">
-<meta property="article:published_time" content="2020-11-01T11:50:35.000Z">
-<meta property="article:modified_time" content="2020-11-07T06:57:56.505Z">
+<meta property="article:published_time" content="2020-11-10T07:52:34.000Z">
+<meta property="article:modified_time" content="2020-11-10T07:54:06.623Z">
 <meta property="article:author" content="Robin Li">
-<meta property="article:tag" content="项飙">
-<meta property="article:tag" content="人类学">
+<meta property="article:tag" content="R语言">
+<meta property="article:tag" content="统计学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/007DtFxUly1gkakmilwh4j30u00gw3z3.jpg">
 
 
-<link rel="canonical" href="https://modernhero.cc/posts/2/">
+<link rel="canonical" href="https://modernhero.cc/posts/6/">
 
 
 <script class="page-configurations">
@@ -55,7 +53,7 @@
   };
 </script><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <title>理想中的学者 | ModernHero</title>
+  <title>R语言中有关于概率分布的函数 | ModernHero</title>
   
 
 
@@ -210,7 +208,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -222,6 +220,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#R%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%BB%99%E5%87%BA%E7%9A%84%E5%B8%B8%E8%A7%81%E7%9A%84%E5%88%86%E5%B8%83%E3%80%82"><span class="nav-text">R语言中给出的常见的分布。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%85%B3%E4%BA%8E%E8%BF%99%E4%BA%9B%E5%88%86%E5%B8%83%E7%9A%84%E5%87%BD%E6%95%B0"><span class="nav-text">有关于这些分布的函数</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -304,7 +303,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/posts/2/">
+    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/posts/6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.png">
@@ -320,7 +319,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          理想中的学者
+          R语言中有关于概率分布的函数
         </h1>
 
         <div class="post-meta-container">
@@ -330,23 +329,21 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">创建于</span>
+      
 
-      <time title="创建时间：2020-11-01 19:50:35" itemprop="dateCreated datePublished" datetime="2020-11-01T19:50:35+08:00">2020-11-01</time>
+      <time title="创建时间：2020-11-10 15:52:34 / 修改时间：15:54:06" itemprop="dateCreated datePublished" datetime="2020-11-10T15:52:34+08:00">2020-11-10</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-11-07 14:57:56" itemprop="dateModified" datetime="2020-11-07T14:57:56+08:00">2020-11-07</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categorys/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">闲言碎语</span></a>
+          <a href="/categorys/R%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">R语言</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categorys/R%E8%AF%AD%E8%A8%80/%E7%BB%9F%E8%AE%A1%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">统计应用</span></a>
         </span>
     </span>
 
@@ -359,8 +356,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/posts/2/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/2/" itemprop="commentCount"></span>
+    <a title="valine" href="/posts/6/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/6/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -370,14 +367,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>639</span>
+      <span>1.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -388,25 +385,126 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <blockquote class="blockquote-center">
-<p>今天的内卷是一个陀螺式的死循环</p>
-<p><strong>项飙</strong></p>
-
-</blockquote>
-
-<blockquote>
-<p>今天的内卷是一个陀螺式的死循环，我们要不断的要抽打自己，让自己就这么空转，每天要不断地自己动员自己是吧？所以它是一个高度动态的陷阱，所以非常耗能的。[1]</p>
-</blockquote>
+        <p>在R语言中，提供非常全面的统计函数。其中包括概率分布的分布函数（ the cumulative distribution function ）、概率密度函数（ the probability density function）、以及<strong>下分位点</strong>函数（the quantile function）。</p>
 <a id="more"></a>
 
-<p>这些天一直在听项飙的一些音频，有关于移民、世界国民以及内卷化的一些内容，从这些音频中进一步加深了对项飙的印象。对于项飙这个名字很多人都非常的陌生，因为作为一个人类学家，项飙从研究生开始就去了牛津，后来也一直在国外任教，以前几乎很少在国内的社交媒体中亮相。</p>
-<p>对于我来说，第一次知道项飙也是今年早些时候的事，由于疫情的原因待在家里，通过看许知远的<strong>《十三邀》</strong>认识到了项飙这个人，看完那期节目后我对于项飙印象非常的深刻，之所以这样就我个人来说认为是有很多的原因的：</p>
-<p>首先是他的外观：在节目中，他是一个个子不高皮肤较黑身体非常的瘦的人，打扮的也非常的朴素，一眼看起来非常就是非常的平易近人的样子，丝毫没有架子气。这一切感觉似乎都与他身上的头衔有一丝不符，之所以有这种感觉我想是因为平常所看到的一些所谓的学者似乎很多都是 “ 油光满面 ” ，西装革履，似乎看起来就没那么亲近了。</p>
-<img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gkakmilwh4j30u00gw3z3.jpg" title="◎ 项飙" width="80%" height="50%" />
+<h3 id="R语言中给出的常见的分布。"><a href="#R语言中给出的常见的分布。" class="headerlink" title="R语言中给出的常见的分布。"></a>R语言中给出的常见的分布。</h3><table>
+<thead>
+<tr>
+<th align="center">Distribution</th>
+<th align="center">R name</th>
+<th align="center">additional arguments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">beta</td>
+<td align="center">beta</td>
+<td align="center">shape1, shape2, ncp</td>
+</tr>
+<tr>
+<td align="center">binomial</td>
+<td align="center">binom</td>
+<td align="center">size, prob</td>
+</tr>
+<tr>
+<td align="center">Cauchy</td>
+<td align="center">cauchy</td>
+<td align="center">location, scale</td>
+</tr>
+<tr>
+<td align="center">chi-squared</td>
+<td align="center">chisq</td>
+<td align="center">df, ncp</td>
+</tr>
+<tr>
+<td align="center">exponential</td>
+<td align="center">exp</td>
+<td align="center">rate</td>
+</tr>
+<tr>
+<td align="center">F</td>
+<td align="center">f</td>
+<td align="center">df1, df2, ncp</td>
+</tr>
+<tr>
+<td align="center">gamma</td>
+<td align="center">gamma</td>
+<td align="center">shape, scale</td>
+</tr>
+<tr>
+<td align="center">geometric</td>
+<td align="center">geom</td>
+<td align="center">prob</td>
+</tr>
+<tr>
+<td align="center">hypergeometric</td>
+<td align="center">hyper</td>
+<td align="center">m, n, k</td>
+</tr>
+<tr>
+<td align="center">log-normal</td>
+<td align="center">lnorm</td>
+<td align="center">meanlog, sdlog</td>
+</tr>
+<tr>
+<td align="center">logistic</td>
+<td align="center">logis</td>
+<td align="center">location, scale</td>
+</tr>
+<tr>
+<td align="center">negative binomial</td>
+<td align="center">nbinom</td>
+<td align="center">size, prob</td>
+</tr>
+<tr>
+<td align="center">normal</td>
+<td align="center">norm</td>
+<td align="center">mean, sd</td>
+</tr>
+<tr>
+<td align="center">Poisson</td>
+<td align="center">pois</td>
+<td align="center">lambda</td>
+</tr>
+<tr>
+<td align="center">signed rank</td>
+<td align="center">signrank</td>
+<td align="center">n</td>
+</tr>
+<tr>
+<td align="center">Student`s t</td>
+<td align="center">t</td>
+<td align="center">df, ncp</td>
+</tr>
+<tr>
+<td align="center">uniform</td>
+<td align="center">unif</td>
+<td align="center">min, max</td>
+</tr>
+<tr>
+<td align="center">Weibull</td>
+<td align="center">weibull</td>
+<td align="center">shape, scale</td>
+</tr>
+<tr>
+<td align="center">Wilcoxon</td>
+<td align="center">wilcox</td>
+<td align="center">m, n</td>
+</tr>
+</tbody></table>
+<h3 id="有关于这些分布的函数"><a href="#有关于这些分布的函数" class="headerlink" title="有关于这些分布的函数"></a>有关于这些分布的函数</h3><p>在上面的 <code>R name</code> 前面加上 <code>d</code> 表示对应的概率密度函数，加上 <code>p</code>表示对应分布的分布函数，加上 <code>q</code> 表示对应的分位数函数，前面加上<code>r</code> 表示产生对应分布的随机数。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">dnorm(x,</span> <span class="string">mean</span> <span class="string">=</span> <span class="number">0</span><span class="string">,</span> <span class="string">sd</span> <span class="string">=</span> <span class="number">1</span><span class="string">,</span> <span class="string">log</span> <span class="string">=</span> <span class="literal">FALSE</span><span class="string">)</span></span><br><span class="line"><span class="string">pnorm(q,</span> <span class="string">mean</span> <span class="string">=</span> <span class="number">0</span><span class="string">,</span> <span class="string">sd</span> <span class="string">=</span> <span class="number">1</span><span class="string">,</span> <span class="string">lower.tail</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">log.p</span> <span class="string">=</span> <span class="literal">FALSE</span><span class="string">)</span></span><br><span class="line"><span class="string">qnorm(p,</span> <span class="string">mean</span> <span class="string">=</span> <span class="number">0</span><span class="string">,</span> <span class="string">sd</span> <span class="string">=</span> <span class="number">1</span><span class="string">,</span> <span class="string">lower.tail</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">log.p</span> <span class="string">=</span> <span class="literal">FALSE</span><span class="string">)</span></span><br><span class="line"><span class="string">rnorm(n,</span> <span class="string">mean</span> <span class="string">=</span> <span class="number">0</span><span class="string">,</span> <span class="string">sd</span> <span class="string">=</span> <span class="number">1</span><span class="string">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#特殊的参数：</span></span><br><span class="line"><span class="string">log,</span> <span class="string">log.p：logical;</span> <span class="string">if</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">probabilities</span> <span class="string">p</span> <span class="string">are</span> <span class="string">given</span> <span class="string">as</span> <span class="string">log(p).</span></span><br><span class="line"><span class="string">lower.tail：logical;</span> <span class="string">if</span> <span class="literal">TRUE</span> <span class="string">(default),</span> <span class="string">probabilities</span> <span class="string">are</span> <span class="string">P[X</span> <span class="string">≤</span> <span class="string">x]</span> <span class="string">otherwise,</span> <span class="string">P[X</span> <span class="string">&gt;</span> <span class="string">x].</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<p>例如对于正态分布：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; dnorm(<span class="number">2</span>,mean=<span class="number">0</span>,sd = <span class="number">1</span>) </span><br><span class="line"><span class="string">[1]</span> <span class="number">0.05399097</span></span><br><span class="line">&gt; pnorm(<span class="number">2</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>)</span><br><span class="line"><span class="string">[1]</span> <span class="number">0.9772499</span></span><br><span class="line">&gt; qnorm(<span class="number">0.03</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>)</span><br><span class="line"><span class="string">[1]</span> <span class="number">-1.880794</span></span><br><span class="line">&gt; rnorm(<span class="number">10</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>)</span><br><span class="line"><span class="string"> [1]</span>  <span class="number">1.1642331</span>  <span class="number">0.5681395</span> <span class="number">-1.1315078</span>  <span class="number">0.6672826</span></span><br><span class="line"><span class="string"> [5]</span>  <span class="number">0.7476347</span> <span class="number">-1.6436189</span> <span class="number">-0.3249231</span>  <span class="number">0.1818301</span></span><br><span class="line"><span class="string"> [9]</span>  <span class="number">1.0729797</span> <span class="number">-0.4267270</span></span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+<p><code>dnorm</code> 函数给出了标准正态分布的概率密度函数在2处的取值；<br><code>pnorm</code> 函数给出了标准正态分布在2处的分布函数值；<br><code>qnorm</code> 给出了概率为0.03的<strong>下分位点</strong>。<br><code>rnorm</code> 产生了一个包含10个数的标准正态分布的序列。</p>
+<div class="note warning"><p>在 <code>pxxx</code> 与 <code>qxxx</code> 中存在一个两个特殊的参数：<code>lower.tail</code> 与 <code> log.p</code>。第一个参数是改变求相应的值的方向，第二个值是将求出来的值取对数。</p>
+</div>
 
+<p>例如对于上面的例子：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; pnorm(<span class="number">2</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>,lower.tail = F)</span><br><span class="line"><span class="string">[1]</span> <span class="number">0.02275013</span></span><br><span class="line">&gt; qnorm(<span class="number">0.03</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>,lower.tail = F)</span><br><span class="line"><span class="string">[1]</span> <span class="number">1.880794</span></span><br><span class="line">&gt; pnorm(<span class="number">2</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>,lower.tail = F,log.p = T)</span><br><span class="line"><span class="string">[1]</span> <span class="number">-3.783184</span></span><br><span class="line">&gt; qnorm(<span class="number">-3.783184</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>,lower.tail = F,log.p = T)</span><br><span class="line"><span class="string">[1]</span> <span class="number">2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>其实让我最印象深刻的并不是他的外在的一面，而是作为一个学者内在的一面。在听他与许知远的对话的过程中有一种特别的舒服的感觉，在为一个人类学家，他在讨论有关于 “ 附近 ” 等社会学问题的时候并没有用那些多么高深的专业语句，而是非常的清晰的简洁的向听众讲述了他对专业问题的见解，更重要的是他展示了自己的整个的思考的过程，我认为这是最让我难忘的一点。</p>
+<p>在第一个结果中，给出的值是 <code>1-CDF</code>, 第二个值是对应的上分位点，第三个值将第一个值以对数的形式给出。第四个在参数 <code>q</code>处给出的是对应概率的对数值，而不是概率值。</p>
 
     </div>
 
@@ -414,6 +512,18 @@
     
     
       
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\3\" rel="bookmark">R语言中的条件与循环结构</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\1\" rel="bookmark">R语言数据创建与导入</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\rvest\" rel="bookmark">基于Rvest的爬虫</a></div>
+    </li>
+  </ul>
 
 
     <footer class="post-footer">
@@ -426,7 +536,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://modernhero.cc/posts/2/" title="理想中的学者">https://modernhero.cc/posts/2/</a>
+      <a href="https://modernhero.cc/posts/6/" title="R语言中有关于概率分布的函数">https://modernhero.cc/posts/6/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -474,8 +584,8 @@
   </div>
 
           <div class="post-tags">
-              <a href="/tags/%E9%A1%B9%E9%A3%99/" rel="tag"><i class="fa fa-tag"></i> 项飙</a>
-              <a href="/tags/%E4%BA%BA%E7%B1%BB%E5%AD%A6/" rel="tag"><i class="fa fa-tag"></i> 人类学</a>
+              <a href="/tags/R%E8%AF%AD%E8%A8%80/" rel="tag"><i class="fa fa-tag"></i> R语言</a>
+              <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/" rel="tag"><i class="fa fa-tag"></i> 统计学</a>
           </div>
 
         
@@ -486,14 +596,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/rvest/" rel="prev" title="基于Rvest的爬虫">
-                  <i class="fa fa-chevron-left"></i> 基于Rvest的爬虫
+                <a href="/posts/5/" rel="prev" title="真的有理想的工作吗？">
+                  <i class="fa fa-chevron-left"></i> 真的有理想的工作吗？
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/1/" rel="next" title="R语言数据创建与导入">
-                  R语言数据创建与导入 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -645,7 +752,7 @@ NexT.utils.loadComments('#valine-comments', () => {
   NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
     new Valine(Object.assign({
       el  : '#valine-comments',
-      path: "/posts/2/",
+      path: "/posts/6/",
     }, {"enable":true,"appId":"OqcLraGyUGkWL0MAnPAp6sNn-MdYXbMMI","appKey":"8RfHAJOzCSRCM7gFgw1JQHzv","placeholder":"大师留言，小丑靠边！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":false,"recordIP":false,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
     ));
   }, window.Valine);
