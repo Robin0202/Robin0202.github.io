@@ -6,7 +6,7 @@
   <link href="https://modernhero.cc/atom.xml" rel="self"/>
   
   <link href="https://modernhero.cc/"/>
-  <updated>2020-11-10T07:54:06.623Z</updated>
+  <updated>2020-11-10T09:18:16.706Z</updated>
   <id>https://modernhero.cc/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="https://modernhero.cc/posts/6/"/>
     <id>https://modernhero.cc/posts/6/</id>
     <published>2020-11-10T07:52:34.000Z</published>
-    <updated>2020-11-10T07:54:06.623Z</updated>
+    <updated>2020-11-10T09:18:16.706Z</updated>
     
     
-    <summary type="html">&lt;p&gt;在R语言中，提供非常全面的统计函数。其中包括概率分布的分布函数（ the cumulative distribution function ）、概率密度函数（ the probability density function）、以及&lt;strong&gt;下分位点&lt;/strong&gt;函数（the quantile function）。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;在R语言中，提供非常全面的统计函数。其中包括概率分布的分布函数（CDF the cumulative distribution function ）、概率密度函数（ the probability density function）、以及&lt;strong&gt;下分位点&lt;/strong&gt;函数（the quantile function）。&lt;/p&gt;</summary>
     
     
     

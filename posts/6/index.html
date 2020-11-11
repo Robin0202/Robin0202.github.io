@@ -25,15 +25,15 @@
     var CONFIG = {"hostname":"modernhero.cc","root":"/","scheme":"Mist","version":"8.0.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="在R语言中，提供非常全面的统计函数。其中包括概率分布的分布函数（ the cumulative distribution function ）、概率密度函数（ the probability density function）、以及下分位点函数（the quantile function）。">
+  <meta name="description" content="在R语言中，提供非常全面的统计函数。其中包括概率分布的分布函数（CDF the cumulative distribution function ）、概率密度函数（ the probability density function）、以及下分位点函数（the quantile function）。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="R语言中有关于概率分布的函数">
 <meta property="og:url" content="https://modernhero.cc/posts/6/index.html">
 <meta property="og:site_name" content="ModernHero">
-<meta property="og:description" content="在R语言中，提供非常全面的统计函数。其中包括概率分布的分布函数（ the cumulative distribution function ）、概率密度函数（ the probability density function）、以及下分位点函数（the quantile function）。">
+<meta property="og:description" content="在R语言中，提供非常全面的统计函数。其中包括概率分布的分布函数（CDF the cumulative distribution function ）、概率密度函数（ the probability density function）、以及下分位点函数（the quantile function）。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-11-10T07:52:34.000Z">
-<meta property="article:modified_time" content="2020-11-10T07:54:06.623Z">
+<meta property="article:modified_time" content="2020-11-10T09:18:16.706Z">
 <meta property="article:author" content="Robin Li">
 <meta property="article:tag" content="R语言">
 <meta property="article:tag" content="统计学">
@@ -220,7 +220,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#R%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%BB%99%E5%87%BA%E7%9A%84%E5%B8%B8%E8%A7%81%E7%9A%84%E5%88%86%E5%B8%83%E3%80%82"><span class="nav-text">R语言中给出的常见的分布。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%85%B3%E4%BA%8E%E8%BF%99%E4%BA%9B%E5%88%86%E5%B8%83%E7%9A%84%E5%87%BD%E6%95%B0"><span class="nav-text">有关于这些分布的函数</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83"><span class="nav-text">相关的概率分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E7%9A%84%E7%9B%B8%E5%85%B3%E8%AE%A1%E7%AE%97"><span class="nav-text">概率密度的相关计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83%E7%9A%84%E7%BB%98%E5%9B%BE"><span class="nav-text">概率分布的绘图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8C%8E%E5%8F%B6%E5%9B%BE"><span class="nav-text">茎叶图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="nav-text">直方图</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -331,7 +331,7 @@
       <span class="post-meta-item-text">创建于</span>
       
 
-      <time title="创建时间：2020-11-10 15:52:34 / 修改时间：15:54:06" itemprop="dateCreated datePublished" datetime="2020-11-10T15:52:34+08:00">2020-11-10</time>
+      <time title="创建时间：2020-11-10 15:52:34 / 修改时间：17:18:16" itemprop="dateCreated datePublished" datetime="2020-11-10T15:52:34+08:00">2020-11-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -367,14 +367,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.7k</span>
+      <span>2.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -385,10 +385,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>在R语言中，提供非常全面的统计函数。其中包括概率分布的分布函数（ the cumulative distribution function ）、概率密度函数（ the probability density function）、以及<strong>下分位点</strong>函数（the quantile function）。</p>
+        <p>在R语言中，提供非常全面的统计函数。其中包括概率分布的分布函数（CDF the cumulative distribution function ）、概率密度函数（ the probability density function）、以及<strong>下分位点</strong>函数（the quantile function）。</p>
 <a id="more"></a>
 
-<h3 id="R语言中给出的常见的分布。"><a href="#R语言中给出的常见的分布。" class="headerlink" title="R语言中给出的常见的分布。"></a>R语言中给出的常见的分布。</h3><table>
+<h2 id="相关的概率分布"><a href="#相关的概率分布" class="headerlink" title="相关的概率分布"></a>相关的概率分布</h2><table>
 <thead>
 <tr>
 <th align="center">Distribution</th>
@@ -492,7 +492,7 @@
 <td align="center">m, n</td>
 </tr>
 </tbody></table>
-<h3 id="有关于这些分布的函数"><a href="#有关于这些分布的函数" class="headerlink" title="有关于这些分布的函数"></a>有关于这些分布的函数</h3><p>在上面的 <code>R name</code> 前面加上 <code>d</code> 表示对应的概率密度函数，加上 <code>p</code>表示对应分布的分布函数，加上 <code>q</code> 表示对应的分位数函数，前面加上<code>r</code> 表示产生对应分布的随机数。</p>
+<h2 id="概率密度的相关计算"><a href="#概率密度的相关计算" class="headerlink" title="概率密度的相关计算"></a>概率密度的相关计算</h2><p>在上面的 <code>R name</code> 前面加上 <code>d</code> 表示对应的概率密度函数，加上 <code>p</code>表示对应分布的分布函数，加上 <code>q</code> 表示对应的分位数函数，前面加上<code>r</code> 表示产生对应分布的随机数。</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">dnorm(x,</span> <span class="string">mean</span> <span class="string">=</span> <span class="number">0</span><span class="string">,</span> <span class="string">sd</span> <span class="string">=</span> <span class="number">1</span><span class="string">,</span> <span class="string">log</span> <span class="string">=</span> <span class="literal">FALSE</span><span class="string">)</span></span><br><span class="line"><span class="string">pnorm(q,</span> <span class="string">mean</span> <span class="string">=</span> <span class="number">0</span><span class="string">,</span> <span class="string">sd</span> <span class="string">=</span> <span class="number">1</span><span class="string">,</span> <span class="string">lower.tail</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">log.p</span> <span class="string">=</span> <span class="literal">FALSE</span><span class="string">)</span></span><br><span class="line"><span class="string">qnorm(p,</span> <span class="string">mean</span> <span class="string">=</span> <span class="number">0</span><span class="string">,</span> <span class="string">sd</span> <span class="string">=</span> <span class="number">1</span><span class="string">,</span> <span class="string">lower.tail</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">log.p</span> <span class="string">=</span> <span class="literal">FALSE</span><span class="string">)</span></span><br><span class="line"><span class="string">rnorm(n,</span> <span class="string">mean</span> <span class="string">=</span> <span class="number">0</span><span class="string">,</span> <span class="string">sd</span> <span class="string">=</span> <span class="number">1</span><span class="string">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#特殊的参数：</span></span><br><span class="line"><span class="string">log,</span> <span class="string">log.p：logical;</span> <span class="string">if</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">probabilities</span> <span class="string">p</span> <span class="string">are</span> <span class="string">given</span> <span class="string">as</span> <span class="string">log(p).</span></span><br><span class="line"><span class="string">lower.tail：logical;</span> <span class="string">if</span> <span class="literal">TRUE</span> <span class="string">(default),</span> <span class="string">probabilities</span> <span class="string">are</span> <span class="string">P[X</span> <span class="string">≤</span> <span class="string">x]</span> <span class="string">otherwise,</span> <span class="string">P[X</span> <span class="string">&gt;</span> <span class="string">x].</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>例如对于正态分布：</p>
@@ -505,6 +505,30 @@
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; pnorm(<span class="number">2</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>,lower.tail = F)</span><br><span class="line"><span class="string">[1]</span> <span class="number">0.02275013</span></span><br><span class="line">&gt; qnorm(<span class="number">0.03</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>,lower.tail = F)</span><br><span class="line"><span class="string">[1]</span> <span class="number">1.880794</span></span><br><span class="line">&gt; pnorm(<span class="number">2</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>,lower.tail = F,log.p = T)</span><br><span class="line"><span class="string">[1]</span> <span class="number">-3.783184</span></span><br><span class="line">&gt; qnorm(<span class="number">-3.783184</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>,lower.tail = F,log.p = T)</span><br><span class="line"><span class="string">[1]</span> <span class="number">2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>在第一个结果中，给出的值是 <code>1-CDF</code>, 第二个值是对应的上分位点，第三个值将第一个值以对数的形式给出。第四个在参数 <code>q</code>处给出的是对应概率的对数值，而不是概率值。</p>
+<h2 id="概率分布的绘图"><a href="#概率分布的绘图" class="headerlink" title="概率分布的绘图"></a>概率分布的绘图</h2><p>给我们一组数据、我们可以通过多种方式检验他的分布，其中一种方式就是绘制这组数据所对应的图形。</p>
+<h3 id="茎叶图"><a href="#茎叶图" class="headerlink" title="茎叶图"></a>茎叶图</h3><p>我们使用R语言自带的数据集 <code>faithful</code> :</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; head(faithful)</span><br><span class="line">  eruptions waiting</span><br><span class="line"><span class="number">1</span>     <span class="number">3.600</span>      <span class="number">79</span></span><br><span class="line"><span class="number">2</span>     <span class="number">1.800</span>      <span class="number">54</span></span><br><span class="line"><span class="number">3</span>     <span class="number">3.333</span>      <span class="number">74</span></span><br><span class="line"><span class="number">4</span>     <span class="number">2.283</span>      <span class="number">62</span></span><br><span class="line"><span class="number">5</span>     <span class="number">4.533</span>      <span class="number">85</span></span><br><span class="line"><span class="number">6</span>     <span class="number">2.883</span>      <span class="number">55</span></span><br></pre></td></tr></table></figure>
+
+<p>这个数据集中包含两个变量 <code>eruptions</code> , <code>waiting</code>，我们来试探第一个变量的分布，通过绘制对应的茎叶图：<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&gt; attach(faithful)</span><br><span class="line">&gt; stem(eruptions)</span><br><span class="line"></span><br><span class="line">  The decimal point <span class="keyword">is</span> <span class="number">1</span> digit(s) to the left of the |</span><br><span class="line"></span><br><span class="line">  <span class="number">16</span> | <span class="number">070355555588</span></span><br><span class="line">  <span class="number">18</span> | <span class="number">000022233333335577777777888822335777888</span></span><br><span class="line">  <span class="number">20</span> | <span class="number">00002223378800035778</span></span><br><span class="line">  <span class="number">22</span> | <span class="number">0002335578023578</span></span><br><span class="line">  <span class="number">24</span> | <span class="number">00228</span></span><br><span class="line">  <span class="number">26</span> | <span class="number">23</span></span><br><span class="line">  <span class="number">28</span> | <span class="number">080</span></span><br><span class="line">  <span class="number">30</span> | <span class="number">7</span></span><br><span class="line">  <span class="number">32</span> | <span class="number">2337</span></span><br><span class="line">  <span class="number">34</span> | <span class="number">250077</span></span><br><span class="line">  <span class="number">36</span> | <span class="number">0000823577</span></span><br><span class="line">  <span class="number">38</span> | <span class="number">2333335582225577</span></span><br><span class="line">  <span class="number">40</span> | <span class="number">0000003357788888002233555577778</span></span><br><span class="line">  <span class="number">42</span> | <span class="number">03335555778800233333555577778</span></span><br><span class="line">  <span class="number">44</span> | <span class="number">02222335557780000000023333357778888</span></span><br><span class="line">  <span class="number">46</span> | <span class="number">0000233357700000023578</span></span><br><span class="line">  <span class="number">48</span> | <span class="number">00000022335800333</span></span><br><span class="line">  <span class="number">50</span> | <span class="number">0370</span></span><br></pre></td></tr></table></figure>
+<p>通过上面的茎叶图我们可以大致的可以看出数据的分布，数据向两端集中。</p>
+<h3 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h3><p>在R语言中可以通过自带的函数 <code>hist</code> 绘制直方图。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">hist(x,</span> <span class="string">breaks</span> <span class="string">=</span> <span class="string">&quot;Sturges&quot;</span><span class="string">,</span></span><br><span class="line">     <span class="string">freq</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">,</span> <span class="string">probability</span> <span class="string">=</span> <span class="type">!freq,</span></span><br><span class="line">     <span class="string">include.lowest</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">right</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span></span><br><span class="line">     <span class="string">density</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">,</span> <span class="string">angle</span> <span class="string">=</span> <span class="number">45</span><span class="string">,</span> <span class="string">col</span> <span class="string">=</span> <span class="string">&quot;lightgray&quot;</span><span class="string">,</span> <span class="string">border</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">,</span></span><br><span class="line">     <span class="string">main</span> <span class="string">=</span> <span class="string">paste(&quot;Histogram</span> <span class="string">of&quot;</span> <span class="string">,</span> <span class="string">xname),</span></span><br><span class="line">     <span class="string">xlim</span> <span class="string">=</span> <span class="string">range(breaks),</span> <span class="string">ylim</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">,</span></span><br><span class="line">     <span class="string">xlab</span> <span class="string">=</span> <span class="string">xname,</span> <span class="string">ylab,</span></span><br><span class="line">     <span class="string">axes</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">plot</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">labels</span> <span class="string">=</span> <span class="literal">FALSE</span><span class="string">,</span></span><br><span class="line">     <span class="string">nclass</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">,</span> <span class="string">warn.unused</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">...)</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>&gt; summary(eruptions)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.600   2.163   4.000   3.488   4.454   5.100 
+
+
+
+
+
+
+
+
+
+
+</code></pre>
 
     </div>
 
@@ -659,13 +683,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">15k</span>
+    <span title="站点总字数">16k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">14 分钟</span>
+    <span title="站点阅读时长">15 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
