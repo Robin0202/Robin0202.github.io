@@ -206,6 +206,62 @@
       </tags>
   </entry>
   <entry>
+    <title>基于Rvest的爬虫</title>
+    <url>//posts/rvest/</url>
+    <content><![CDATA[<img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gk9qsre6j9j306o07qmxq.jpg" width="20%" height="20%" title="◎ rvest" alt="rvest"/>
+
+
+
+<a id="more"></a>
+
+<h2 id="关于rvest包"><a href="#关于rvest包" class="headerlink" title="关于rvest包"></a>关于rvest包</h2><p><code>rvest</code> 包是Hadley Wickham开发的一个能够非常容易的从网页获取数据的包，这个包使用起来非常的容易，<code>rvest</code>的灵感来源于<code>BeautifulSoup</code>（<code>python</code>中的一个非常有名的解析库）。</p>
+<p>但是我的理解是这个包实际上不能直接从网络中获取<code>HTML</code>文件，而是通过<code>xml2</code> 包中的<code>read_html()</code> 获取<code>HTML</code>文件或者是通过其他的方式获取了<code>html</code>文件之后再转给<code>rvest</code>，用<code>rvest</code>包中的函数来非常方便的去提取数据。加载<code>rvest</code>的同时也会加载<code>xml2</code>包。</p>
+<p><code>read_html()</code> 函数：</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">read_html(x, encoding = <span class="string">&quot;&quot;</span>, ..., options = <span class="built_in">c</span>(<span class="string">&quot;RECOVER&quot;</span>, <span class="string">&quot;NOERROR&quot;</span>, <span class="string">&quot;NOBLANKS&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个函数可以从互联网中获取网页内容，x为网页的URL，encoding是指定网页的编码方式。</span></span><br></pre></td></tr></table></figure>
+
+<p>这个函数获取<code>html</code>文件的功能是非常的有限的，因为他没有伪装，无法获取动态网页的全部内容，有些网页中存在异步加载，文件中包含js脚本，浏览器可以通过加载js脚本去更新数据，但是用R这种方式获取<code>html</code>文件是无法获取所有的内容的。必须要使用<code>rselenium</code>包通过虚拟浏览器的方式去进行获取。</p>
+<p><code>rvest</code>包中存在下面这些函数：</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">back	History navigation tools</span><br><span class="line">encoding	Guess and repair faulty character encoding.</span><br><span class="line">follow_link	Navigate to a new url.</span><br><span class="line">google_form	Make link to google form given id</span><br><span class="line">guess_encoding	Guess and repair faulty character encoding.</span><br><span class="line">html	Parse an HTML page.</span><br><span class="line">html_attr	Extract attributes, text and tag name from html.</span><br><span class="line">html_attrs	Extract attributes, text and tag name from html.</span><br><span class="line">html_children	Extract attributes, text and tag name from html.</span><br><span class="line">html_form	Parse forms <span class="keyword">in</span> a page.</span><br><span class="line">html_name	Extract attributes, text and tag name from html.</span><br><span class="line">html_node	Select nodes from an HTML document</span><br><span class="line">html_nodes	Select nodes from an HTML document</span><br><span class="line">html_session	Simulate a session <span class="keyword">in</span> an html browser.</span><br><span class="line">html_table	Parse an html table into a data frame.</span><br><span class="line">html_text	Extract attributes, text and tag name from html.</span><br><span class="line">is.session	Simulate a session <span class="keyword">in</span> an html browser.</span><br><span class="line">jump_to	Navigate to a new url.</span><br><span class="line">pluck	Extract elements of a <span class="built_in">list</span> by position.</span><br><span class="line">read_xml.session	Parse an HTML page.</span><br><span class="line">repair_encoding	Guess and repair faulty character encoding.</span><br><span class="line">session_history	History navigation tools</span><br><span class="line">set_values	Set values <span class="keyword">in</span> a form.</span><br><span class="line">submit_form	Submit a form back to the server.</span><br></pre></td></tr></table></figure>
+
+<p><code>rvest</code>包中经常使用的有下面几个：</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">html_nodes(x, css, xpath)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个函数用于从html文件中去定位到需要的内容的节点的位置；</span></span><br><span class="line"><span class="comment">#定位的方式有两种一种是通过xpath定位一种是通过css进行定位</span></span><br><span class="line"></span><br><span class="line">html_node(x, css, xpath)</span><br><span class="line"></span><br><span class="line"><span class="comment">#只是输出一个元素</span></span><br><span class="line">----</span><br><span class="line">html_text(x, trim = <span class="literal">FALSE</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个包用来获取html文件中的文本数据。x是定位到的文本所在的节点；trim参数可以去掉文本前后的空格</span></span><br><span class="line"></span><br><span class="line">----</span><br><span class="line">html_table(x, header = <span class="literal">NA</span>, trim = <span class="literal">TRUE</span>, fill = <span class="literal">FALSE</span>, dec = <span class="string">&quot;.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个函数用来读取网页中的表格，转化为数据框</span></span><br><span class="line"><span class="comment">#x：一个html文件、或者是一个节点、节点集。 </span></span><br><span class="line"><span class="comment">#header：是否将第一行设为表头？如果为NA，则默认的是当含有&lt;th&gt;标签时，将以第一行作为表头。</span></span><br><span class="line"><span class="comment">#trim：去掉内容中前后的空格</span></span><br><span class="line"><span class="comment">#fill：缺失值是否自动填充</span></span><br><span class="line"><span class="comment">#dec：转化为十进制</span></span><br><span class="line"></span><br><span class="line">----</span><br><span class="line">html_attr(x, name, default = <span class="literal">NA_character_</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取属性内容，x是节点，name获取节点中哪个属性的值。</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数据爬取步骤"><a href="#数据爬取步骤" class="headerlink" title="数据爬取步骤"></a>数据爬取步骤</h2><p><code>rvest</code>爬取数据的步骤非常的简单，一般来说是三步：</p>
+<ol>
+<li>读取网页：借助<code>read_html()</code>函数去读取网页</li>
+<li>爬取内容：从读取下来的网页中获取想要的内容：<ol>
+<li>定位：从html节点文件中找到目标数据的位置，用<code>html_nodes()</code> 读取节点</li>
+<li>解析，获取数据：用html_text()等函数获取定位到的节点的数据。</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#爬取静态网站pubmed示例</span></span><br><span class="line"><span class="comment">#调用包</span></span><br><span class="line">library(<span class="string">&quot;rvest&quot;</span>)</span><br><span class="line"><span class="comment">#第一步、读取网页。</span></span><br><span class="line">page_content &lt;- read_html( x= <span class="string">&quot;&lt;http://www.stats.gov.cn/tjsj/zxfb/202010/t20201027_1796416.html&gt;&quot;</span> )</span><br><span class="line"><span class="comment">#第二步、爬取内容。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#2.1、定位</span></span><br><span class="line"><span class="comment">#xpath:使用xpat定位</span></span><br><span class="line"><span class="comment">#css：优点：简洁 缺点：定位可能不精确。</span></span><br><span class="line">node &lt;- <span class="string">&#x27;//*[@id=&quot;search-results&quot;]/section/div[1]/div/article[1]/div[2]/div[1]/a&#x27;</span></span><br><span class="line">nodes_content &lt;- html_nodes(x = page_content,xpath = node)</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.2、爬起数据</span></span><br><span class="line">html_text(x = nodes_content,trim = <span class="built_in">T</span>)</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a> 是一个免费的搜索引擎，提供生物医学方面的论文搜索以及摘要。</p>
+<p>上面用的是<code>xpath</code> 进行定位，也可以使用<code>css</code>进行定位；这两种定位各有各的优缺点。</p>
+<h3 id="xpath定位"><a href="#xpath定位" class="headerlink" title="xpath定位"></a>xpath定位</h3><p><code>xpath</code>简单的来说是直接通过路径来进行定位，如：</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">//*[@id=<span class="string">&quot;search-results&quot;</span>]/section/div[<span class="number">1</span>]/div/article[<span class="number">1</span>]/div[<span class="number">2</span>]/div[<span class="number">1</span>]/a</span><br></pre></td></tr></table></figure>
+
+<p>这种形式就类似于我们文件夹中的路径，有两种路径：</p>
+<ol>
+<li>绝对路径：路径以<code>/</code>符号分隔，非常精确的定位到节点所在的位置</li>
+<li>相对路径：路径中用<code>//</code> 来进行表示相对的路径</li>
+</ol>
+<p>例如有两个小区，每个小区两栋楼一单元与二单元，每一栋楼有五层。</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">一号小区/一单元/二楼  </span><br><span class="line"><span class="comment">#绝对定位，一号小区一单元二楼</span></span><br><span class="line"></span><br><span class="line">一号小区//二楼</span><br><span class="line"><span class="comment">#采用了相对路径，一号小区所有的二楼，既包括一单元的也包括二单元的二楼</span></span><br><span class="line"></span><br><span class="line">//二楼</span><br><span class="line"><span class="comment">#相对路径，各个小区各个单元的二楼</span></span><br></pre></td></tr></table></figure>
+
+<p>在谷歌浏览器中可以直接在浏览器中检查源代码（F12），定位到节点复制xpath地址，使用起来非常的简单。</p>
+]]></content>
+      <categories>
+        <category>R语言</category>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>R语言</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>R语言数据创建与导入</title>
     <url>//posts/1/</url>
     <content><![CDATA[<img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gkangqreppj307305i3ye.jpg" width="20%" height="20%" title=" " alt=""/>
@@ -266,62 +322,6 @@
       <tags>
         <tag>R语言</tag>
         <tag>数据操作</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基于Rvest的爬虫</title>
-    <url>//posts/rvest/</url>
-    <content><![CDATA[<img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gk9qsre6j9j306o07qmxq.jpg" width="20%" height="20%" title="◎ rvest" alt="rvest"/>
-
-
-
-<a id="more"></a>
-
-<h2 id="关于rvest包"><a href="#关于rvest包" class="headerlink" title="关于rvest包"></a>关于rvest包</h2><p><code>rvest</code> 包是Hadley Wickham开发的一个能够非常容易的从网页获取数据的包，这个包使用起来非常的容易，<code>rvest</code>的灵感来源于<code>BeautifulSoup</code>（<code>python</code>中的一个非常有名的解析库）。</p>
-<p>但是我的理解是这个包实际上不能直接从网络中获取<code>HTML</code>文件，而是通过<code>xml2</code> 包中的<code>read_html()</code> 获取<code>HTML</code>文件或者是通过其他的方式获取了<code>html</code>文件之后再转给<code>rvest</code>，用<code>rvest</code>包中的函数来非常方便的去提取数据。加载<code>rvest</code>的同时也会加载<code>xml2</code>包。</p>
-<p><code>read_html()</code> 函数：</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">read_html(x, encoding = <span class="string">&quot;&quot;</span>, ..., options = <span class="built_in">c</span>(<span class="string">&quot;RECOVER&quot;</span>, <span class="string">&quot;NOERROR&quot;</span>, <span class="string">&quot;NOBLANKS&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个函数可以从互联网中获取网页内容，x为网页的URL，encoding是指定网页的编码方式。</span></span><br></pre></td></tr></table></figure>
-
-<p>这个函数获取<code>html</code>文件的功能是非常的有限的，因为他没有伪装，无法获取动态网页的全部内容，有些网页中存在异步加载，文件中包含js脚本，浏览器可以通过加载js脚本去更新数据，但是用R这种方式获取<code>html</code>文件是无法获取所有的内容的。必须要使用<code>rselenium</code>包通过虚拟浏览器的方式去进行获取。</p>
-<p><code>rvest</code>包中存在下面这些函数：</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">back	History navigation tools</span><br><span class="line">encoding	Guess and repair faulty character encoding.</span><br><span class="line">follow_link	Navigate to a new url.</span><br><span class="line">google_form	Make link to google form given id</span><br><span class="line">guess_encoding	Guess and repair faulty character encoding.</span><br><span class="line">html	Parse an HTML page.</span><br><span class="line">html_attr	Extract attributes, text and tag name from html.</span><br><span class="line">html_attrs	Extract attributes, text and tag name from html.</span><br><span class="line">html_children	Extract attributes, text and tag name from html.</span><br><span class="line">html_form	Parse forms <span class="keyword">in</span> a page.</span><br><span class="line">html_name	Extract attributes, text and tag name from html.</span><br><span class="line">html_node	Select nodes from an HTML document</span><br><span class="line">html_nodes	Select nodes from an HTML document</span><br><span class="line">html_session	Simulate a session <span class="keyword">in</span> an html browser.</span><br><span class="line">html_table	Parse an html table into a data frame.</span><br><span class="line">html_text	Extract attributes, text and tag name from html.</span><br><span class="line">is.session	Simulate a session <span class="keyword">in</span> an html browser.</span><br><span class="line">jump_to	Navigate to a new url.</span><br><span class="line">pluck	Extract elements of a <span class="built_in">list</span> by position.</span><br><span class="line">read_xml.session	Parse an HTML page.</span><br><span class="line">repair_encoding	Guess and repair faulty character encoding.</span><br><span class="line">session_history	History navigation tools</span><br><span class="line">set_values	Set values <span class="keyword">in</span> a form.</span><br><span class="line">submit_form	Submit a form back to the server.</span><br></pre></td></tr></table></figure>
-
-<p><code>rvest</code>包中经常使用的有下面几个：</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">html_nodes(x, css, xpath)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个函数用于从html文件中去定位到需要的内容的节点的位置；</span></span><br><span class="line"><span class="comment">#定位的方式有两种一种是通过xpath定位一种是通过css进行定位</span></span><br><span class="line"></span><br><span class="line">html_node(x, css, xpath)</span><br><span class="line"></span><br><span class="line"><span class="comment">#只是输出一个元素</span></span><br><span class="line">----</span><br><span class="line">html_text(x, trim = <span class="literal">FALSE</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个包用来获取html文件中的文本数据。x是定位到的文本所在的节点；trim参数可以去掉文本前后的空格</span></span><br><span class="line"></span><br><span class="line">----</span><br><span class="line">html_table(x, header = <span class="literal">NA</span>, trim = <span class="literal">TRUE</span>, fill = <span class="literal">FALSE</span>, dec = <span class="string">&quot;.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个函数用来读取网页中的表格，转化为数据框</span></span><br><span class="line"><span class="comment">#x：一个html文件、或者是一个节点、节点集。 </span></span><br><span class="line"><span class="comment">#header：是否将第一行设为表头？如果为NA，则默认的是当含有&lt;th&gt;标签时，将以第一行作为表头。</span></span><br><span class="line"><span class="comment">#trim：去掉内容中前后的空格</span></span><br><span class="line"><span class="comment">#fill：缺失值是否自动填充</span></span><br><span class="line"><span class="comment">#dec：转化为十进制</span></span><br><span class="line"></span><br><span class="line">----</span><br><span class="line">html_attr(x, name, default = <span class="literal">NA_character_</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取属性内容，x是节点，name获取节点中哪个属性的值。</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="数据爬取步骤"><a href="#数据爬取步骤" class="headerlink" title="数据爬取步骤"></a>数据爬取步骤</h2><p><code>rvest</code>爬取数据的步骤非常的简单，一般来说是三步：</p>
-<ol>
-<li>读取网页：借助<code>read_html()</code>函数去读取网页</li>
-<li>爬取内容：从读取下来的网页中获取想要的内容：<ol>
-<li>定位：从html节点文件中找到目标数据的位置，用<code>html_nodes()</code> 读取节点</li>
-<li>解析，获取数据：用html_text()等函数获取定位到的节点的数据。</li>
-</ol>
-</li>
-</ol>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#爬取静态网站pubmed示例</span></span><br><span class="line"><span class="comment">#调用包</span></span><br><span class="line">library(<span class="string">&quot;rvest&quot;</span>)</span><br><span class="line"><span class="comment">#第一步、读取网页。</span></span><br><span class="line">page_content &lt;- read_html( x= <span class="string">&quot;&lt;http://www.stats.gov.cn/tjsj/zxfb/202010/t20201027_1796416.html&gt;&quot;</span> )</span><br><span class="line"><span class="comment">#第二步、爬取内容。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#2.1、定位</span></span><br><span class="line"><span class="comment">#xpath:使用xpat定位</span></span><br><span class="line"><span class="comment">#css：优点：简洁 缺点：定位可能不精确。</span></span><br><span class="line">node &lt;- <span class="string">&#x27;//*[@id=&quot;search-results&quot;]/section/div[1]/div/article[1]/div[2]/div[1]/a&#x27;</span></span><br><span class="line">nodes_content &lt;- html_nodes(x = page_content,xpath = node)</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.2、爬起数据</span></span><br><span class="line">html_text(x = nodes_content,trim = <span class="built_in">T</span>)</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a> 是一个免费的搜索引擎，提供生物医学方面的论文搜索以及摘要。</p>
-<p>上面用的是<code>xpath</code> 进行定位，也可以使用<code>css</code>进行定位；这两种定位各有各的优缺点。</p>
-<h3 id="xpath定位"><a href="#xpath定位" class="headerlink" title="xpath定位"></a>xpath定位</h3><p><code>xpath</code>简单的来说是直接通过路径来进行定位，如：</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">//*[@id=<span class="string">&quot;search-results&quot;</span>]/section/div[<span class="number">1</span>]/div/article[<span class="number">1</span>]/div[<span class="number">2</span>]/div[<span class="number">1</span>]/a</span><br></pre></td></tr></table></figure>
-
-<p>这种形式就类似于我们文件夹中的路径，有两种路径：</p>
-<ol>
-<li>绝对路径：路径以<code>/</code>符号分隔，非常精确的定位到节点所在的位置</li>
-<li>相对路径：路径中用<code>//</code> 来进行表示相对的路径</li>
-</ol>
-<p>例如有两个小区，每个小区两栋楼一单元与二单元，每一栋楼有五层。</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">一号小区/一单元/二楼  </span><br><span class="line"><span class="comment">#绝对定位，一号小区一单元二楼</span></span><br><span class="line"></span><br><span class="line">一号小区//二楼</span><br><span class="line"><span class="comment">#采用了相对路径，一号小区所有的二楼，既包括一单元的也包括二单元的二楼</span></span><br><span class="line"></span><br><span class="line">//二楼</span><br><span class="line"><span class="comment">#相对路径，各个小区各个单元的二楼</span></span><br></pre></td></tr></table></figure>
-
-<p>在谷歌浏览器中可以直接在浏览器中检查源代码（F12），定位到节点复制xpath地址，使用起来非常的简单。</p>
-]]></content>
-      <categories>
-        <category>R语言</category>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>R语言</tag>
-        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
