@@ -235,7 +235,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -386,7 +386,6 @@
     <div class="post-body" itemprop="articleBody">
         <p>在书中有一章名为：“赤脚的对冲基金经理”，毫无疑问这应该是这本书这让我影响深刻的一个标题：穷人在某种程度上与基金经理一样几乎无时无刻不面临着非常高的风险，但是他们所面临高风险并没有给他们带来相应的高收益。</p>
 <a id="more"></a>
-
 <p>由于高风险的存在，穷人自然也会去使用各种各样的方式去应对风险：</p>
 <h3 id="私人处理办法"><a href="#私人处理办法" class="headerlink" title="私人处理办法"></a>私人处理办法</h3><p>例如在书中提到的：</p>
 <p>他们面临失业与工资水平下降时，穷人往往会加大他们的工作量，想通过更多的工作去弥补由于可能的失业与低工资给自己带来的损失，尽管从某种意义上来说这种行为是无效的，因为过多的劳动供给只会导致工资的进一步下滑，但这也是穷人面对时的一种处理办法。</p>
@@ -492,6 +491,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/posts/0008/" rel="next" title="R语言简单的simulation">
+                  R语言简单的simulation <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -550,13 +552,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">18k</span>
+    <span title="站点总字数">19k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">16 分钟</span>
+    <span title="站点阅读时长">17 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -636,6 +638,52 @@
 
 
   
+
+  
+      <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = '//cdn.jsdelivr.net/npm/mathjax@3.1.0/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 <script>

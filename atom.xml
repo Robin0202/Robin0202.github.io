@@ -6,7 +6,7 @@
   <link href="https://modernhero.cc/atom.xml" rel="self"/>
   
   <link href="https://modernhero.cc/"/>
-  <updated>2020-11-14T14:30:50.724Z</updated>
+  <updated>2020-11-23T08:37:01.420Z</updated>
   <id>https://modernhero.cc/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>R语言简单的simulation</title>
+    <link href="https://modernhero.cc/posts/0008/"/>
+    <id>https://modernhero.cc/posts/0008/</id>
+    <published>2020-11-23T03:05:15.000Z</published>
+    <updated>2020-11-23T08:37:01.420Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;R语言提供了很多的概率分布的函数以及产生随机数的函数，通过这些函数我们可以做一些简单的simulation。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="R语言" scheme="https://modernhero.cc/categorys/R%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="统计应用" scheme="https://modernhero.cc/categorys/R%E8%AF%AD%E8%A8%80/%E7%BB%9F%E8%AE%A1%E5%BA%94%E7%94%A8/"/>
+    
+    
+    <category term="R语言" scheme="https://modernhero.cc/tags/R%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
   
   <entry>
     <title>高风险的穷人</title>
@@ -72,8 +93,7 @@
 &lt;p&gt;最理想的一个工作状态就是我可以去做我想做的事情，你不要去问我想做什么，因为我自己也不知道。&lt;/p&gt;
 
 &lt;/blockquote&gt;
-
-&lt;p&gt;今天周末休息半天，没事在吃饭的时候边吃边在看 YouTube 上的一个系列视频 – 。一句话简单的评价就是这是一个很接地气的视频节目。&lt;/p&gt;</summary>
+&lt;p&gt;今天周末休息半天，没事在吃饭的时候边吃边在看 YouTube 上的一个系列视频 — 。一句话简单的评价就是这是一个很接地气的视频节目。&lt;/p&gt;</summary>
     
     
     
@@ -115,7 +135,7 @@
     <updated>2020-11-02T07:10:59.681Z</updated>
     
     
-    <summary type="html">&lt;img src=&quot;http://ww1.sinaimg.cn/large/007DtFxUly1gkangqreppj307305i3ye.jpg&quot; width=&quot;20%&quot; height=&quot;20%&quot; title=&quot; &quot; alt=&quot;&quot;/&gt;</summary>
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/007DtFxUly1gkangqreppj307305i3ye.jpg&quot; width=&quot;20%&quot; height=&quot;20%&quot; title=&quot; &quot; alt=&quot;&quot;/&gt;&lt;/p&gt;</summary>
     
     
     
@@ -143,7 +163,6 @@
 &lt;p&gt;&lt;strong&gt;项飙&lt;/strong&gt;&lt;/p&gt;
 
 &lt;/blockquote&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;今天的内卷是一个陀螺式的死循环，我们要不断的要抽打自己，让自己就这么空转，每天要不断地自己动员自己是吧？所以它是一个高度动态的陷阱，所以非常耗能的。[1]&lt;/p&gt;
 &lt;/blockquote&gt;</summary>
@@ -167,7 +186,7 @@
     <updated>2020-11-07T07:07:44.076Z</updated>
     
     
-    <summary type="html">&lt;img src=&quot;http://ww1.sinaimg.cn/large/007DtFxUly1gk9qsre6j9j306o07qmxq.jpg&quot; width=&quot;20%&quot; height=&quot;20%&quot; title=&quot;◎ rvest&quot; alt=&quot;rvest&quot;/&gt;</summary>
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/007DtFxUly1gk9qsre6j9j306o07qmxq.jpg&quot; width=&quot;20%&quot; height=&quot;20%&quot; title=&quot;◎ rvest&quot; alt=&quot;rvest&quot;/&gt;&lt;/p&gt;</summary>
     
     
     

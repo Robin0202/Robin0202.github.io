@@ -5,148 +5,135 @@
     <url>//posts/6/</url>
     <content><![CDATA[<p>在R语言中，提供非常全面的统计函数。其中包括概率分布的分布函数（CDF the cumulative distribution function ）、概率密度函数（ the probability density function）、以及<strong>下分位点</strong>函数（the quantile function）。</p>
 <a id="more"></a>
-
-<h2 id="相关的概率分布"><a href="#相关的概率分布" class="headerlink" title="相关的概率分布"></a>相关的概率分布</h2><table>
+<h2 id="相关的概率分布"><a href="#相关的概率分布" class="headerlink" title="相关的概率分布"></a>相关的概率分布</h2><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="center">Distribution</th>
-<th align="center">R name</th>
-<th align="center">additional arguments</th>
+<th style="text-align:center">Distribution</th>
+<th style="text-align:center">R name</th>
+<th style="text-align:center">additional arguments</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">beta</td>
-<td align="center">beta</td>
-<td align="center">shape1, shape2, ncp</td>
+<tbody>
+<tr>
+<td style="text-align:center">beta</td>
+<td style="text-align:center">beta</td>
+<td style="text-align:center">shape1, shape2, ncp</td>
 </tr>
 <tr>
-<td align="center">binomial</td>
-<td align="center">binom</td>
-<td align="center">size, prob</td>
+<td style="text-align:center">binomial</td>
+<td style="text-align:center">binom</td>
+<td style="text-align:center">size, prob</td>
 </tr>
 <tr>
-<td align="center">Cauchy</td>
-<td align="center">cauchy</td>
-<td align="center">location, scale</td>
+<td style="text-align:center">Cauchy</td>
+<td style="text-align:center">cauchy</td>
+<td style="text-align:center">location, scale</td>
 </tr>
 <tr>
-<td align="center">chi-squared</td>
-<td align="center">chisq</td>
-<td align="center">df, ncp</td>
+<td style="text-align:center">chi-squared</td>
+<td style="text-align:center">chisq</td>
+<td style="text-align:center">df, ncp</td>
 </tr>
 <tr>
-<td align="center">exponential</td>
-<td align="center">exp</td>
-<td align="center">rate</td>
+<td style="text-align:center">exponential</td>
+<td style="text-align:center">exp</td>
+<td style="text-align:center">rate</td>
 </tr>
 <tr>
-<td align="center">F</td>
-<td align="center">f</td>
-<td align="center">df1, df2, ncp</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">f</td>
+<td style="text-align:center">df1, df2, ncp</td>
 </tr>
 <tr>
-<td align="center">gamma</td>
-<td align="center">gamma</td>
-<td align="center">shape, scale</td>
+<td style="text-align:center">gamma</td>
+<td style="text-align:center">gamma</td>
+<td style="text-align:center">shape, scale</td>
 </tr>
 <tr>
-<td align="center">geometric</td>
-<td align="center">geom</td>
-<td align="center">prob</td>
+<td style="text-align:center">geometric</td>
+<td style="text-align:center">geom</td>
+<td style="text-align:center">prob</td>
 </tr>
 <tr>
-<td align="center">hypergeometric</td>
-<td align="center">hyper</td>
-<td align="center">m, n, k</td>
+<td style="text-align:center">hypergeometric</td>
+<td style="text-align:center">hyper</td>
+<td style="text-align:center">m, n, k</td>
 </tr>
 <tr>
-<td align="center">log-normal</td>
-<td align="center">lnorm</td>
-<td align="center">meanlog, sdlog</td>
+<td style="text-align:center">log-normal</td>
+<td style="text-align:center">lnorm</td>
+<td style="text-align:center">meanlog, sdlog</td>
 </tr>
 <tr>
-<td align="center">logistic</td>
-<td align="center">logis</td>
-<td align="center">location, scale</td>
+<td style="text-align:center">logistic</td>
+<td style="text-align:center">logis</td>
+<td style="text-align:center">location, scale</td>
 </tr>
 <tr>
-<td align="center">negative binomial</td>
-<td align="center">nbinom</td>
-<td align="center">size, prob</td>
+<td style="text-align:center">negative binomial</td>
+<td style="text-align:center">nbinom</td>
+<td style="text-align:center">size, prob</td>
 </tr>
 <tr>
-<td align="center">normal</td>
-<td align="center">norm</td>
-<td align="center">mean, sd</td>
+<td style="text-align:center">normal</td>
+<td style="text-align:center">norm</td>
+<td style="text-align:center">mean, sd</td>
 </tr>
 <tr>
-<td align="center">Poisson</td>
-<td align="center">pois</td>
-<td align="center">lambda</td>
+<td style="text-align:center">Poisson</td>
+<td style="text-align:center">pois</td>
+<td style="text-align:center">lambda</td>
 </tr>
 <tr>
-<td align="center">signed rank</td>
-<td align="center">signrank</td>
-<td align="center">n</td>
+<td style="text-align:center">signed rank</td>
+<td style="text-align:center">signrank</td>
+<td style="text-align:center">n</td>
 </tr>
 <tr>
-<td align="center">Student`s t</td>
-<td align="center">t</td>
-<td align="center">df, ncp</td>
+<td style="text-align:center">Student`s t</td>
+<td style="text-align:center">t</td>
+<td style="text-align:center">df, ncp</td>
 </tr>
 <tr>
-<td align="center">uniform</td>
-<td align="center">unif</td>
-<td align="center">min, max</td>
+<td style="text-align:center">uniform</td>
+<td style="text-align:center">unif</td>
+<td style="text-align:center">min, max</td>
 </tr>
 <tr>
-<td align="center">Weibull</td>
-<td align="center">weibull</td>
-<td align="center">shape, scale</td>
+<td style="text-align:center">Weibull</td>
+<td style="text-align:center">weibull</td>
+<td style="text-align:center">shape, scale</td>
 </tr>
 <tr>
-<td align="center">Wilcoxon</td>
-<td align="center">wilcox</td>
-<td align="center">m, n</td>
+<td style="text-align:center">Wilcoxon</td>
+<td style="text-align:center">wilcox</td>
+<td style="text-align:center">m, n</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="概率密度的相关计算"><a href="#概率密度的相关计算" class="headerlink" title="概率密度的相关计算"></a>概率密度的相关计算</h2><p>在上面的 <code>R name</code> 前面加上 <code>d</code> 表示对应的概率密度函数，加上 <code>p</code>表示对应分布的分布函数，加上 <code>q</code> 表示对应的分位数函数，前面加上<code>r</code> 表示产生对应分布的随机数。</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">dnorm(x,</span> <span class="string">mean</span> <span class="string">=</span> <span class="number">0</span><span class="string">,</span> <span class="string">sd</span> <span class="string">=</span> <span class="number">1</span><span class="string">,</span> <span class="string">log</span> <span class="string">=</span> <span class="literal">FALSE</span><span class="string">)</span></span><br><span class="line"><span class="string">pnorm(q,</span> <span class="string">mean</span> <span class="string">=</span> <span class="number">0</span><span class="string">,</span> <span class="string">sd</span> <span class="string">=</span> <span class="number">1</span><span class="string">,</span> <span class="string">lower.tail</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">log.p</span> <span class="string">=</span> <span class="literal">FALSE</span><span class="string">)</span></span><br><span class="line"><span class="string">qnorm(p,</span> <span class="string">mean</span> <span class="string">=</span> <span class="number">0</span><span class="string">,</span> <span class="string">sd</span> <span class="string">=</span> <span class="number">1</span><span class="string">,</span> <span class="string">lower.tail</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">log.p</span> <span class="string">=</span> <span class="literal">FALSE</span><span class="string">)</span></span><br><span class="line"><span class="string">rnorm(n,</span> <span class="string">mean</span> <span class="string">=</span> <span class="number">0</span><span class="string">,</span> <span class="string">sd</span> <span class="string">=</span> <span class="number">1</span><span class="string">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#特殊的参数：</span></span><br><span class="line"><span class="string">log,</span> <span class="string">log.p：logical;</span> <span class="string">if</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">probabilities</span> <span class="string">p</span> <span class="string">are</span> <span class="string">given</span> <span class="string">as</span> <span class="string">log(p).</span></span><br><span class="line"><span class="string">lower.tail：logical;</span> <span class="string">if</span> <span class="literal">TRUE</span> <span class="string">(default),</span> <span class="string">probabilities</span> <span class="string">are</span> <span class="string">P[X</span> <span class="string">≤</span> <span class="string">x]</span> <span class="string">otherwise,</span> <span class="string">P[X</span> <span class="string">&gt;</span> <span class="string">x].</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>例如对于正态分布：</p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&gt; dnorm(<span class="number">2</span>,mean=<span class="number">0</span>,sd = <span class="number">1</span>) </span><br><span class="line"><span class="string">[1]</span> <span class="number">0.05399097</span></span><br><span class="line">&gt; pnorm(<span class="number">2</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>)</span><br><span class="line"><span class="string">[1]</span> <span class="number">0.9772499</span></span><br><span class="line">&gt; qnorm(<span class="number">0.03</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>)</span><br><span class="line"><span class="string">[1]</span> <span class="number">-1.880794</span></span><br><span class="line">&gt; rnorm(<span class="number">10</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>)</span><br><span class="line"><span class="string"> [1]</span>  <span class="number">1.1642331</span>  <span class="number">0.5681395</span> <span class="number">-1.1315078</span>  <span class="number">0.6672826</span></span><br><span class="line"><span class="string"> [5]</span>  <span class="number">0.7476347</span> <span class="number">-1.6436189</span> <span class="number">-0.3249231</span>  <span class="number">0.1818301</span></span><br><span class="line"><span class="string"> [9]</span>  <span class="number">1.0729797</span> <span class="number">-0.4267270</span></span><br><span class="line"> </span><br></pre></td></tr></table></figure>
 <p><code>dnorm</code> 函数给出了标准正态分布的概率密度函数在2处的取值；<br><code>pnorm</code> 函数给出了标准正态分布在2处的分布函数值；<br><code>qnorm</code> 给出了概率为0.03的<strong>下分位点</strong>。<br><code>rnorm</code> 产生了一个包含10个数的标准正态分布的序列。</p>
-<div class="note warning"><p>在 <code>pxxx</code> 与 <code>qxxx</code> 中存在一个两个特殊的参数：<code>lower.tail</code> 与 <code> log.p</code>。第一个参数是改变求相应的值的方向，第二个值是将求出来的值取对数。</p>
+<div class="note warning"><p>在 <code>pxxx</code> 与 <code>qxxx</code> 中存在一个两个特殊的参数：<code>lower.tail</code> 与 <code>log.p</code>。第一个参数是改变求相应的值的方向，第二个值是将求出来的值取对数。</p>
 </div>
-
 <p>例如对于上面的例子：</p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">&gt; pnorm(<span class="number">2</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>,lower.tail = F)</span><br><span class="line"><span class="string">[1]</span> <span class="number">0.02275013</span></span><br><span class="line">&gt; qnorm(<span class="number">0.03</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>,lower.tail = F)</span><br><span class="line"><span class="string">[1]</span> <span class="number">1.880794</span></span><br><span class="line">&gt; pnorm(<span class="number">2</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>,lower.tail = F,log.p = T)</span><br><span class="line"><span class="string">[1]</span> <span class="number">-3.783184</span></span><br><span class="line">&gt; qnorm(<span class="number">-3.783184</span>,mean = <span class="number">0</span>,sd = <span class="number">1</span>,lower.tail = F,log.p = T)</span><br><span class="line"><span class="string">[1]</span> <span class="number">2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>在第一个结果中，给出的值是 <code>1-CDF</code>, 第二个值是对应的上分位点，第三个值将第一个值以对数的形式给出。第四个在参数 <code>q</code>处给出的是对应概率的对数值，而不是概率值。</p>
 <h2 id="概率分布的绘图"><a href="#概率分布的绘图" class="headerlink" title="概率分布的绘图"></a>概率分布的绘图</h2><p>给我们一组数据、我们可以通过多种方式检验他的分布，其中一种方式就是绘制这组数据所对应的图形。</p>
 <h3 id="茎叶图"><a href="#茎叶图" class="headerlink" title="茎叶图"></a>茎叶图</h3><p>我们使用R语言自带的数据集 <code>faithful</code> :</p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">&gt; head(faithful)</span><br><span class="line">  eruptions waiting</span><br><span class="line"><span class="number">1</span>     <span class="number">3.600</span>      <span class="number">79</span></span><br><span class="line"><span class="number">2</span>     <span class="number">1.800</span>      <span class="number">54</span></span><br><span class="line"><span class="number">3</span>     <span class="number">3.333</span>      <span class="number">74</span></span><br><span class="line"><span class="number">4</span>     <span class="number">2.283</span>      <span class="number">62</span></span><br><span class="line"><span class="number">5</span>     <span class="number">4.533</span>      <span class="number">85</span></span><br><span class="line"><span class="number">6</span>     <span class="number">2.883</span>      <span class="number">55</span></span><br></pre></td></tr></table></figure>
-
 <p>这个数据集中包含两个变量 <code>eruptions</code> , <code>waiting</code>，我们来试探第一个变量的分布，通过绘制对应的茎叶图：<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">&gt; attach(faithful)</span><br><span class="line">&gt; stem(eruptions)</span><br><span class="line"></span><br><span class="line">  The decimal point <span class="keyword">is</span> <span class="number">1</span> digit(s) to the left of the |</span><br><span class="line"></span><br><span class="line">  <span class="number">16</span> | <span class="number">070355555588</span></span><br><span class="line">  <span class="number">18</span> | <span class="number">000022233333335577777777888822335777888</span></span><br><span class="line">  <span class="number">20</span> | <span class="number">00002223378800035778</span></span><br><span class="line">  <span class="number">22</span> | <span class="number">0002335578023578</span></span><br><span class="line">  <span class="number">24</span> | <span class="number">00228</span></span><br><span class="line">  <span class="number">26</span> | <span class="number">23</span></span><br><span class="line">  <span class="number">28</span> | <span class="number">080</span></span><br><span class="line">  <span class="number">30</span> | <span class="number">7</span></span><br><span class="line">  <span class="number">32</span> | <span class="number">2337</span></span><br><span class="line">  <span class="number">34</span> | <span class="number">250077</span></span><br><span class="line">  <span class="number">36</span> | <span class="number">0000823577</span></span><br><span class="line">  <span class="number">38</span> | <span class="number">2333335582225577</span></span><br><span class="line">  <span class="number">40</span> | <span class="number">0000003357788888002233555577778</span></span><br><span class="line">  <span class="number">42</span> | <span class="number">03335555778800233333555577778</span></span><br><span class="line">  <span class="number">44</span> | <span class="number">02222335557780000000023333357778888</span></span><br><span class="line">  <span class="number">46</span> | <span class="number">0000233357700000023578</span></span><br><span class="line">  <span class="number">48</span> | <span class="number">00000022335800333</span></span><br><span class="line">  <span class="number">50</span> | <span class="number">0370</span></span><br></pre></td></tr></table></figure>
 <p>通过上面的茎叶图我们可以大致的可以看出数据的分布，数据向两端集中。</p>
-<h3 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h3><p>在R语言中可以通过自带的函数 <code>hist</code> 绘制直方图。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">hist(x,</span> <span class="string">breaks</span> <span class="string">=</span> <span class="string">&quot;Sturges&quot;</span><span class="string">,</span></span><br><span class="line">     <span class="string">freq</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">,</span> <span class="string">probability</span> <span class="string">=</span> <span class="type">!freq,</span></span><br><span class="line">     <span class="string">include.lowest</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">right</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span></span><br><span class="line">     <span class="string">density</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">,</span> <span class="string">angle</span> <span class="string">=</span> <span class="number">45</span><span class="string">,</span> <span class="string">col</span> <span class="string">=</span> <span class="string">&quot;lightgray&quot;</span><span class="string">,</span> <span class="string">border</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">,</span></span><br><span class="line">     <span class="string">main</span> <span class="string">=</span> <span class="string">paste(&quot;Histogram</span> <span class="string">of&quot;</span> <span class="string">,</span> <span class="string">xname),</span></span><br><span class="line">     <span class="string">xlim</span> <span class="string">=</span> <span class="string">range(breaks),</span> <span class="string">ylim</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">,</span></span><br><span class="line">     <span class="string">xlab</span> <span class="string">=</span> <span class="string">xname,</span> <span class="string">ylab,</span></span><br><span class="line">     <span class="string">axes</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">plot</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">labels</span> <span class="string">=</span> <span class="literal">FALSE</span><span class="string">,</span></span><br><span class="line">     <span class="string">nclass</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">,</span> <span class="string">warn.unused</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">...)</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<pre><code>&gt; summary(eruptions)
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  1.600   2.163   4.000   3.488   4.454   5.100 
-
-
-
-
-
-
-
-
-
-
-</code></pre>
+<h3 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h3><p>在R语言中可以通过自带的函数 <code>hist</code> 绘制直方图。<br><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">hist(x,</span> <span class="string">breaks</span> <span class="string">=</span> <span class="string">&quot;Sturges&quot;</span><span class="string">,</span></span><br><span class="line">     <span class="string">freq</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">,</span> <span class="string">probability</span> <span class="string">=</span> <span class="type">!freq,</span></span><br><span class="line">     <span class="string">include.lowest</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">right</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span></span><br><span class="line">     <span class="string">density</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">,</span> <span class="string">angle</span> <span class="string">=</span> <span class="number">45</span><span class="string">,</span> <span class="string">col</span> <span class="string">=</span> <span class="string">&quot;lightgray&quot;</span><span class="string">,</span> <span class="string">border</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">,</span></span><br><span class="line">     <span class="string">main</span> <span class="string">=</span> <span class="string">paste(&quot;Histogram</span> <span class="string">of&quot;</span> <span class="string">,</span> <span class="string">xname),</span></span><br><span class="line">     <span class="string">xlim</span> <span class="string">=</span> <span class="string">range(breaks),</span> <span class="string">ylim</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">,</span></span><br><span class="line">     <span class="string">xlab</span> <span class="string">=</span> <span class="string">xname,</span> <span class="string">ylab,</span></span><br><span class="line">     <span class="string">axes</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">plot</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">labels</span> <span class="string">=</span> <span class="literal">FALSE</span><span class="string">,</span></span><br><span class="line">     <span class="string">nclass</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">,</span> <span class="string">warn.unused</span> <span class="string">=</span> <span class="literal">TRUE</span><span class="string">,</span> <span class="string">...)</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>```</p>
+<blockquote>
+<p>summary(eruptions)<br>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.<br>  1.600   2.163   4.000   3.488   4.454   5.100 </p>
+</blockquote>
 ]]></content>
       <categories>
         <category>R语言</category>
@@ -162,39 +149,29 @@
     <url>//posts/3/</url>
     <content><![CDATA[<p>编程语言的执行顺序一般都是从上到下依次执行，但是在日常使用的过程中我们要可能需要一些其他的语句执行顺序，如循环结构与条件结构。</p>
 <a id="more"></a>
-
 <h2 id="R语言里面的循环结构"><a href="#R语言里面的循环结构" class="headerlink" title="R语言里面的循环结构"></a>R语言里面的循环结构</h2><h3 id="1、for循环"><a href="#1、for循环" class="headerlink" title="1、for循环"></a>1、for循环</h3><p>for 可以重复执行语句，而且重复的次数是可以直接控制的。</p>
 <figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">for</span> (variable <span class="keyword">in</span> <span class="built_in">vector</span>) &#123;</span><br><span class="line">  <span class="built_in">content</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">variable:为循环的参数</span><br><span class="line"><span class="built_in">vector</span>：为循环参数的取值</span><br><span class="line">在<span class="built_in">content</span>：输入要循环的语句</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>例如通过下面的语句输出斐波拉契数列的前三十个值</p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">fseq &lt;- c(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line"><span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:<span class="number">28</span>) &#123;</span><br><span class="line">  fseq[i+<span class="number">2</span>]=fseq[i]+fseq[i+<span class="number">1</span>]</span><br><span class="line">&#125;</span><br><span class="line">fseq</span><br></pre></td></tr></table></figure>
-
 <h3 id="2、while循环"><a href="#2、while循环" class="headerlink" title="2、while循环"></a>2、while循环</h3><p>while 循环当给定条件为 TRUE 时就会一直循环直到判断条件为 FALSE，这种循环需要知道循环的条件。</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">while</span><span class="params">(condition)</span></span>&#123;</span><br><span class="line">  如果条件满足则执行的语句</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>例如通过while循环来输出斐波拉契数列前三十个</p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">i = <span class="number">1</span></span><br><span class="line">fseq &lt;- c(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line"><span class="keyword">while</span>(i&lt;=<span class="number">28</span>)&#123;</span><br><span class="line">  fseq[i+<span class="number">2</span>] = fseq[i]+fseq[i+<span class="number">1</span>] </span><br><span class="line">  i=i+<span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line">fseq</span><br></pre></td></tr></table></figure>
 <h3 id="3、repeat循环"><a href="#3、repeat循环" class="headerlink" title="3、repeat循环"></a>3、repeat循环</h3><p>repeat 循环会一直的执行语句，直到 break 之后循环停止。因此 repeat 循环经常与 break 语句连用。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">repeat&#123;</span><br><span class="line">  content</span><br><span class="line">  <span class="function"><span class="title">if</span>(<span class="params">condition</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在上面的语句中一直执行 content 中的代码，直到满足条件 break。例如通过 repeat 循环去输出斐波拉契数列的前三十项</p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">i=<span class="number">1</span></span><br><span class="line">fseq &lt;- c(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">repeat&#123;</span><br><span class="line">     fseq[i+<span class="number">2</span>] = fseq[i+<span class="number">1</span>]+fseq[i]</span><br><span class="line">     i=i+<span class="number">1</span></span><br><span class="line">     <span class="keyword">if</span>(i == <span class="number">29</span>)&#123;</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
-
 <h3 id="4、循环控制语句"><a href="#4、循环控制语句" class="headerlink" title="4、循环控制语句"></a>4、循环控制语句</h3><p><strong>break语句</strong></p>
 <p>break 语句用于循环体中，作用是直接退出当前的循环体，执行循环下面的语句<strong>或者是执行外层的循环</strong>。例如上面的例子中，当 i 的取值等于29时，就停止 repeat 的循环。</p>
 <p><strong>next语句</strong></p>
 <p>这个语句和 break 语句有一些区别，它是跳过某次循环，执行下次循环，整个循环体还是在继续执行。例如一个字符串 <code>c(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;)</code> 。用循环语句依次输出每一个元素，但是跳过 b。</p>
 <figure class="highlight erlang"><table><tr><td class="code"><pre><span class="line">A = c(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>)</span><br><span class="line"><span class="function"><span class="title">for</span><span class="params">(i in <span class="number">1</span>:<span class="number">3</span>)</span>&#123;</span></span><br><span class="line"><span class="function">  <span class="title">if</span><span class="params">(A[i] == <span class="string">&quot;b&quot;</span>)</span> <span class="title">next</span></span></span><br><span class="line"><span class="function">  <span class="title">print</span><span class="params">(A[i])</span> </span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
-
 <h2 id="R语言里面的条件结构"><a href="#R语言里面的条件结构" class="headerlink" title="R语言里面的条件结构"></a>R语言里面的条件结构</h2><h3 id="1、if条件结构"><a href="#1、if条件结构" class="headerlink" title="1、if条件结构"></a>1、if条件结构</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">if</span>(<span class="params">expression</span>)</span>&#123;</span><br><span class="line">  若expression为<span class="literal">true</span>则执行</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>例如下面的例子，判断数是否大于5</p>
 <figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="variable">x</span> &lt;- <span class="number">6</span></span><br><span class="line"><span class="function"><span class="title">if</span>(<span class="variable">x</span>&gt;<span class="number">5</span>)&#123;</span></span><br><span class="line"><span class="function">  <span class="title">print</span>(<span class="string">&quot;x is greater than 5&quot;</span>)</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
 <h3 id="2、if-else-条件结构"><a href="#2、if-else-条件结构" class="headerlink" title="2、if-else 条件结构"></a>2、if-else 条件结构</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">if</span>(<span class="params">expression</span>)</span>&#123;</span><br><span class="line">  若expression为<span class="literal">true</span>则执行</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  若expression为<span class="literal">false</span>则执行</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>例如同样的例子：</p>
 <figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="variable">x</span> &lt;-<span class="number">4</span></span><br><span class="line"><span class="function"><span class="title">if</span>(<span class="variable">x</span>&gt;<span class="number">5</span>)&#123;</span></span><br><span class="line"><span class="function">  <span class="title">print</span>(<span class="string">&quot;x is greater than 5&quot;</span>)</span></span><br><span class="line">&#125; <span class="variable"><span class="keyword">else</span></span> &#123;</span><br><span class="line">  <span class="function"><span class="title">print</span>(<span class="string">&quot;x is not greater than 5&quot;</span>)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>在上面的结构中会先去判断 if 后面的条件，如果不满足则执行 else 语句后面的代码。</p>
 ]]></content>
       <categories>
@@ -208,40 +185,29 @@
   <entry>
     <title>R语言数据创建与导入</title>
     <url>//posts/1/</url>
-    <content><![CDATA[<img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gkangqreppj307305i3ye.jpg" width="20%" height="20%" title=" " alt=""/>
-
-
-
+    <content><![CDATA[<p><img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gkangqreppj307305i3ye.jpg" width="20%" height="20%" title=" " alt=""/></p>
 <a id="more"></a>
-
 <h2 id="创建数据集"><a href="#创建数据集" class="headerlink" title="创建数据集"></a>创建数据集</h2><h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><p><strong>向量：</strong></p>
 <p>存储同一类型的数据，可以是<strong>数值型</strong>、<strong>字符串型</strong>、也可以是<strong>布尔型</strong>的。</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">a &lt;- <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line">b &lt;- <span class="built_in">c</span>(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>,<span class="string">&quot;d&quot;</span>,<span class="string">&quot;e&quot;</span>)</span><br><span class="line"><span class="built_in">c</span> &lt;- <span class="built_in">c</span>(<span class="literal">FALSE</span>,<span class="literal">FALSE</span>,<span class="literal">TRUE</span>,<span class="literal">TRUE</span>,<span class="literal">FALSE</span>)</span><br><span class="line"></span><br><span class="line">------ 向量的创建</span><br><span class="line"></span><br><span class="line">&gt; a[<span class="number">2</span>]</span><br><span class="line">[<span class="number">1</span>] <span class="number">2</span></span><br><span class="line">&gt; a[<span class="number">2</span>:<span class="number">3</span>]</span><br><span class="line">[<span class="number">1</span>] <span class="number">2</span> <span class="number">3</span></span><br><span class="line">&gt; a[<span class="built_in">c</span>(<span class="built_in">T</span>,<span class="built_in">T</span>,<span class="built_in">F</span>,<span class="built_in">F</span>,<span class="built_in">F</span>)]</span><br><span class="line">[<span class="number">1</span>] <span class="number">1</span> <span class="number">2</span></span><br><span class="line"></span><br><span class="line">------ 向量数据的提取</span><br></pre></td></tr></table></figure>
-
 <p>在R语言种存在标量一词，标量其实就是只是包含一个元素的向量，如 <code>a &lt; - 2</code> 这时 <code>a</code> 是一个标量。</p>
 <p><strong>矩阵：</strong></p>
 <p>矩阵是一个二维数组，且必须存同一个数据类型数值型或者是字符串型等。</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">mymatrix &lt;- matrix(vector,nrow,ncol,byrow=<span class="literal">FALSE</span>,dimnames=<span class="built_in">list</span>(Char_vector_rownames,Char_vector_colnames)</span><br><span class="line"></span><br><span class="line">vector:数据向量</span><br><span class="line">nrow ：行数</span><br><span class="line">ncol ：列数</span><br><span class="line">byrow ：在矩阵默认是按照列对数据进行填充的。</span><br><span class="line">dimnames ：对矩阵修改行列名</span><br><span class="line"></span><br><span class="line">------</span><br><span class="line">a &lt;- matrix(<span class="number">1</span>:<span class="number">20</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line">a</span><br><span class="line">      [,<span class="number">1</span>] [,<span class="number">2</span>] [,<span class="number">3</span>] [,<span class="number">4</span>] [,<span class="number">5</span>]</span><br><span class="line">[<span class="number">1</span>,]    <span class="number">1</span>    <span class="number">5</span>    <span class="number">9</span>   <span class="number">13</span>   <span class="number">17</span></span><br><span class="line">[<span class="number">2</span>,]    <span class="number">2</span>    <span class="number">6</span>   <span class="number">10</span>   <span class="number">14</span>   <span class="number">18</span></span><br><span class="line">[<span class="number">3</span>,]    <span class="number">3</span>    <span class="number">7</span>   <span class="number">11</span>   <span class="number">15</span>   <span class="number">19</span></span><br><span class="line">[<span class="number">4</span>,]    <span class="number">4</span>    <span class="number">8</span>   <span class="number">12</span>   <span class="number">16</span>   <span class="number">20</span></span><br><span class="line"></span><br><span class="line">----- 创建矩阵默认按列对数据进行填充。</span><br><span class="line"></span><br><span class="line">b &lt;- matrix(<span class="number">1</span>:<span class="number">20</span>,<span class="number">4</span>,<span class="number">5</span>,byrow=<span class="built_in">T</span>)</span><br><span class="line">b</span><br><span class="line">      [,<span class="number">1</span>] [,<span class="number">2</span>] [,<span class="number">3</span>] [,<span class="number">4</span>] [,<span class="number">5</span>]</span><br><span class="line">[<span class="number">1</span>,]    <span class="number">1</span>    <span class="number">2</span>    <span class="number">3</span>    <span class="number">4</span>    <span class="number">5</span></span><br><span class="line">[<span class="number">2</span>,]    <span class="number">6</span>    <span class="number">7</span>    <span class="number">8</span>    <span class="number">9</span>   <span class="number">10</span></span><br><span class="line">[<span class="number">3</span>,]   <span class="number">11</span>   <span class="number">12</span>   <span class="number">13</span>   <span class="number">14</span>   <span class="number">15</span></span><br><span class="line">[<span class="number">4</span>,]   <span class="number">16</span>   <span class="number">17</span>   <span class="number">18</span>   <span class="number">19</span>   <span class="number">20</span></span><br><span class="line"></span><br><span class="line">----- 创建按照列进行填行进行填充的数据。</span><br><span class="line"></span><br><span class="line">a &lt;- <span class="built_in">c</span>(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>,<span class="string">&quot;d&quot;</span>,<span class="string">&quot;e&quot;</span>)</span><br><span class="line">b &lt;- <span class="built_in">c</span>(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>,<span class="string">&quot;d&quot;</span>)</span><br><span class="line"><span class="built_in">c</span> &lt;- matrix(<span class="number">1</span>:<span class="number">20</span>,<span class="number">5</span>,<span class="number">4</span>,byrow=<span class="built_in">T</span>,dimnames=<span class="built_in">list</span>(a,b))</span><br><span class="line"><span class="built_in">c</span></span><br><span class="line">   a  b  <span class="built_in">c</span>  d</span><br><span class="line">a  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span></span><br><span class="line">b  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span></span><br><span class="line"><span class="built_in">c</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span></span><br><span class="line">d <span class="number">13</span> <span class="number">14</span> <span class="number">15</span> <span class="number">16</span></span><br><span class="line">e <span class="number">17</span> <span class="number">18</span> <span class="number">19</span> <span class="number">20</span></span><br><span class="line"></span><br><span class="line">----- 通过dimnames参数对矩阵的行与列命名。</span><br><span class="line"></span><br><span class="line">&gt; <span class="built_in">c</span>[<span class="number">1</span>:<span class="number">8</span>]</span><br><span class="line">[<span class="number">1</span>]  <span class="number">1</span>  <span class="number">5</span>  <span class="number">9</span> <span class="number">13</span> <span class="number">17</span>  <span class="number">2</span>  <span class="number">6</span> <span class="number">10</span></span><br><span class="line">&gt; <span class="built_in">c</span>[<span class="number">1</span>,]</span><br><span class="line">a b <span class="built_in">c</span> d </span><br><span class="line">1 <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> </span><br><span class="line">&gt; <span class="built_in">c</span>[,<span class="number">1</span>]</span><br><span class="line"> a  b  <span class="built_in">c</span>  d  e </span><br><span class="line"> <span class="number">1</span>  <span class="number">5</span>  <span class="number">9</span> <span class="number">13</span> <span class="number">17</span></span><br><span class="line"></span><br><span class="line">矩阵数据的提取。同样默认是按照列进行数据提取的。</span><br></pre></td></tr></table></figure>
-
 <p><strong>数组：</strong></p>
 <p>数组是一个多维的数据矩阵，维度可以大于二，存储同一数据类型。</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">myarray &lt;- array(vector,dimensions,dimnames)</span><br><span class="line"></span><br><span class="line">vector : 数据向量</span><br><span class="line">dimensions : 数组的维度</span><br><span class="line">dimnames : 为各个维度命名，必须为字符串类型。</span><br><span class="line"></span><br><span class="line">-----</span><br><span class="line"></span><br><span class="line">dim1 &lt;- <span class="built_in">c</span>(<span class="string">&quot;1&quot;</span>,<span class="string">&quot;2&quot;</span>)</span><br><span class="line">dim2 &lt;- <span class="built_in">c</span>(<span class="string">&quot;1&quot;</span>,<span class="string">&quot;2&quot;</span>,<span class="string">&quot;3&quot;</span>)</span><br><span class="line">dim3 &lt;- <span class="built_in">c</span>(<span class="string">&quot;1&quot;</span>,<span class="string">&quot;2&quot;</span>,<span class="string">&quot;3&quot;</span>,<span class="string">&quot;4&quot;</span>)</span><br><span class="line">myarray &lt;- array(<span class="number">1</span>:<span class="number">24</span>,<span class="built_in">c</span>(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>),dimnames = <span class="built_in">list</span>(dim1,dim2,dim3))</span><br><span class="line">myarray</span><br><span class="line"></span><br><span class="line">, , <span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line">1 <span class="number">1</span> <span class="number">3</span> <span class="number">5</span></span><br><span class="line">2 <span class="number">2</span> <span class="number">4</span> <span class="number">6</span></span><br><span class="line"></span><br><span class="line">, , <span class="number">2</span></span><br><span class="line"></span><br><span class="line">  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span></span><br><span class="line">1 <span class="number">7</span>  <span class="number">9</span> <span class="number">11</span></span><br><span class="line">2 <span class="number">8</span> <span class="number">10</span> <span class="number">12</span></span><br><span class="line"></span><br><span class="line">, , <span class="number">3</span></span><br><span class="line"></span><br><span class="line">   <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span></span><br><span class="line">1 <span class="number">13</span> <span class="number">15</span> <span class="number">17</span></span><br><span class="line">2 <span class="number">14</span> <span class="number">16</span> <span class="number">18</span></span><br><span class="line"></span><br><span class="line">, , <span class="number">4</span></span><br><span class="line"></span><br><span class="line">   <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span></span><br><span class="line">1 <span class="number">19</span> <span class="number">21</span> <span class="number">23</span></span><br><span class="line">2 <span class="number">20</span> <span class="number">22</span> <span class="number">24</span></span><br><span class="line"></span><br><span class="line">----- 上面创建的就是一个两行三列四维的数组。</span><br><span class="line"></span><br><span class="line">myarray[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">[<span class="number">1</span>] <span class="number">15</span></span><br><span class="line"></span><br><span class="line">----- 提取数组中第三个维度中的第一行第二列的数据</span><br><span class="line"></span><br><span class="line">myarray[<span class="number">1</span>,<span class="number">2</span>,]</span><br><span class="line"> <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span> </span><br><span class="line"> <span class="number">3</span>  <span class="number">9</span> <span class="number">15</span> <span class="number">21</span></span><br><span class="line"></span><br><span class="line">----- 提取数据中各个维度中的第一行，第二列的数据</span><br><span class="line"></span><br><span class="line">myarray[<span class="number">1</span>,,<span class="number">3</span>]</span><br><span class="line"> <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span> </span><br><span class="line"> <span class="number">13</span> <span class="number">15</span> <span class="number">17</span></span><br><span class="line"></span><br><span class="line">----- 提取第三维度，第一行所有的数据</span><br><span class="line"></span><br><span class="line">myarray[,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"> <span class="number">1</span>  <span class="number">2</span> </span><br><span class="line">15 <span class="number">16</span></span><br><span class="line"></span><br><span class="line">----- 提取第三维度第二列的所有数据</span><br><span class="line"></span><br><span class="line">myarray[<span class="number">1</span>,,] </span><br><span class="line">  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span></span><br><span class="line">1 <span class="number">1</span>  <span class="number">7</span> <span class="number">13</span> <span class="number">19</span></span><br><span class="line">2 <span class="number">3</span>  <span class="number">9</span> <span class="number">15</span> <span class="number">21</span></span><br><span class="line">3 <span class="number">5</span> <span class="number">11</span> <span class="number">17</span> <span class="number">23</span></span><br><span class="line"></span><br><span class="line">----- 提取各个维度第一行的数据。</span><br></pre></td></tr></table></figure>
-
 <p><strong>数据框：</strong></p>
 <p>数据框是使用最多的一种数据结构，形式上与矩阵相似，但是这种数据结构可以存储不同的数据类型的数据。</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">mydata &lt;- data.frame(col1,clo2,col3,,,,,row.names,,)</span><br><span class="line"></span><br><span class="line">col1 : 第一列数据</span><br><span class="line">col2 ： 第二列数据</span><br><span class="line">......</span><br><span class="line">row.names ： 行名向量。</span><br><span class="line"></span><br><span class="line">-----</span><br><span class="line"></span><br><span class="line">name &lt;- <span class="built_in">c</span>(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>,<span class="string">&quot;d&quot;</span>)</span><br><span class="line">age &lt;- <span class="built_in">c</span>(<span class="number">12</span>,<span class="number">13</span>,<span class="number">13</span>,<span class="number">14</span>)</span><br><span class="line">classlevel &lt;- <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">ismale &lt;- <span class="built_in">c</span>(<span class="built_in">T</span>,<span class="built_in">T</span>,<span class="built_in">F</span>,<span class="built_in">F</span>)</span><br><span class="line">mydata &lt;- data.frame(name,age,classlevel,ismale)</span><br><span class="line">mydata</span><br><span class="line"></span><br><span class="line">   name age classlevel ismale</span><br><span class="line">1    a  <span class="number">12</span>          <span class="number">1</span>   <span class="literal">TRUE</span></span><br><span class="line">2    b  <span class="number">13</span>          <span class="number">2</span>   <span class="literal">TRUE</span></span><br><span class="line">3    <span class="built_in">c</span>  <span class="number">13</span>          <span class="number">2</span>  <span class="literal">FALSE</span></span><br><span class="line">4    d  <span class="number">14</span>          <span class="number">3</span>  <span class="literal">FALSE</span></span><br><span class="line"></span><br><span class="line">----- 创建矩阵</span><br><span class="line"></span><br><span class="line">mydata[<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">[<span class="number">1</span>] <span class="number">12</span></span><br><span class="line"></span><br><span class="line">----- 提取矩阵中第一行第二列的数据</span><br><span class="line"></span><br><span class="line">mydata[<span class="number">1</span>:<span class="number">2</span>]</span><br><span class="line">   name age</span><br><span class="line">1    a  <span class="number">12</span></span><br><span class="line">2    b  <span class="number">13</span></span><br><span class="line">3    <span class="built_in">c</span>  <span class="number">13</span></span><br><span class="line">4    d  <span class="number">14</span></span><br><span class="line"></span><br><span class="line">----- 提取矩阵前两列的数据</span><br><span class="line"></span><br><span class="line">mydata[<span class="built_in">c</span>(<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;age&#x27;</span>)]</span><br><span class="line">   name age</span><br><span class="line">1    a  <span class="number">12</span></span><br><span class="line">2    b  <span class="number">13</span></span><br><span class="line">3    <span class="built_in">c</span>  <span class="number">13</span></span><br><span class="line">4    d  <span class="number">14</span></span><br><span class="line"></span><br><span class="line">----- 提取矩阵列命为name与age的两列</span><br><span class="line"></span><br><span class="line">mydata$age</span><br><span class="line">[<span class="number">1</span>] <span class="number">12</span> <span class="number">13</span> <span class="number">13</span> <span class="number">14</span></span><br><span class="line"></span><br><span class="line">----- 提取矩阵age这一列，在矩阵中$符号可以用来提取特定的列。</span><br></pre></td></tr></table></figure>
-
 <p>与矩阵有关的几个函数：<code>attach()</code> , <code>detach()</code> , <code>with()</code> .</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">attach()</span><br><span class="line"></span><br><span class="line">&gt; attach(mydata)</span><br><span class="line">The following objects are masked _by_ .GlobalEnv:</span><br><span class="line"></span><br><span class="line">    age, classlevel, ismale, name</span><br><span class="line"></span><br><span class="line">&gt; age</span><br><span class="line">[<span class="number">1</span>] <span class="number">12</span> <span class="number">13</span> <span class="number">13</span> <span class="number">14</span></span><br><span class="line">&gt; <span class="built_in">c</span>(age,name)</span><br><span class="line">[<span class="number">1</span>] <span class="string">&quot;12&quot;</span> <span class="string">&quot;13&quot;</span> <span class="string">&quot;13&quot;</span> <span class="string">&quot;14&quot;</span> <span class="string">&quot;a&quot;</span>  <span class="string">&quot;b&quot;</span>  <span class="string">&quot;c&quot;</span>  <span class="string">&quot;d&quot;</span></span><br><span class="line"></span><br><span class="line">----- 通过attach()函数可以将数据框放在搜索路径中，这时可以直接通过列名去调取数据框中的数据，而不用$等符号，R会主动首先搜索attach的数据框。</span><br><span class="line"></span><br><span class="line">&gt; age &lt;- <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">&gt; attach(mydata)</span><br><span class="line">The following objects are masked _by_ .GlobalEnv:</span><br><span class="line"></span><br><span class="line">    age, classlevel, ismale, name</span><br><span class="line"></span><br><span class="line">The following objects are masked from mydata (pos = <span class="number">3</span>):</span><br><span class="line"></span><br><span class="line">    age, classlevel, ismale, name</span><br><span class="line"></span><br><span class="line">&gt; age</span><br><span class="line">[<span class="number">1</span>] <span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"></span><br><span class="line">----- 从上面的例子我们可以看到，这种attach()将数据加到搜索路径中的方法存在一些缺点，</span><br><span class="line">      就是如果先前存在数据框中的同名变量，这时原先的变量将取得优先权。所有上面age输出的不是数据框中的数据。</span><br><span class="line"></span><br><span class="line">detach()</span><br><span class="line"></span><br><span class="line">----- 通过这个函数可以将数据框从搜索路径中移除。</span><br><span class="line"></span><br><span class="line">with()</span><br><span class="line"></span><br><span class="line">&gt; age &lt;- <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">&gt; with(mydata,age)</span><br><span class="line">[<span class="number">1</span>] <span class="number">12</span> <span class="number">13</span> <span class="number">13</span> <span class="number">14</span></span><br><span class="line"></span><br><span class="line">----- 由于上面attach存在的一些缺点，我们可以看到通过with函数可以得到解决，这个函数将运算集中在数据框中。</span><br></pre></td></tr></table></figure>
-
 <p><strong>因子：</strong></p>
 <p>因子是数据结构在统计中是一个非常有用的概念，这种变量对于定序变量与定类变量非常有用，费别可以用有序因子和无须因子表示。在R中是通过factor() 函数创建因子，这个函数其实是以一个整数向量的形式存储类别值，同时用一个字符串（原始值）的向量映射到这个整数向量中。</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">factor(x,levels,labels=levels，ordered=<span class="literal">FALSE</span>)</span><br><span class="line"></span><br><span class="line">x : 字符串向量</span><br><span class="line">levels ：指定因子的水平</span><br><span class="line">labels : 为每个水平定义一个值标签</span><br><span class="line">ordered ： 是否是有序因子（如果不给的level则会按照英文字母去给定序）</span><br><span class="line"></span><br><span class="line">-----</span><br><span class="line"></span><br><span class="line">fruit &lt;- <span class="built_in">c</span>(<span class="string">&quot;apple&quot;</span>,<span class="string">&quot;orange&quot;</span>,<span class="string">&quot;strawberry&quot;</span>,<span class="string">&quot;banana&quot;</span>,<span class="string">&quot;watermelon&quot;</span>,<span class="string">&quot;grape&quot;</span>)</span><br><span class="line">factor(fruit)</span><br><span class="line">[<span class="number">1</span>] apple      orange     strawberry banana     watermelon grape     </span><br><span class="line">Levels: apple banana grape orange strawberry watermelon</span><br><span class="line"></span><br><span class="line">----- 上面创建的是一个无序因子，默认按照字母的顺序排列。</span><br><span class="line"></span><br><span class="line">fruit &lt;- <span class="built_in">c</span>(<span class="string">&quot;apple&quot;</span>,<span class="string">&quot;orange&quot;</span>,<span class="string">&quot;strawberry&quot;</span>,<span class="string">&quot;banana&quot;</span>,<span class="string">&quot;watermelon&quot;</span>,<span class="string">&quot;grape&quot;</span>)</span><br><span class="line">factor(fruit,ordered=<span class="literal">TRUE</span>)</span><br><span class="line">[<span class="number">1</span>] apple      orange     strawberry banana     watermelon grape     </span><br><span class="line">6 Levels: apple &lt; banana &lt; grape &lt; orange &lt; ... &lt; watermelon</span><br><span class="line"></span><br><span class="line">----- 上面创建的是一个有序的因子。同样默认是按照首字母的顺序排列的。</span><br><span class="line"></span><br><span class="line">fruit &lt;- <span class="built_in">c</span>(<span class="string">&quot;apple&quot;</span>,<span class="string">&quot;orange&quot;</span>,<span class="string">&quot;strawberry&quot;</span>,<span class="string">&quot;banana&quot;</span>,<span class="string">&quot;watermelon&quot;</span>,<span class="string">&quot;grape&quot;</span>)</span><br><span class="line">factor(fruit,ordered=<span class="literal">TRUE</span>,level=<span class="built_in">c</span>(<span class="string">&quot;apple&quot;</span>,<span class="string">&quot;strawberry&quot;</span>,<span class="string">&quot;banana&quot;</span>,<span class="string">&quot;watermelon&quot;</span>,<span class="string">&quot;grape&quot;</span>,<span class="string">&quot;orange&quot;</span>))</span><br><span class="line">[<span class="number">1</span>] apple      orange     strawberry banana     watermelon grape     </span><br><span class="line">6 Levels: apple &lt; strawberry &lt; banana &lt; watermelon &lt; ... &lt; orange</span><br><span class="line"></span><br><span class="line">----- 上面创建的因子是一个有序因子我们自己通过level给定了因子的序。</span><br><span class="line"></span><br><span class="line">factor(fruit,ordered=<span class="literal">TRUE</span>,level=<span class="built_in">c</span>(<span class="string">&quot;apple&quot;</span>,<span class="string">&quot;strawberry&quot;</span>,<span class="string">&quot;banana&quot;</span>,<span class="string">&quot;watermelon&quot;</span>,<span class="string">&quot;grape&quot;</span>,<span class="string">&quot;orange&quot;</span>),labels=<span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>))</span><br><span class="line">[<span class="number">1</span>] <span class="number">1</span> <span class="number">6</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line">Levels: <span class="number">1</span> &lt; <span class="number">2</span> &lt; <span class="number">3</span> &lt; <span class="number">4</span> &lt; <span class="number">5</span> &lt; <span class="number">6</span></span><br><span class="line"></span><br><span class="line">----- 上面同样是一个有序的因子，我们通过给定了自己的序，且给每一种水果一个值标签，<span class="number">1</span> 表示apple等</span><br></pre></td></tr></table></figure>
-
 <p><strong>列表：</strong></p>
 <p>列表是另外一种数据结构，这是R中最复杂的一种数据结构，在列表中可以存放各种R对象，可以是列表，矩阵，数据框等。</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">mylist &lt;- <span class="built_in">list</span>(object1,object2,object3,,,,,)llllll</span><br><span class="line"></span><br><span class="line">object : 都是列表中的对象</span><br><span class="line"></span><br><span class="line">-----</span><br><span class="line"></span><br><span class="line">a &lt;- <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line">b &lt;- matrix(<span class="number">1</span>:<span class="number">6</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">c</span> &lt;- data.frame(<span class="number">1</span>:<span class="number">3</span>,<span class="built_in">c</span>(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>))</span><br><span class="line">mylist &lt;- <span class="built_in">list</span>(name=a,b,<span class="built_in">c</span>)</span><br><span class="line">mylist</span><br><span class="line"></span><br><span class="line">$name</span><br><span class="line">[<span class="number">1</span>] <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line">[[<span class="number">2</span>]]</span><br><span class="line">     [,<span class="number">1</span>] [,<span class="number">2</span>] [,<span class="number">3</span>]</span><br><span class="line">[<span class="number">1</span>,]    <span class="number">1</span>    <span class="number">3</span>    <span class="number">5</span></span><br><span class="line">[<span class="number">2</span>,]    <span class="number">2</span>    <span class="number">4</span>    <span class="number">6</span></span><br><span class="line"></span><br><span class="line">[[<span class="number">3</span>]]</span><br><span class="line">  name1 name2</span><br><span class="line">1     <span class="number">1</span>     a</span><br><span class="line">2     <span class="number">2</span>     b</span><br><span class="line">3     <span class="number">3</span>     <span class="built_in">c</span></span><br><span class="line"></span><br><span class="line">----- 上面创建一个列表，这个列表中包括一个向量，一个矩阵，一个数据框三种数据结构。在列表中可以通过 name= 来对每一个对象命名。</span><br><span class="line"></span><br><span class="line">&gt; mylist[[<span class="number">2</span>]]</span><br><span class="line">     [,<span class="number">1</span>] [,<span class="number">2</span>] [,<span class="number">3</span>]</span><br><span class="line">[<span class="number">1</span>,]    <span class="number">1</span>    <span class="number">3</span>    <span class="number">5</span></span><br><span class="line">[<span class="number">2</span>,]    <span class="number">2</span>    <span class="number">4</span>    <span class="number">6</span></span><br><span class="line"></span><br><span class="line">&gt; mylist[[<span class="string">&quot;name&quot;</span>]]</span><br><span class="line">[<span class="number">1</span>] <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line">----- 列表中数据的提取。</span><br></pre></td></tr></table></figure>
-
 <p>列表是R中非常重要的一个数据结构，在R中许多函数的输出结果是以列表的形式给出的。</p>
 <hr>
 <h2 id="数据的输入"><a href="#数据的输入" class="headerlink" title="数据的输入"></a>数据的输入</h2> <iframe id="embed_dom" name="embed_dom" frameborder="0" style="display:block;width:525px; height:245px;" src="https://www.processon.com/embed/5f7426107d9c0806f2605fe1"></iframe>
@@ -252,11 +218,9 @@
 <li>针对上面创建的数据结构调用数据编辑器。输入数据保存</li>
 </ol>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">myedit &lt;- data.frame(age=numeric(<span class="number">0</span>),name=character(<span class="number">0</span>))</span><br><span class="line">myedit &lt;- edit(myedit)</span><br><span class="line"></span><br><span class="line">----- 通过上面的edit可以调出一个类似于excel的数据编辑框对数据进行编辑。</span><br></pre></td></tr></table></figure>
-
 <p>上面通过numeric(0)可以创建一个只是指定数据模式但是不包含数据的向量。</p>
 <h3 id="分隔符文本导入"><a href="#分隔符文本导入" class="headerlink" title="分隔符文本导入"></a>分隔符文本导入</h3><p>R语言中可以直接从以分隔符分隔的文本文件中导入数据，通过read.table()函数可以读入一个表格格式的文件，并且存储在一个数据框中。</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">mycsv &lt;- read.table(file,options(header,sep,row.names,col.names,skip,stringASFactors,colClasses,,,,))</span><br><span class="line"></span><br><span class="line">file :这是一个以分隔符分隔的ASCII文本文件。</span><br><span class="line">options :是函数的可选参数集合，包括很多参数</span><br><span class="line">	header :文件是否在第一行包含了变量名。</span><br><span class="line">	sep :说明文件是以什么符号分隔数据的，默认的sep=<span class="string">&quot; &quot;</span>是以空格，制表符，换行，回车等分隔的。可以使用sep=<span class="string">&quot;,&quot;</span>来指定逗号为分隔符。</span><br><span class="line">	row.names : 用来指定行名</span><br><span class="line">	col.names :用于指定列名</span><br><span class="line">	skip :这个参数可以指定是否跳过文件中的前几行数据。</span><br><span class="line">	stringASFactors :read.table()函数默认将字符串读取为因子，可以通过设置该参数为<span class="literal">FALSE</span>将这一行为取消。</span><br><span class="line">	colClasses :可以通过这个参数去指定每一列的数据类型。</span><br><span class="line">	，，，，，</span><br><span class="line"></span><br><span class="line">-----</span><br><span class="line"></span><br><span class="line">创建一个txt文件，内容为：</span><br><span class="line"></span><br><span class="line">张三 李四 王五 赵六</span><br><span class="line">男 男 男 男</span><br><span class="line">23 <span class="number">24</span> <span class="number">34</span> <span class="number">44</span></span><br><span class="line"></span><br><span class="line">存放在C:\\Users\\SweepingRobot\\Desktop。</span><br><span class="line"></span><br><span class="line">mydata &lt;- read.table(<span class="string">&quot;C:/Users/SweepingRobot/Desktop/data.txt&quot;</span>,header=<span class="literal">TRUE</span>)</span><br><span class="line"></span><br><span class="line">----- 上面通过read.table()函数读取位于桌面上的以空格分隔的txt文件，开头包含变量名。</span><br></pre></td></tr></table></figure>
-
 <p>在R语言中路径不能使用反斜杠分隔，因为在R语言中反斜杠是转义的符号，所有要用斜杆。</p>
 ]]></content>
       <categories>
@@ -269,26 +233,75 @@
       </tags>
   </entry>
   <entry>
+    <title>R语言简单的simulation</title>
+    <url>//posts/0008/</url>
+    <content><![CDATA[<p>R语言提供了很多的概率分布的函数以及产生随机数的函数，通过这些函数我们可以做一些简单的simulation。</p>
+<a id="more"></a>
+<h3 id="通过simulation来计算-Π-的值"><a href="#通过simulation来计算-Π-的值" class="headerlink" title="通过simulation来计算 Π 的值"></a>通过simulation来计算 Π 的值</h3><p>我们通过在R语言中通过simulation的方法近似的去估计 Π 的数值。</p>
+<p><strong>基本思路</strong></p>
+<ul>
+<li>生成从一个 x 属于(-1,1) , y 属于(-1,1)的正方形中产生大量的随机点N。</li>
+<li>计算产生的大量的随机点在圆心位于圆点，半径为1的点的个数M。</li>
+<li>基于大数定律当N趋于无穷大时有下面的等式成立：</li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{equation} \label{eq2}
+\begin{aligned}
+a &= b + c \\
+  &= d + e + f + g \\
+  &= h + i
+\end{aligned}
+\end{equation}</script><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">N</span> &lt;- <span class="number">100000</span></span><br><span class="line"><span class="attribute">x</span> &lt;- runif(N,min = -<span class="number">1</span>,max = <span class="number">1</span>)</span><br><span class="line"><span class="attribute">y</span> &lt;- runif(N,min = -<span class="number">1</span>,max = <span class="number">1</span>)</span><br><span class="line"><span class="comment">#产生100000个随机点。</span></span><br><span class="line"><span class="attribute">z</span> &lt;- sum(x^<span class="number">2</span>+y^<span class="number">2</span>&lt;=<span class="number">1</span>)</span><br><span class="line"><span class="comment">#统计100000个随机点中位于圆中的个数。</span></span><br><span class="line"><span class="attribute">pai</span> &lt;- z/N*<span class="number">4</span></span><br><span class="line"><span class="comment">#计算pai的数值</span></span><br></pre></td></tr></table></figure>
+<p>上面就是简单的simulation计算 Π 的估计值。</p>
+<h3 id="验证正态分布的3法则"><a href="#验证正态分布的3法则" class="headerlink" title="验证正态分布的3法则"></a>验证正态分布的3法则</h3>]]></content>
+      <categories>
+        <category>R语言</category>
+        <category>统计应用</category>
+      </categories>
+      <tags>
+        <tag>R语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>理想中的学者</title>
+    <url>//posts/2/</url>
+    <content><![CDATA[<blockquote class="blockquote-center">
+<p>今天的内卷是一个陀螺式的死循环</p>
+<p><strong>项飙</strong></p>
+
+</blockquote>
+<blockquote>
+<p>今天的内卷是一个陀螺式的死循环，我们要不断的要抽打自己，让自己就这么空转，每天要不断地自己动员自己是吧？所以它是一个高度动态的陷阱，所以非常耗能的。[1]</p>
+</blockquote>
+<a id="more"></a>
+<p>这些天一直在听项飙的一些音频，有关于移民、世界国民以及内卷化的一些内容，从这些音频中进一步加深了对项飙的印象。对于项飙这个名字很多人都非常的陌生，因为作为一个人类学家，项飙从研究生开始就去了牛津，后来也一直在国外任教，以前几乎很少在国内的社交媒体中亮相。</p>
+<p>对于我来说，第一次知道项飙也是今年早些时候的事，由于疫情的原因待在家里，通过看许知远的<strong>《十三邀》</strong>认识到了项飙这个人，看完那期节目后我对于项飙印象非常的深刻，之所以这样就我个人来说认为是有很多的原因的：</p>
+<p>首先是他的外观：在节目中，他是一个个子不高皮肤较黑身体非常的瘦的人，打扮的也非常的朴素，一眼看起来非常就是非常的平易近人的样子，丝毫没有架子气。这一切感觉似乎都与他身上的头衔有一丝不符，之所以有这种感觉我想是因为平常所看到的一些所谓的学者似乎很多都是 “ 油光满面 ” ，西装革履，似乎看起来就没那么亲近了。</p>
+<p><img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gkakmilwh4j30u00gw3z3.jpg" title="◎ 项飙" width="80%" height="50%" /></p>
+<p>其实让我最印象深刻的并不是他的外在的一面，而是作为一个学者内在的一面。在听他与许知远的对话的过程中有一种特别的舒服的感觉，在为一个人类学家，他在讨论有关于 “ 附近 ” 等社会学问题的时候并没有用那些多么高深的专业语句，而是非常的清晰的简洁的向听众讲述了他对专业问题的见解，更重要的是他展示了自己的整个的思考的过程，我认为这是最让我难忘的一点。</p>
+]]></content>
+      <categories>
+        <category>闲言碎语</category>
+      </categories>
+      <tags>
+        <tag>项飙</tag>
+        <tag>人类学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于Rvest的爬虫</title>
     <url>//posts/rvest/</url>
-    <content><![CDATA[<img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gk9qsre6j9j306o07qmxq.jpg" width="20%" height="20%" title="◎ rvest" alt="rvest"/>
-
-
-
+    <content><![CDATA[<p><img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gk9qsre6j9j306o07qmxq.jpg" width="20%" height="20%" title="◎ rvest" alt="rvest"/></p>
 <a id="more"></a>
-
 <h2 id="关于rvest包"><a href="#关于rvest包" class="headerlink" title="关于rvest包"></a>关于rvest包</h2><p><code>rvest</code> 包是Hadley Wickham开发的一个能够非常容易的从网页获取数据的包，这个包使用起来非常的容易，<code>rvest</code>的灵感来源于<code>BeautifulSoup</code>（<code>python</code>中的一个非常有名的解析库）。</p>
 <p>但是我的理解是这个包实际上不能直接从网络中获取<code>HTML</code>文件，而是通过<code>xml2</code> 包中的<code>read_html()</code> 获取<code>HTML</code>文件或者是通过其他的方式获取了<code>html</code>文件之后再转给<code>rvest</code>，用<code>rvest</code>包中的函数来非常方便的去提取数据。加载<code>rvest</code>的同时也会加载<code>xml2</code>包。</p>
 <p><code>read_html()</code> 函数：</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">read_html(x, encoding = <span class="string">&quot;&quot;</span>, ..., options = <span class="built_in">c</span>(<span class="string">&quot;RECOVER&quot;</span>, <span class="string">&quot;NOERROR&quot;</span>, <span class="string">&quot;NOBLANKS&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个函数可以从互联网中获取网页内容，x为网页的URL，encoding是指定网页的编码方式。</span></span><br></pre></td></tr></table></figure>
-
 <p>这个函数获取<code>html</code>文件的功能是非常的有限的，因为他没有伪装，无法获取动态网页的全部内容，有些网页中存在异步加载，文件中包含js脚本，浏览器可以通过加载js脚本去更新数据，但是用R这种方式获取<code>html</code>文件是无法获取所有的内容的。必须要使用<code>rselenium</code>包通过虚拟浏览器的方式去进行获取。</p>
 <p><code>rvest</code>包中存在下面这些函数：</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">back	History navigation tools</span><br><span class="line">encoding	Guess and repair faulty character encoding.</span><br><span class="line">follow_link	Navigate to a new url.</span><br><span class="line">google_form	Make link to google form given id</span><br><span class="line">guess_encoding	Guess and repair faulty character encoding.</span><br><span class="line">html	Parse an HTML page.</span><br><span class="line">html_attr	Extract attributes, text and tag name from html.</span><br><span class="line">html_attrs	Extract attributes, text and tag name from html.</span><br><span class="line">html_children	Extract attributes, text and tag name from html.</span><br><span class="line">html_form	Parse forms <span class="keyword">in</span> a page.</span><br><span class="line">html_name	Extract attributes, text and tag name from html.</span><br><span class="line">html_node	Select nodes from an HTML document</span><br><span class="line">html_nodes	Select nodes from an HTML document</span><br><span class="line">html_session	Simulate a session <span class="keyword">in</span> an html browser.</span><br><span class="line">html_table	Parse an html table into a data frame.</span><br><span class="line">html_text	Extract attributes, text and tag name from html.</span><br><span class="line">is.session	Simulate a session <span class="keyword">in</span> an html browser.</span><br><span class="line">jump_to	Navigate to a new url.</span><br><span class="line">pluck	Extract elements of a <span class="built_in">list</span> by position.</span><br><span class="line">read_xml.session	Parse an HTML page.</span><br><span class="line">repair_encoding	Guess and repair faulty character encoding.</span><br><span class="line">session_history	History navigation tools</span><br><span class="line">set_values	Set values <span class="keyword">in</span> a form.</span><br><span class="line">submit_form	Submit a form back to the server.</span><br></pre></td></tr></table></figure>
-
 <p><code>rvest</code>包中经常使用的有下面几个：</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">html_nodes(x, css, xpath)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个函数用于从html文件中去定位到需要的内容的节点的位置；</span></span><br><span class="line"><span class="comment">#定位的方式有两种一种是通过xpath定位一种是通过css进行定位</span></span><br><span class="line"></span><br><span class="line">html_node(x, css, xpath)</span><br><span class="line"></span><br><span class="line"><span class="comment">#只是输出一个元素</span></span><br><span class="line">----</span><br><span class="line">html_text(x, trim = <span class="literal">FALSE</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个包用来获取html文件中的文本数据。x是定位到的文本所在的节点；trim参数可以去掉文本前后的空格</span></span><br><span class="line"></span><br><span class="line">----</span><br><span class="line">html_table(x, header = <span class="literal">NA</span>, trim = <span class="literal">TRUE</span>, fill = <span class="literal">FALSE</span>, dec = <span class="string">&quot;.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个函数用来读取网页中的表格，转化为数据框</span></span><br><span class="line"><span class="comment">#x：一个html文件、或者是一个节点、节点集。 </span></span><br><span class="line"><span class="comment">#header：是否将第一行设为表头？如果为NA，则默认的是当含有&lt;th&gt;标签时，将以第一行作为表头。</span></span><br><span class="line"><span class="comment">#trim：去掉内容中前后的空格</span></span><br><span class="line"><span class="comment">#fill：缺失值是否自动填充</span></span><br><span class="line"><span class="comment">#dec：转化为十进制</span></span><br><span class="line"></span><br><span class="line">----</span><br><span class="line">html_attr(x, name, default = <span class="literal">NA_character_</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取属性内容，x是节点，name获取节点中哪个属性的值。</span></span><br></pre></td></tr></table></figure>
-
 <h2 id="数据爬取步骤"><a href="#数据爬取步骤" class="headerlink" title="数据爬取步骤"></a>数据爬取步骤</h2><p><code>rvest</code>爬取数据的步骤非常的简单，一般来说是三步：</p>
 <ol>
 <li>读取网页：借助<code>read_html()</code>函数去读取网页</li>
@@ -299,12 +312,10 @@
 </li>
 </ol>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#爬取静态网站pubmed示例</span></span><br><span class="line"><span class="comment">#调用包</span></span><br><span class="line">library(<span class="string">&quot;rvest&quot;</span>)</span><br><span class="line"><span class="comment">#第一步、读取网页。</span></span><br><span class="line">page_content &lt;- read_html( x= <span class="string">&quot;&lt;http://www.stats.gov.cn/tjsj/zxfb/202010/t20201027_1796416.html&gt;&quot;</span> )</span><br><span class="line"><span class="comment">#第二步、爬取内容。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#2.1、定位</span></span><br><span class="line"><span class="comment">#xpath:使用xpat定位</span></span><br><span class="line"><span class="comment">#css：优点：简洁 缺点：定位可能不精确。</span></span><br><span class="line">node &lt;- <span class="string">&#x27;//*[@id=&quot;search-results&quot;]/section/div[1]/div/article[1]/div[2]/div[1]/a&#x27;</span></span><br><span class="line">nodes_content &lt;- html_nodes(x = page_content,xpath = node)</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.2、爬起数据</span></span><br><span class="line">html_text(x = nodes_content,trim = <span class="built_in">T</span>)</span><br></pre></td></tr></table></figure>
-
 <p><a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a> 是一个免费的搜索引擎，提供生物医学方面的论文搜索以及摘要。</p>
 <p>上面用的是<code>xpath</code> 进行定位，也可以使用<code>css</code>进行定位；这两种定位各有各的优缺点。</p>
 <h3 id="xpath定位"><a href="#xpath定位" class="headerlink" title="xpath定位"></a>xpath定位</h3><p><code>xpath</code>简单的来说是直接通过路径来进行定位，如：</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">//*[@id=<span class="string">&quot;search-results&quot;</span>]/section/div[<span class="number">1</span>]/div/article[<span class="number">1</span>]/div[<span class="number">2</span>]/div[<span class="number">1</span>]/a</span><br></pre></td></tr></table></figure>
-
 <p>这种形式就类似于我们文件夹中的路径，有两种路径：</p>
 <ol>
 <li>绝对路径：路径以<code>/</code>符号分隔，非常精确的定位到节点所在的位置</li>
@@ -312,7 +323,6 @@
 </ol>
 <p>例如有两个小区，每个小区两栋楼一单元与二单元，每一栋楼有五层。</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">一号小区/一单元/二楼  </span><br><span class="line"><span class="comment">#绝对定位，一号小区一单元二楼</span></span><br><span class="line"></span><br><span class="line">一号小区//二楼</span><br><span class="line"><span class="comment">#采用了相对路径，一号小区所有的二楼，既包括一单元的也包括二单元的二楼</span></span><br><span class="line"></span><br><span class="line">//二楼</span><br><span class="line"><span class="comment">#相对路径，各个小区各个单元的二楼</span></span><br></pre></td></tr></table></figure>
-
 <p>在谷歌浏览器中可以直接在浏览器中检查源代码（F12），定位到节点复制xpath地址，使用起来非常的简单。</p>
 ]]></content>
       <categories>
@@ -325,52 +335,19 @@
       </tags>
   </entry>
   <entry>
-    <title>理想中的学者</title>
-    <url>//posts/2/</url>
-    <content><![CDATA[<blockquote class="blockquote-center">
-<p>今天的内卷是一个陀螺式的死循环</p>
-<p><strong>项飙</strong></p>
-
-</blockquote>
-
-<blockquote>
-<p>今天的内卷是一个陀螺式的死循环，我们要不断的要抽打自己，让自己就这么空转，每天要不断地自己动员自己是吧？所以它是一个高度动态的陷阱，所以非常耗能的。[1]</p>
-</blockquote>
-<a id="more"></a>
-
-<p>这些天一直在听项飙的一些音频，有关于移民、世界国民以及内卷化的一些内容，从这些音频中进一步加深了对项飙的印象。对于项飙这个名字很多人都非常的陌生，因为作为一个人类学家，项飙从研究生开始就去了牛津，后来也一直在国外任教，以前几乎很少在国内的社交媒体中亮相。</p>
-<p>对于我来说，第一次知道项飙也是今年早些时候的事，由于疫情的原因待在家里，通过看许知远的<strong>《十三邀》</strong>认识到了项飙这个人，看完那期节目后我对于项飙印象非常的深刻，之所以这样就我个人来说认为是有很多的原因的：</p>
-<p>首先是他的外观：在节目中，他是一个个子不高皮肤较黑身体非常的瘦的人，打扮的也非常的朴素，一眼看起来非常就是非常的平易近人的样子，丝毫没有架子气。这一切感觉似乎都与他身上的头衔有一丝不符，之所以有这种感觉我想是因为平常所看到的一些所谓的学者似乎很多都是 “ 油光满面 ” ，西装革履，似乎看起来就没那么亲近了。</p>
-<img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gkakmilwh4j30u00gw3z3.jpg" title="◎ 项飙" width="80%" height="50%" />
-
-
-
-<p>其实让我最印象深刻的并不是他的外在的一面，而是作为一个学者内在的一面。在听他与许知远的对话的过程中有一种特别的舒服的感觉，在为一个人类学家，他在讨论有关于 “ 附近 ” 等社会学问题的时候并没有用那些多么高深的专业语句，而是非常的清晰的简洁的向听众讲述了他对专业问题的见解，更重要的是他展示了自己的整个的思考的过程，我认为这是最让我难忘的一点。</p>
-]]></content>
-      <categories>
-        <category>闲言碎语</category>
-      </categories>
-      <tags>
-        <tag>项飙</tag>
-        <tag>人类学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>真的有理想的工作吗？</title>
     <url>//posts/5/</url>
     <content><![CDATA[<blockquote class="blockquote-center">
 <p>最理想的一个工作状态就是我可以去做我想做的事情，你不要去问我想做什么，因为我自己也不知道。</p>
 
 </blockquote>
-
-<p>今天周末休息半天，没事在吃饭的时候边吃边在看 YouTube 上的一个系列视频 – 。一句话简单的评价就是这是一个很接地气的视频节目。</p>
+<p>今天周末休息半天，没事在吃饭的时候边吃边在看 YouTube 上的一个系列视频 — 。一句话简单的评价就是这是一个很接地气的视频节目。</p>
 <a id="more"></a>
-
 <p>在这些视频中有一个视频是采访几个90后的“打工人”，询问他们是否对自己的工作状态感到满意，他们理想的工作状态是上面呢？虽然自己还没有到他们那一步但是看了感到莫名的触动！</p>
 <p>通过他们采访的回答，很容易的发现他们存在很多的共同点：</p>
 <ol>
-<li> 他们由于各种各样的原因对自己的工作状态表示不满意；有的认为工作很辛苦，有的认为工作的人际关系复杂，所谓的<strong>办公室政治</strong>（头一次听到，很有意思的一个词语）。总而言之是不满意。</li>
-<li> 当问他们的理想的工作状态的时候，有一个女孩的回答就是前面引用的那句话，而其他几个的回答也几乎是差不多的想去做自己喜欢做的事情。</li>
+<li>他们由于各种各样的原因对自己的工作状态表示不满意；有的认为工作很辛苦，有的认为工作的人际关系复杂，所谓的<strong>办公室政治</strong>（头一次听到，很有意思的一个词语）。总而言之是不满意。</li>
+<li>当问他们的理想的工作状态的时候，有一个女孩的回答就是前面引用的那句话，而其他几个的回答也几乎是差不多的想去做自己喜欢做的事情。</li>
 </ol>
 <p>我很喜欢那个女孩的回答，她的回答是一类人的回答，仔细想想或许以后也会是自己的回答吧！我不禁的思考为什么很多人想去做自己想做的事情，却有的时候竟然不知道自己想做的是什么呢？</p>
 <p>我的思绪飘到了前一段时间听的项飙的一个关于“内卷”化的访谈。在节目中项飙认为我们现在之所以存在如此严重的所谓的“内卷”化的现象是有原因的：</p>
@@ -399,7 +376,6 @@
     <url>//posts/7/</url>
     <content><![CDATA[<p>在书中有一章名为：“赤脚的对冲基金经理”，毫无疑问这应该是这本书这让我影响深刻的一个标题：穷人在某种程度上与基金经理一样几乎无时无刻不面临着非常高的风险，但是他们所面临高风险并没有给他们带来相应的高收益。</p>
 <a id="more"></a>
-
 <p>由于高风险的存在，穷人自然也会去使用各种各样的方式去应对风险：</p>
 <h3 id="私人处理办法"><a href="#私人处理办法" class="headerlink" title="私人处理办法"></a>私人处理办法</h3><p>例如在书中提到的：</p>
 <p>他们面临失业与工资水平下降时，穷人往往会加大他们的工作量，想通过更多的工作去弥补由于可能的失业与低工资给自己带来的损失，尽管从某种意义上来说这种行为是无效的，因为过多的劳动供给只会导致工资的进一步下滑，但这也是穷人面对时的一种处理办法。</p>
