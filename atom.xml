@@ -6,7 +6,7 @@
   <link href="https://modernhero.cc/atom.xml" rel="self"/>
   
   <link href="https://modernhero.cc/"/>
-  <updated>2020-11-24T08:50:46.846Z</updated>
+  <updated>2020-11-24T09:36:03.127Z</updated>
   <id>https://modernhero.cc/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://modernhero.cc/posts/0008/"/>
     <id>https://modernhero.cc/posts/0008/</id>
     <published>2020-11-23T03:05:15.000Z</published>
-    <updated>2020-11-24T08:50:46.846Z</updated>
+    <updated>2020-11-24T09:36:03.127Z</updated>
     
     
     <summary type="html">&lt;p&gt;R语言提供了很多的概率分布的函数以及产生随机数的函数，通过这些函数我们可以做一些简单的simulation。&lt;/p&gt;</summary>
