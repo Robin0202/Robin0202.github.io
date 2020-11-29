@@ -233,59 +233,35 @@
       </tags>
   </entry>
   <entry>
-    <title>理想中的学者</title>
-    <url>//posts/2/</url>
-    <content><![CDATA[<blockquote class="blockquote-center">
-<p>今天的内卷是一个陀螺式的死循环</p>
-<p><strong>项飙</strong></p>
-
-</blockquote>
-<blockquote>
-<p>今天的内卷是一个陀螺式的死循环，我们要不断的要抽打自己，让自己就这么空转，每天要不断地自己动员自己是吧？所以它是一个高度动态的陷阱，所以非常耗能的。[1]</p>
-</blockquote>
-<a id="more"></a>
-<p>这些天一直在听项飙的一些音频，有关于移民、世界国民以及内卷化的一些内容，从这些音频中进一步加深了对项飙的印象。对于项飙这个名字很多人都非常的陌生，因为作为一个人类学家，项飙从研究生开始就去了牛津，后来也一直在国外任教，以前几乎很少在国内的社交媒体中亮相。</p>
-<p>对于我来说，第一次知道项飙也是今年早些时候的事，由于疫情的原因待在家里，通过看许知远的<strong>《十三邀》</strong>认识到了项飙这个人，看完那期节目后我对于项飙印象非常的深刻，之所以这样就我个人来说认为是有很多的原因的：</p>
-<p>首先是他的外观：在节目中，他是一个个子不高皮肤较黑身体非常的瘦的人，打扮的也非常的朴素，一眼看起来非常就是非常的平易近人的样子，丝毫没有架子气。这一切感觉似乎都与他身上的头衔有一丝不符，之所以有这种感觉我想是因为平常所看到的一些所谓的学者似乎很多都是 “ 油光满面 ” ，西装革履，似乎看起来就没那么亲近了。</p>
-<p><img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gkakmilwh4j30u00gw3z3.jpg" title="◎ 项飙" width="80%" height="50%" /></p>
-<p>其实让我最印象深刻的并不是他的外在的一面，而是作为一个学者内在的一面。在听他与许知远的对话的过程中有一种特别的舒服的感觉，在为一个人类学家，他在讨论有关于 “ 附近 ” 等社会学问题的时候并没有用那些多么高深的专业语句，而是非常的清晰的简洁的向听众讲述了他对专业问题的见解，更重要的是他展示了自己的整个的思考的过程，我认为这是最让我难忘的一点。</p>
-]]></content>
-      <categories>
-        <category>闲言碎语</category>
-      </categories>
-      <tags>
-        <tag>项飙</tag>
-        <tag>人类学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>R语言简单的simulation</title>
     <url>//posts/0008/</url>
     <content><![CDATA[<p>R语言提供了很多的概率分布的函数以及产生随机数的函数，通过这些函数我们可以做一些简单的simulation。</p>
 <a id="more"></a>
 <h3 id="通过simulation来计算-Π-的值"><a href="#通过simulation来计算-Π-的值" class="headerlink" title="通过simulation来计算 Π 的值"></a>通过simulation来计算 Π 的值</h3><p>我们通过在R语言中通过simulation的方法近似的去估计 Π 的数值。</p>
-<p><strong>基本思路</strong></p>
-<ul>
+<h4 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h4><ul>
 <li>生成从一个 x 属于(-1,1) , y 属于(-1,1)的正方形中产生大量的随机点N。</li>
 <li>计算产生的大量的随机点在圆心位于圆点，半径为1的点的个数M。</li>
 <li>基于大数定律当N趋于无穷大时有下面的等式成立：</li>
 </ul>
 <script type="math/tex; mode=display">
-\frac{n}{N} = \frac{pair^2 u}{4}</script><p>Simple inline $a = b + c$.</p>
-<p>This equation {&#37; math \cos 2\theta = \cos^2 \theta - \sin^2 \theta =  2 \cos^2 \theta - 1 %} is inline.</p>
-<script type="math/tex; mode=display">
-\left[
-\begin{array}{cc|c}
-    1&2&3\\\\
-    4&5&6
-\end{array}
-\right]</script><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">N</span> &lt;- <span class="number">100000</span></span><br><span class="line"><span class="attribute">x</span> &lt;- runif(N,min = -<span class="number">1</span>,max = <span class="number">1</span>)</span><br><span class="line"><span class="attribute">y</span> &lt;- runif(N,min = -<span class="number">1</span>,max = <span class="number">1</span>)</span><br><span class="line"><span class="comment">#产生100000个随机点。</span></span><br><span class="line"><span class="attribute">z</span> &lt;- sum(x^<span class="number">2</span>+y^<span class="number">2</span>&lt;=<span class="number">1</span>)</span><br><span class="line"><span class="comment">#统计100000个随机点中位于圆中的个数。</span></span><br><span class="line"><span class="attribute">pai</span> &lt;- z/N*<span class="number">4</span></span><br><span class="line"><span class="comment">#计算pai的数值</span></span><br></pre></td></tr></table></figure>
+\frac{n}{N} = \frac{\pi \cdot r^2}{4}</script><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">N</span> &lt;- <span class="number">100000</span></span><br><span class="line"><span class="attribute">x</span> &lt;- runif(N,min = -<span class="number">1</span>,max = <span class="number">1</span>)</span><br><span class="line"><span class="attribute">y</span> &lt;- runif(N,min = -<span class="number">1</span>,max = <span class="number">1</span>)</span><br><span class="line"><span class="comment">#产生100000个随机点。</span></span><br><span class="line"><span class="attribute">z</span> &lt;- sum(x^<span class="number">2</span>+y^<span class="number">2</span>&lt;=<span class="number">1</span>)</span><br><span class="line"><span class="comment">#统计100000个随机点中位于圆中的个数。</span></span><br><span class="line"><span class="attribute">pai</span> &lt;- z/N*<span class="number">4</span></span><br><span class="line"><span class="comment">#计算pai的数值</span></span><br></pre></td></tr></table></figure>
 <p><img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gl0dsirz0vj30lj0lkmzj.jpg" alt="图一" style="zoom:50%;" /></p>
 <p>上面就是简单的simulation计算 Π 的估计值。</p>
-<h3 id="验证正态分布的3法则"><a href="#验证正态分布的3法则" class="headerlink" title="验证正态分布的3法则"></a>验证正态分布的3法则</h3><p>在统计学上存在一个法则，经常用来检验数据</p>
-<figure class="highlight excel"><table><tr><td class="code"><pre><span class="line"><span class="built_in">N</span> &lt;- <span class="number">1000000</span></span><br><span class="line"></span><br><span class="line">#一个标准差</span><br><span class="line"></span><br><span class="line">x &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = -<span class="number">1</span>,<span class="built_in">max</span> = <span class="number">1</span>)</span><br><span class="line">y &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = <span class="number">0</span>,<span class="built_in">max</span> = dnorm(<span class="number">0</span>))</span><br><span class="line"><span class="symbol">z1</span> &lt;- <span class="built_in">sum</span>(y&lt;dnorm(x))/<span class="built_in">N</span>*(<span class="number">2</span>*dnorm(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#两个标准差</span><br><span class="line"></span><br><span class="line">x &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = -<span class="number">2</span>,<span class="built_in">max</span> = <span class="number">2</span>)</span><br><span class="line">y &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = <span class="number">0</span>,<span class="built_in">max</span> = dnorm(<span class="number">0</span>))</span><br><span class="line"><span class="symbol">z2</span> &lt;- <span class="built_in">sum</span>(y&lt;dnorm(x))/<span class="built_in">N</span>*(<span class="number">4</span>*dnorm(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">#三个标准差</span><br><span class="line"></span><br><span class="line">x &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = -<span class="number">3</span>,<span class="built_in">max</span> = <span class="number">3</span>)</span><br><span class="line">y &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = <span class="number">0</span>,<span class="built_in">max</span> = dnorm(<span class="number">0</span>))</span><br><span class="line"><span class="symbol">z3</span> &lt;- <span class="built_in">sum</span>(y&lt;dnorm(x))/<span class="built_in">N</span>*(<span class="number">6</span>*dnorm(<span class="number">0</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line">plot(<span class="name">x</span>,y,pch=<span class="string">&quot;.&quot;</span>)</span><br><span class="line">lines(<span class="name">seq</span>(<span class="name">-2</span>,<span class="number">2</span>,length=500),dnorm(<span class="name">seq</span>(<span class="name">-2</span>,<span class="number">2</span>,length=500)),col=<span class="string">&quot;red&quot;</span>)</span><br><span class="line">abline(<span class="name">v=c</span>(<span class="name">-2</span>,<span class="number">2</span>),col=<span class="string">&quot;red&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="验证正态分布的3-sigma-法则"><a href="#验证正态分布的3-sigma-法则" class="headerlink" title="验证正态分布的3$ \sigma $法则"></a>验证正态分布的3$ \sigma $法则</h3><p>在统计学上存在一个3$ \sigma $法则：</p>
+<p><blockquote class="quoteback" darkmode="" data-title="%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99%EF%BC%88%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%89_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91" data-author="" cite="https://baike.baidu.com/item/%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99%EF%BC%88%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%89">
+                      经验规则是统计规律，指出了在正态分布，几乎所有数据都将落在均值的三倍标准差内。所述经验规则表明，68%的数据将分布在的第一个标准偏差之内，95%将落在第二个标准差之内，和99.7%将落在均值的前三个标准偏差之内。
+                      <footer> <cite><a href="https://baike.baidu.com/item/%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99%EF%BC%88%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%89">https://baike.baidu.com/item/%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99%EF%BC%88%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%89</a></cite></footer>
+                      </blockquote><script note="" src="https://cdn.jsdelivr.net/gh/Blogger-Peer-Review/quotebacks@1/quoteback.js"></script></p>
+<p>我们可以对这个法则进行简单的 simulation。</p>
+<h4 id="基本思路-1"><a href="#基本思路-1" class="headerlink" title="基本思路"></a>基本思路</h4><figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line">plot(<span class="name">x</span>,y,pch=<span class="string">&quot;.&quot;</span>)</span><br><span class="line">lines(<span class="name">seq</span>(<span class="name">-2</span>,<span class="number">2</span>,length=500),dnorm(<span class="name">seq</span>(<span class="name">-2</span>,<span class="number">2</span>,length=500)),col=<span class="string">&quot;red&quot;</span>)</span><br><span class="line">abline(<span class="name">v=c</span>(<span class="name">-2</span>,<span class="number">2</span>),col=<span class="string">&quot;red&quot;</span>)</span><br></pre></td></tr></table></figure>
 <p><img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gl0cwutxy5j30if07n3yh.jpg" alt="图二"></p>
+<ul>
+<li>如上图二所示，我们在产生在2$ \sigma $长的长方形中大量的随机点N个</li>
+<li>计算位于正态分布下部的点的个数m</li>
+<li>通过下面的式子可以计算是否大致符合经验法则</li>
+</ul>
+<script type="math/tex; mode=display">
+\frac{m}{N}\cdot 2 \cdot dnorm(0) \simeq 0.9544</script><h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight excel"><table><tr><td class="code"><pre><span class="line"><span class="built_in">N</span> &lt;- <span class="number">1000000</span></span><br><span class="line"></span><br><span class="line">#一个标准差</span><br><span class="line"></span><br><span class="line">x &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = -<span class="number">1</span>,<span class="built_in">max</span> = <span class="number">1</span>)</span><br><span class="line">y &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = <span class="number">0</span>,<span class="built_in">max</span> = dnorm(<span class="number">0</span>))</span><br><span class="line"><span class="symbol">z1</span> &lt;- <span class="built_in">sum</span>(y&lt;dnorm(x))/<span class="built_in">N</span>*(<span class="number">2</span>*dnorm(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#两个标准差</span><br><span class="line"></span><br><span class="line">x &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = -<span class="number">2</span>,<span class="built_in">max</span> = <span class="number">2</span>)</span><br><span class="line">y &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = <span class="number">0</span>,<span class="built_in">max</span> = dnorm(<span class="number">0</span>))</span><br><span class="line"><span class="symbol">z2</span> &lt;- <span class="built_in">sum</span>(y&lt;dnorm(x))/<span class="built_in">N</span>*(<span class="number">4</span>*dnorm(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">#三个标准差</span><br><span class="line"></span><br><span class="line">x &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = -<span class="number">3</span>,<span class="built_in">max</span> = <span class="number">3</span>)</span><br><span class="line">y &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = <span class="number">0</span>,<span class="built_in">max</span> = dnorm(<span class="number">0</span>))</span><br><span class="line"><span class="symbol">z3</span> &lt;- <span class="built_in">sum</span>(y&lt;dnorm(x))/<span class="built_in">N</span>*(<span class="number">6</span>*dnorm(<span class="number">0</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>R语言</category>
@@ -339,6 +315,32 @@
       <tags>
         <tag>R语言</tag>
         <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>理想中的学者</title>
+    <url>//posts/2/</url>
+    <content><![CDATA[<blockquote class="blockquote-center">
+<p>今天的内卷是一个陀螺式的死循环</p>
+<p><strong>项飙</strong></p>
+
+</blockquote>
+<blockquote>
+<p>今天的内卷是一个陀螺式的死循环，我们要不断的要抽打自己，让自己就这么空转，每天要不断地自己动员自己是吧？所以它是一个高度动态的陷阱，所以非常耗能的。[1]</p>
+</blockquote>
+<a id="more"></a>
+<p>这些天一直在听项飙的一些音频，有关于移民、世界国民以及内卷化的一些内容，从这些音频中进一步加深了对项飙的印象。对于项飙这个名字很多人都非常的陌生，因为作为一个人类学家，项飙从研究生开始就去了牛津，后来也一直在国外任教，以前几乎很少在国内的社交媒体中亮相。</p>
+<p>对于我来说，第一次知道项飙也是今年早些时候的事，由于疫情的原因待在家里，通过看许知远的<strong>《十三邀》</strong>认识到了项飙这个人，看完那期节目后我对于项飙印象非常的深刻，之所以这样就我个人来说认为是有很多的原因的：</p>
+<p>首先是他的外观：在节目中，他是一个个子不高皮肤较黑身体非常的瘦的人，打扮的也非常的朴素，一眼看起来非常就是非常的平易近人的样子，丝毫没有架子气。这一切感觉似乎都与他身上的头衔有一丝不符，之所以有这种感觉我想是因为平常所看到的一些所谓的学者似乎很多都是 “ 油光满面 ” ，西装革履，似乎看起来就没那么亲近了。</p>
+<p><img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gkakmilwh4j30u00gw3z3.jpg" title="◎ 项飙" width="80%" height="50%" /></p>
+<p>其实让我最印象深刻的并不是他的外在的一面，而是作为一个学者内在的一面。在听他与许知远的对话的过程中有一种特别的舒服的感觉，在为一个人类学家，他在讨论有关于 “ 附近 ” 等社会学问题的时候并没有用那些多么高深的专业语句，而是非常的清晰的简洁的向听众讲述了他对专业问题的见解，更重要的是他展示了自己的整个的思考的过程，我认为这是最让我难忘的一点。</p>
+]]></content>
+      <categories>
+        <category>闲言碎语</category>
+      </categories>
+      <tags>
+        <tag>项飙</tag>
+        <tag>人类学</tag>
       </tags>
   </entry>
   <entry>
