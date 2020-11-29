@@ -6,7 +6,7 @@
   <link href="https://modernhero.cc/atom.xml" rel="self"/>
   
   <link href="https://modernhero.cc/"/>
-  <updated>2020-11-29T07:31:17.720Z</updated>
+  <updated>2020-11-29T12:27:58.141Z</updated>
   <id>https://modernhero.cc/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>学校食堂的感想</title>
+    <link href="https://modernhero.cc/posts/0009/"/>
+    <id>https://modernhero.cc/posts/0009/</id>
+    <published>2020-11-29T11:35:01.000Z</published>
+    <updated>2020-11-29T12:27:58.141Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;几乎和昨天一样，中午小憩一会休息好之后，蹭着食堂人少悠哉游哉的去食堂吃饭，今天中午吃麻辣烫，吃麻辣烫的这家店铺不单单有麻辣烫还可以吃饭，这家店铺的生意在食堂里面是非常不错的！&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="闲言碎语" scheme="https://modernhero.cc/categorys/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
+    
+    <category term="生活" scheme="https://modernhero.cc/categorys/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="食品卫生" scheme="https://modernhero.cc/tags/%E9%A3%9F%E5%93%81%E5%8D%AB%E7%94%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>R语言简单的simulation</title>
     <link href="https://modernhero.cc/posts/0008/"/>
     <id>https://modernhero.cc/posts/0008/</id>
     <published>2020-11-23T03:05:15.000Z</published>
-    <updated>2020-11-29T07:31:17.720Z</updated>
+    <updated>2020-11-29T08:00:09.307Z</updated>
     
     
     <summary type="html">&lt;p&gt;R语言提供了很多的概率分布的函数以及产生随机数的函数，通过这些函数我们可以做一些简单的simulation。&lt;/p&gt;</summary>
