@@ -6,7 +6,7 @@
   <link href="https://modernhero.cc/atom.xml" rel="self"/>
   
   <link href="https://modernhero.cc/"/>
-  <updated>2020-12-25T13:15:35.840Z</updated>
+  <updated>2020-12-25T13:23:20.072Z</updated>
   <id>https://modernhero.cc/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://modernhero.cc/posts/undefined/"/>
     <id>https://modernhero.cc/posts/undefined/</id>
     <published>2020-12-25T13:07:27.000Z</published>
-    <updated>2020-12-25T13:15:35.840Z</updated>
+    <updated>2020-12-25T13:23:20.072Z</updated>
     
     
     <summary type="html">“向量与矩阵是R语言中基本的两个数据结构，我们在使用R的过程中经常需要建立一些特定的向量与矩阵，并且对矩阵与向量进行相应的操作。”</summary>

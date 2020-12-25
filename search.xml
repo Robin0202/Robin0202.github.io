@@ -444,7 +444,7 @@
 <li>使用 <code>rep( )</code> 函数创建向量序列</li>
 </ul>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="built_in">c</span>(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>,<span class="string">&quot;d&quot;</span>)</span><br><span class="line"><span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">1:<span class="number">5</span></span><br><span class="line">5:<span class="number">1</span></span><br></pre></td></tr></table></figure>
-<h3 id="产生规则序列"><a href="#产生规则序列" class="headerlink" title="### 产生规则序列"></a>### 产生规则序列</h3><p><strong><code>seq( )</code> 函数</strong></p>
+<h3 id="产生规则序列"><a href="#产生规则序列" class="headerlink" title="产生规则序列"></a>产生规则序列</h3><p><strong><code>seq( )</code> 函数</strong></p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">seq(from = <span class="number">1</span>, to = <span class="number">1</span>, by = ((to - from)/(length.out - <span class="number">1</span>)),</span><br><span class="line">    length.out = <span class="literal">NULL</span>, along.with = <span class="literal">NULL</span>, ...)</span><br></pre></td></tr></table></figure>
 <p><strong>例如：</strong></p>
 <p>1、产生 1、3、5、7、9、11、13、15、17 的等差序列：</p>
@@ -456,11 +456,12 @@
 <p><strong>例如：</strong></p>
 <p>产生 1、2、2、3、3、3、4、4、4、4 的序列：</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="built_in">rep</span>(<span class="number">1</span>:<span class="number">4</span>,<span class="number">1</span>:<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
-<p>产生一个 c(1,0,2,0,0,3,0,0,0,4,0,0,0….100,0,,,,,,,,,0) 的向量：</p>
+<p>产生一个 1,0,2,0,0,3,0,0,0,4,0,0,0….100,0,,,,,,,,,0 的序列：</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &lt;- numeric(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">for</span> (<span class="selector-tag">i</span> <span class="keyword">in</span> <span class="number">1</span>:<span class="number">100</span>)&#123;</span><br><span class="line">  <span class="selector-tag">a</span> = c(<span class="selector-tag">a</span>,<span class="selector-tag">i</span>,rep(<span class="number">0</span>,i))</span><br><span class="line">&#125;</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
 <h2 id="向量运算"><a href="#向量运算" class="headerlink" title="向量运算"></a>向量运算</h2><p>在R语言中可以对向量直接进行运算也可以将向量放入一个 expression 中进行运算。</p>
 <blockquote><p>Vectors can be used in arithmetic expressions, in which case the operations are performed element by element. Vectors occurring in the same expression need not all be of the same length. If they are not, the value of the expression is a vector with the same length as the longest vector which occurs in the expression. Shorter vectors in the expression are recycled as often as need be (perhaps fractionally) until they match the length of the longest vector. In particular a constant is simply repeated. </p>
 <footer><strong>R-introduction</strong></footer></blockquote>
+<p><br></p>
 <p><strong>例如：</strong></p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">&gt; x &lt;- <span class="built_in">c</span>(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">&gt; y &lt;- <span class="built_in">c</span>(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>)</span><br><span class="line">&gt; z &lt;- <span class="number">2</span>+y</span><br><span class="line">&gt; z</span><br><span class="line">[<span class="number">1</span>] <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span></span><br></pre></td></tr></table></figure>
 <h2 id="与向量有关的几个排序"><a href="#与向量有关的几个排序" class="headerlink" title="与向量有关的几个排序"></a>与向量有关的几个排序</h2><p>在R语言中，有三个很容易搞混的与排序有关的函数：</p>
@@ -474,7 +475,8 @@
 <p><code>sort ( )</code> 函数默认的是直接对向量中的元素进行排序，然后将排序的结果进行输出。</p>
 <p><code>order( )</code> 函数是按照原始向量元素对应位置进行排序。</p>
 <p><code>rank( )</code> 函数是向量的排秩。</p>
-<h1 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h1><h2 id="创建矩阵"><a href="#创建矩阵" class="headerlink" title="创建矩阵"></a>创建矩阵</h2><h3 id="matrix-函数"><a href="#matrix-函数" class="headerlink" title="matrix( ) 函数"></a><code>matrix( )</code> 函数</h3><p>在R语言中，<strong>在某种程度上创建一个矩阵就是创建一个相应的向量，然后将向量中的数据往矩阵中填充，</strong>在R语言中，创建矩阵的基本函数是：<code>matrix( )</code> 函数</p>
+<h1 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h1><h2 id="创建矩阵"><a href="#创建矩阵" class="headerlink" title="创建矩阵"></a>创建矩阵</h2><p><strong><code>matrix( )</code> 函数</strong></p>
+<p>在R语言中，<strong>在某种程度上创建一个矩阵就是创建一个相应的向量，然后将向量中的数据往矩阵中填充，</strong>在R语言中，创建矩阵的基本函数是：<code>matrix( )</code> 函数</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">matrix</span><span class="params">(data, nrow , ncol, byrow = FALSE,dimnames)</span></span></span><br></pre></td></tr></table></figure>
 <p><strong>例如：</strong></p>
 <p>创建一个矩阵：</p>
@@ -483,7 +485,8 @@
 {\rm{1}}&{\rm{0}}&{\rm{1}}\\
 {\rm{1}}&{\rm{1}}&{\rm{0}}
 \end{array}} \right)\</script><figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">&gt; vec &lt;- c(rep(rep(c(<span class="number">0</span>,<span class="number">1</span>),c(<span class="number">1</span>,<span class="number">3</span>)),<span class="number">2</span>),<span class="number">0</span>)</span><br><span class="line">&gt; matrix(vec,<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line"><span class="string">     [,1]</span> [,<span class="number">2</span>] [,<span class="number">3</span>]</span><br><span class="line"><span class="string">[1,]</span>    <span class="number">0</span>    <span class="number">1</span>    <span class="number">1</span></span><br><span class="line"><span class="string">[2,]</span>    <span class="number">1</span>    <span class="number">0</span>    <span class="number">1</span></span><br><span class="line"><span class="string">[3,]</span>    <span class="number">1</span>    <span class="number">1</span>    <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<h3 id="特殊矩阵"><a href="#特殊矩阵" class="headerlink" title="特殊矩阵"></a>特殊矩阵</h3><p>在R语言中提供了一些对矩阵进行操作的特殊函数：</p>
+<p><strong>特殊矩阵</strong></p>
+<p>在R语言中提供了一些对矩阵进行操作的特殊函数：</p>
 <p><strong>对角矩阵：<code>diag( )</code> 函数</strong></p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">diag(x = <span class="number">1</span>, nrow, ncol, <span class="built_in">names</span> = <span class="literal">TRUE</span>)</span><br><span class="line">diag(x) &lt;- value</span><br></pre></td></tr></table></figure>
 <p>这个函数有两种用法：</p>
