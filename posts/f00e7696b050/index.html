@@ -25,24 +25,21 @@
     var CONFIG = {"hostname":"modernhero.cc","root":"/","scheme":"Mist","version":"8.0.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="R语言提供了很多的概率分布的函数以及产生随机数的函数，通过这些函数我们可以做一些简单的simulation。">
+  <meta name="description" content="最理想的一个工作状态就是我可以去做我想做的事情，你不要去问我想做什么，因为我自己也不知道。   今天周末休息半天，没事在吃饭的时候边吃边在看 YouTube 上的一个系列视频 — 。一句话简单的评价就是这是一个很接地气的视频节目。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="R语言简单的simulation">
-<meta property="og:url" content="https://modernhero.cc/68292e6b8acc">
+<meta property="og:title" content="真的有理想的工作吗？">
+<meta property="og:url" content="https://modernhero.cc/posts/f00e7696b050/index.html">
 <meta property="og:site_name" content="ModernHero">
-<meta property="og:description" content="R语言提供了很多的概率分布的函数以及产生随机数的函数，通过这些函数我们可以做一些简单的simulation。">
+<meta property="og:description" content="最理想的一个工作状态就是我可以去做我想做的事情，你不要去问我想做什么，因为我自己也不知道。   今天周末休息半天，没事在吃饭的时候边吃边在看 YouTube 上的一个系列视频 — 。一句话简单的评价就是这是一个很接地气的视频节目。">
 <meta property="og:locale">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007DtFxUly1gl0dsirz0vj30lj0lkmzj.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007DtFxUly1gl0cwutxy5j30if07n3yh.jpg">
-<meta property="article:published_time" content="2020-11-23T03:05:15.000Z">
-<meta property="article:modified_time" content="2020-11-29T08:00:09.307Z">
+<meta property="article:published_time" content="2020-11-07T05:43:17.000Z">
+<meta property="article:modified_time" content="2020-11-07T14:32:46.273Z">
 <meta property="article:author" content="Robin Li">
-<meta property="article:tag" content="R语言">
+<meta property="article:tag" content="日常生活">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/007DtFxUly1gl0dsirz0vj30lj0lkmzj.jpg">
 
 
-<link rel="canonical" href="https://modernhero.cc/68292e6b8acc">
+<link rel="canonical" href="https://modernhero.cc/posts/f00e7696b050/">
 
 
 <script class="page-configurations">
@@ -55,7 +52,7 @@
   };
 </script><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <title>R语言简单的simulation | ModernHero</title>
+  <title>真的有理想的工作吗？ | ModernHero</title>
   
 
 
@@ -214,7 +211,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -226,7 +223,6 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87simulation%E6%9D%A5%E8%AE%A1%E7%AE%97-%CE%A0-%E7%9A%84%E5%80%BC"><span class="nav-text">通过simulation来计算 Π 的值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF"><span class="nav-text">基本思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E7%9A%843-sigma-%E6%B3%95%E5%88%99"><span class="nav-text">验证正态分布的3$ \sigma $法则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF-1"><span class="nav-text">基本思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="nav-text">代码</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -309,7 +305,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/68292e6b8acc">
+    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/posts/f00e7696b050/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.png">
@@ -325,7 +321,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          R语言简单的simulation
+          真的有理想的工作吗？
         </h1>
 
         <div class="post-meta-container">
@@ -335,27 +331,21 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">创建于</span>
+      
 
-      <time title="创建时间：2020-11-23 11:05:15" itemprop="dateCreated datePublished" datetime="2020-11-23T11:05:15+08:00">2020-11-23</time>
+      <time title="创建时间：2020-11-07 13:43:17 / 修改时间：22:32:46" itemprop="dateCreated datePublished" datetime="2020-11-07T13:43:17+08:00">2020-11-07</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-11-29 16:00:09" itemprop="dateModified" datetime="2020-11-29T16:00:09+08:00">2020-11-29</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categorys/R%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">R语言</span></a>
+          <a href="/categorys/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">闲言碎语</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categorys/R%E8%AF%AD%E8%A8%80/%E7%BB%9F%E8%AE%A1%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">统计应用</span></a>
+          <a href="/categorys/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/%E7%A4%BE%E4%BC%9A/" itemprop="url" rel="index"><span itemprop="name">社会</span></a>
         </span>
     </span>
 
@@ -368,8 +358,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/68292e6b8acc#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/68292e6b8acc" itemprop="commentCount"></span>
+    <a title="valine" href="/posts/f00e7696b050/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/f00e7696b050/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -379,7 +369,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.3k</span>
+      <span>1.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -397,40 +387,39 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>R语言提供了很多的概率分布的函数以及产生随机数的函数，通过这些函数我们可以做一些简单的simulation。</p>
-<a id="more"></a>
-<h3 id="通过simulation来计算-Π-的值"><a href="#通过simulation来计算-Π-的值" class="headerlink" title="通过simulation来计算 Π 的值"></a>通过simulation来计算 Π 的值</h3><p>我们通过在R语言中通过simulation的方法近似的去估计 Π 的数值。</p>
-<h4 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h4><ul>
-<li>生成从一个 x 属于(-1,1) , y 属于(-1,1)的正方形中产生大量的随机点N。</li>
-<li>计算产生的大量的随机点在圆心位于圆点，半径为1的点的个数M。</li>
-<li>基于大数定律当N趋于无穷大时有下面的等式成立：</li>
-</ul>
-<script type="math/tex; mode=display">
-\frac{n}{N} = \frac{\pi \cdot r^2}{4}</script><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">N</span> &lt;- <span class="number">100000</span></span><br><span class="line"><span class="attribute">x</span> &lt;- runif(N,min = -<span class="number">1</span>,max = <span class="number">1</span>)</span><br><span class="line"><span class="attribute">y</span> &lt;- runif(N,min = -<span class="number">1</span>,max = <span class="number">1</span>)</span><br><span class="line"><span class="comment">#产生100000个随机点。</span></span><br><span class="line"><span class="attribute">z</span> &lt;- sum(x^<span class="number">2</span>+y^<span class="number">2</span>&lt;=<span class="number">1</span>)</span><br><span class="line"><span class="comment">#统计100000个随机点中位于圆中的个数。</span></span><br><span class="line"><span class="attribute">pai</span> &lt;- z/N*<span class="number">4</span></span><br><span class="line"><span class="comment">#计算pai的数值</span></span><br></pre></td></tr></table></figure>
-<p><img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gl0dsirz0vj30lj0lkmzj.jpg" alt="图一" style="zoom:50%;" /></p>
-<p>上面就是简单的simulation计算 Π 的估计值。</p>
-<h3 id="验证正态分布的3-sigma-法则"><a href="#验证正态分布的3-sigma-法则" class="headerlink" title="验证正态分布的3$ \sigma $法则"></a>验证正态分布的3$ \sigma $法则</h3><p>在统计学上存在一个3$ \sigma $法则：</p>
-<p><blockquote class="quoteback" darkmode="" data-title="%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99%EF%BC%88%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%89_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91" data-author="" cite="https://baike.baidu.com/item/%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99%EF%BC%88%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%89">
-                      经验规则是统计规律，指出了在正态分布，几乎所有数据都将落在均值的三倍标准差内。所述经验规则表明，68%的数据将分布在的第一个标准偏差之内，95%将落在第二个标准差之内，和99.7%将落在均值的前三个标准偏差之内。
-                      <footer> <cite><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99%EF%BC%88%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%89">https://baike.baidu.com/item/%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99%EF%BC%88%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%89</a></cite></footer>
-                      </blockquote><script note="" src="https://cdn.jsdelivr.net/gh/Blogger-Peer-Review/quotebacks@1/quoteback.js"></script></p>
-<p>我们可以对这个法则进行简单的 simulation。</p>
-<h4 id="基本思路-1"><a href="#基本思路-1" class="headerlink" title="基本思路"></a>基本思路</h4><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plot(<span class="name">x</span>,y,pch=<span class="string">&quot;.&quot;</span>)</span><br><span class="line">lines(<span class="name">seq</span>(<span class="name">-2</span>,<span class="number">2</span>,length=500),dnorm(<span class="name">seq</span>(<span class="name">-2</span>,<span class="number">2</span>,length=500)),col=<span class="string">&quot;red&quot;</span>)</span><br><span class="line">abline(<span class="name">v=c</span>(<span class="name">-2</span>,<span class="number">2</span>),col=<span class="string">&quot;red&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p><img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gl0cwutxy5j30if07n3yh.jpg" alt="图二"></p>
-<ul>
-<li>如上图二所示，我们在产生在2$ \sigma $长的长方形中大量的随机点N个</li>
-<li>计算位于正态分布下部的点的个数m</li>
-<li>通过下面的式子可以计算是否大致符合经验法则</li>
-</ul>
-<script type="math/tex; mode=display">
-\frac{m}{N}\cdot 2 \cdot dnorm(0) \simeq 0.9544</script><h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">N</span> &lt;- <span class="number">1000000</span></span><br><span class="line"></span><br><span class="line">#一个标准差</span><br><span class="line"></span><br><span class="line">x &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = -<span class="number">1</span>,<span class="built_in">max</span> = <span class="number">1</span>)</span><br><span class="line">y &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = <span class="number">0</span>,<span class="built_in">max</span> = dnorm(<span class="number">0</span>))</span><br><span class="line"><span class="symbol">z1</span> &lt;- <span class="built_in">sum</span>(y&lt;dnorm(x))/<span class="built_in">N</span>*(<span class="number">2</span>*dnorm(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#两个标准差</span><br><span class="line"></span><br><span class="line">x &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = -<span class="number">2</span>,<span class="built_in">max</span> = <span class="number">2</span>)</span><br><span class="line">y &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = <span class="number">0</span>,<span class="built_in">max</span> = dnorm(<span class="number">0</span>))</span><br><span class="line"><span class="symbol">z2</span> &lt;- <span class="built_in">sum</span>(y&lt;dnorm(x))/<span class="built_in">N</span>*(<span class="number">4</span>*dnorm(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">#三个标准差</span><br><span class="line"></span><br><span class="line">x &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = -<span class="number">3</span>,<span class="built_in">max</span> = <span class="number">3</span>)</span><br><span class="line">y &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = <span class="number">0</span>,<span class="built_in">max</span> = dnorm(<span class="number">0</span>))</span><br><span class="line"><span class="symbol">z3</span> &lt;- <span class="built_in">sum</span>(y&lt;dnorm(x))/<span class="built_in">N</span>*(<span class="number">6</span>*dnorm(<span class="number">0</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <blockquote class="blockquote-center">
+<p>最理想的一个工作状态就是我可以去做我想做的事情，你不要去问我想做什么，因为我自己也不知道。</p>
 
+</blockquote>
+<p>今天周末休息半天，没事在吃饭的时候边吃边在看 YouTube 上的一个系列视频 — 。一句话简单的评价就是这是一个很接地气的视频节目。</p>
+<a id="more"></a>
+<p>在这些视频中有一个视频是采访几个90后的“打工人”，询问他们是否对自己的工作状态感到满意，他们理想的工作状态是上面呢？虽然自己还没有到他们那一步但是看了感到莫名的触动！</p>
+<p>通过他们采访的回答，很容易的发现他们存在很多的共同点：</p>
+<ol>
+<li>他们由于各种各样的原因对自己的工作状态表示不满意；有的认为工作很辛苦，有的认为工作的人际关系复杂，所谓的<strong>办公室政治</strong>（头一次听到，很有意思的一个词语）。总而言之是不满意。</li>
+<li>当问他们的理想的工作状态的时候，有一个女孩的回答就是前面引用的那句话，而其他几个的回答也几乎是差不多的想去做自己喜欢做的事情。</li>
+</ol>
+<p>我很喜欢那个女孩的回答，她的回答是一类人的回答，仔细想想或许以后也会是自己的回答吧！我不禁的思考为什么很多人想去做自己想做的事情，却有的时候竟然不知道自己想做的是什么呢？</p>
+<p>我的思绪飘到了前一段时间听的项飙的一个关于“内卷”化的访谈。在节目中项飙认为我们现在之所以存在如此严重的所谓的“内卷”化的现象是有原因的：</p>
+<p><strong>高度一体化的竞争机制。</strong></p>
+<blockquote>
+<p>全国人民朝着一个目标去，要多赚钱，买一百多平的房子，要买车，一定要成家。一定年龄做一定的事情是等等。这个线是规划的非常好的，大家高度一体化的，都要在这样一个市场里面争夺一样东西，是高度一体的。<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
+</blockquote>
+<p>我们存在生活于一个由这样的机制所主导的社会中，计划每个人都通过相同的竞争方式（不断的考核）接受相同的价值评价体系去获得那高度相同的社会目标。</p>
+<p><strong>缺乏退出机制</strong></p>
+<p>我们会想，既然存在如此可怕的竞争机制，那我退出不好吗？问题是你一但进入（准确的说是一出生）这种竞争的机制，你几乎很难在从这个机制中退出来。你会面临很多来自各个方面的压力，这些压力会阻止你退出这个机制，就像节目中的那个女孩说的一样，有时你会感到你在无法控制的往自己讨厌的方向前进。</p>
+<p>现在或许自己找到了那个答案。我们从小被教育要在学校好好“学习”。学校是一个典型的高度一体化的象征。相同的目标（高分），相同的价值评价体系（考题做对），相同的竞争方式（没完没了的考试），几乎什么都是相同的，甚至是各个科目的老师所教的都是一样的，并不是如何学习，而是如何学习考试，不同的科目教不同的考试方法。</p>
+<p>对于很多人在进入社会后，迎接你的还是一个高度一体化的社会。你能想象在这种高度一致的生活中，你能有时间去思考自己真的想要的是什么吗？自己真的想要去做的是什么吗？或许晚上躺在床上在想着“生活不只有眼前的苟且，还有诗和远方的生活”，第二天还是要进入现实的洪波中，由不得你。</p>
+<hr>
+<p>想了那么多，思考了那么多有用吗？这个回答不过是对“理想”的工作状态的回答。但是现实是：在现实社会是否真的还存在足够的空间，能够让一个普通的人，在完全坚持自己的理想的道理上顺畅的走下去呢？</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;"><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI2ODU4MDM1Mg==&amp;mid=2247484400&amp;idx=1&amp;sn=92e164d86a19f06e144e42a75fb3c792&amp;chksm=eaec209fdd9ba989ed6f9cd8e14dd6ccc8d2fa9dbd68fce905dd296aa90049c3e5e15985844d#rd">项飙访谈：内卷是一种不允许失败和退出的竞争</a></span><a href="#fnref:1" rev="footnote"> ↩</a></li></ol></div></div>
     </div>
 
     
     
     
       
+
 
     <footer class="post-footer">
           
@@ -442,7 +431,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://modernhero.cc/68292e6b8acc" title="R语言简单的simulation">https://modernhero.cc/68292e6b8acc</a>
+      <a href="https://modernhero.cc/posts/f00e7696b050/" title="真的有理想的工作吗？">https://modernhero.cc/posts/f00e7696b050/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -490,7 +479,7 @@
   </div>
 
           <div class="post-tags">
-              <a href="/tags/R%E8%AF%AD%E8%A8%80/" rel="tag"><i class="fa fa-tag"></i> R语言</a>
+              <a href="/tags/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/" rel="tag"><i class="fa fa-tag"></i> 日常生活</a>
           </div>
 
         
@@ -501,13 +490,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/bc461404efbf" rel="prev" title="高风险的穷人">
-                  <i class="fa fa-chevron-left"></i> 高风险的穷人
+                <a href="/posts/1fed6c701996/" rel="prev" title="R语言中的条件与循环结构">
+                  <i class="fa fa-chevron-left"></i> R语言中的条件与循环结构
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/33a1d18818db" rel="next" title="学校食堂的感想">
-                  学校食堂的感想 <i class="fa fa-chevron-right"></i>
+                <a href="/posts/89d8c3cf1fb6/" rel="next" title="R语言中有关于概率分布的函数">
+                  R语言中有关于概率分布的函数 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -706,7 +695,7 @@ NexT.utils.loadComments('#valine-comments', () => {
   NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
     new Valine(Object.assign({
       el  : '#valine-comments',
-      path: "/68292e6b8acc",
+      path: "/posts/f00e7696b050/",
     }, {"enable":true,"appId":"OqcLraGyUGkWL0MAnPAp6sNn-MdYXbMMI","appKey":"8RfHAJOzCSRCM7gFgw1JQHzv","placeholder":"大师留言，小丑靠边！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":false,"recordIP":false,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
     ));
   }, window.Valine);

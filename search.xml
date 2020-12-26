@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>R语言中有关于概率分布的函数</title>
-    <url>/89d8c3cf1fb6</url>
+    <url>//posts/89d8c3cf1fb6/</url>
     <content><![CDATA[<p>在R语言中，提供非常全面的统计函数。其中包括概率分布的分布函数（CDF the cumulative distribution function ）、概率密度函数（ the probability density function）、以及<strong>下分位点</strong>函数（the quantile function）。</p>
 <a id="more"></a>
 <h2 id="相关的概率分布"><a href="#相关的概率分布" class="headerlink" title="相关的概率分布"></a>相关的概率分布</h2><div class="table-container">
@@ -146,7 +146,7 @@
   </entry>
   <entry>
     <title>R语言中的条件与循环结构</title>
-    <url>/1fed6c701996</url>
+    <url>//posts/1fed6c701996/</url>
     <content><![CDATA[<p>编程语言的执行顺序一般都是从上到下依次执行，但是在日常使用的过程中我们要可能需要一些其他的语句执行顺序，如循环结构与条件结构。</p>
 <a id="more"></a>
 <h2 id="R语言里面的循环结构"><a href="#R语言里面的循环结构" class="headerlink" title="R语言里面的循环结构"></a>R语言里面的循环结构</h2><h3 id="1、for循环"><a href="#1、for循环" class="headerlink" title="1、for循环"></a>1、for循环</h3><p>for 可以重复执行语句，而且重复的次数是可以直接控制的。</p>
@@ -184,7 +184,7 @@
   </entry>
   <entry>
     <title>R语言数据创建与导入</title>
-    <url>/477b9749ba74</url>
+    <url>//posts/477b9749ba74/</url>
     <content><![CDATA[<p><img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gkangqreppj307305i3ye.jpg" width="20%" height="20%" title=" " alt=""/></p>
 <a id="more"></a>
 <h2 id="创建数据集"><a href="#创建数据集" class="headerlink" title="创建数据集"></a>创建数据集</h2><h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><p><strong>向量：</strong></p>
@@ -234,7 +234,7 @@
   </entry>
   <entry>
     <title>R语言简单的simulation</title>
-    <url>/68292e6b8acc</url>
+    <url>//posts/68292e6b8acc/</url>
     <content><![CDATA[<p>R语言提供了很多的概率分布的函数以及产生随机数的函数，通过这些函数我们可以做一些简单的simulation。</p>
 <a id="more"></a>
 <h3 id="通过simulation来计算-Π-的值"><a href="#通过simulation来计算-Π-的值" class="headerlink" title="通过simulation来计算 Π 的值"></a>通过simulation来计算 Π 的值</h3><p>我们通过在R语言中通过simulation的方法近似的去估计 Π 的数值。</p>
@@ -273,7 +273,7 @@
   </entry>
   <entry>
     <title>基于Rvest的爬虫</title>
-    <url>/d6cc1ceeeb1a</url>
+    <url>//posts/d6cc1ceeeb1a/</url>
     <content><![CDATA[<p><img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gk9qsre6j9j306o07qmxq.jpg" width="20%" height="20%" title="◎ rvest" alt="rvest"/></p>
 <a id="more"></a>
 <h2 id="关于rvest包"><a href="#关于rvest包" class="headerlink" title="关于rvest包"></a>关于rvest包</h2><p><code>rvest</code> 包是Hadley Wickham开发的一个能够非常容易的从网页获取数据的包，这个包使用起来非常的容易，<code>rvest</code>的灵感来源于<code>BeautifulSoup</code>（<code>python</code>中的一个非常有名的解析库）。</p>
@@ -319,7 +319,7 @@
   </entry>
   <entry>
     <title>学校食堂的感想</title>
-    <url>/33a1d18818db</url>
+    <url>//posts/33a1d18818db/</url>
     <content><![CDATA[<p>几乎和昨天一样，中午小憩一会休息好之后，蹭着食堂人少悠哉游哉的去食堂吃饭，今天中午吃麻辣烫，吃麻辣烫的这家店铺不单单有麻辣烫还可以吃饭，这家店铺的生意在食堂里面是非常不错的！</p>
 <a id="more"></a>
 <p>不一会，我的午餐就好了，我去出餐处去取自己的午餐回到自己的餐桌上，几乎同时一个女生拿着餐盘从餐桌走向取餐处，看了一眼没怎么在意，因为我急着吃午饭。</p>
@@ -336,7 +336,7 @@
   </entry>
   <entry>
     <title>理想中的学者</title>
-    <url>/d24568681e1a</url>
+    <url>//posts/d24568681e1a/</url>
     <content><![CDATA[<blockquote class="blockquote-center">
 <p>今天的内卷是一个陀螺式的死循环</p>
 <p><strong>项飙</strong></p>
@@ -362,7 +362,7 @@
   </entry>
   <entry>
     <title>真的有理想的工作吗？</title>
-    <url>/f00e7696b050</url>
+    <url>//posts/f00e7696b050/</url>
     <content><![CDATA[<blockquote class="blockquote-center">
 <p>最理想的一个工作状态就是我可以去做我想做的事情，你不要去问我想做什么，因为我自己也不知道。</p>
 
@@ -399,7 +399,7 @@
   </entry>
   <entry>
     <title>高风险的穷人</title>
-    <url>/bc461404efbf</url>
+    <url>//posts/bc461404efbf/</url>
     <content><![CDATA[<p>在书中有一章名为：“赤脚的对冲基金经理”，毫无疑问这应该是这本书这让我影响深刻的一个标题：穷人在某种程度上与基金经理一样几乎无时无刻不面临着非常高的风险，但是他们所面临高风险并没有给他们带来相应的高收益。</p>
 <a id="more"></a>
 <p>由于高风险的存在，穷人自然也会去使用各种各样的方式去应对风险：</p>
@@ -435,7 +435,7 @@
   </entry>
   <entry>
     <title>R语言与蒙特卡洛仿真</title>
-    <url>/55497e597af8</url>
+    <url>//posts/55497e597af8/</url>
     <content><![CDATA[<h2 id="蒙特卡洛仿真"><a href="#蒙特卡洛仿真" class="headerlink" title="蒙特卡洛仿真"></a>蒙特卡洛仿真</h2><p><blockquote class="quoteback" darkmode="" data-title="%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95%20-%20MBA%E6%99%BA%E5%BA%93%E7%99%BE%E7%A7%91" data-author="" cite="https://wiki.mbalib.com/wiki/%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95"><br><b>蒙特卡罗方法又称统计模拟法、随机抽样技术</b>，是一种随机模拟方法，以概率和统计理论方法为基础的一种计算方法，是使用随机数（或更常见的伪随机数）来解决很多计算问题的方法。将所求解的问题同一定的概率模型相联系，用电子计算机实现统计模拟或<a href="https://wiki.mbalib.com/wiki/%E6%8A%BD%E6%A0%B7" title="抽样" target="_blank" rel="noopener">抽样</a>，以获得问题的近似解。为象征性地表明这一方法的概率统计特征，故借用赌城蒙特卡罗命名。</p>
 <p><footer><cite> <a href="https://wiki.mbalib.com/wiki/%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95">https://wiki.mbalib.com/wiki/%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95</a></cite></footer>&lt;/blockquote&gt;<script note="" src="https://cdn.jsdelivr.net/gh/Blogger-Peer-Review/quotebacks@1/quoteback.js"></script></p>
 <p>蒙特卡洛方法利用的就是数理统计中的大数定理与中心极限定理，通过产生大量的随机数来对参数进行估算的一种方法。</p>
@@ -483,7 +483,7 @@
   </entry>
   <entry>
     <title>R语言的向量与矩阵</title>
-    <url>/59c296e3069b</url>
+    <url>//posts/b2ddbedc4063/</url>
     <content><![CDATA[<h1 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h1><h2 id="建立向量"><a href="#建立向量" class="headerlink" title="建立向量"></a>建立向量</h2><p>在R语言中，建立向量的方式有很多，常见的方式有：</p>
 <ul>
 <li>使用 <code>c( )</code> 函数创建向量</li>

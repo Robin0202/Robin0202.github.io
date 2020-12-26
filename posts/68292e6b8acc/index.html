@@ -25,21 +25,24 @@
     var CONFIG = {"hostname":"modernhero.cc","root":"/","scheme":"Mist","version":"8.0.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="编程语言的执行顺序一般都是从上到下依次执行，但是在日常使用的过程中我们要可能需要一些其他的语句执行顺序，如循环结构与条件结构。">
+  <meta name="description" content="R语言提供了很多的概率分布的函数以及产生随机数的函数，通过这些函数我们可以做一些简单的simulation。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="R语言中的条件与循环结构">
-<meta property="og:url" content="https://modernhero.cc/1fed6c701996">
+<meta property="og:title" content="R语言简单的simulation">
+<meta property="og:url" content="https://modernhero.cc/posts/68292e6b8acc/index.html">
 <meta property="og:site_name" content="ModernHero">
-<meta property="og:description" content="编程语言的执行顺序一般都是从上到下依次执行，但是在日常使用的过程中我们要可能需要一些其他的语句执行顺序，如循环结构与条件结构。">
+<meta property="og:description" content="R语言提供了很多的概率分布的函数以及产生随机数的函数，通过这些函数我们可以做一些简单的simulation。">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-11-02T07:05:26.000Z">
-<meta property="article:modified_time" content="2020-11-02T07:10:56.548Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/007DtFxUly1gl0dsirz0vj30lj0lkmzj.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/007DtFxUly1gl0cwutxy5j30if07n3yh.jpg">
+<meta property="article:published_time" content="2020-11-23T03:05:15.000Z">
+<meta property="article:modified_time" content="2020-11-29T08:00:09.307Z">
 <meta property="article:author" content="Robin Li">
 <meta property="article:tag" content="R语言">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/007DtFxUly1gl0dsirz0vj30lj0lkmzj.jpg">
 
 
-<link rel="canonical" href="https://modernhero.cc/1fed6c701996">
+<link rel="canonical" href="https://modernhero.cc/posts/68292e6b8acc/">
 
 
 <script class="page-configurations">
@@ -52,7 +55,7 @@
   };
 </script><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <title>R语言中的条件与循环结构 | ModernHero</title>
+  <title>R语言简单的simulation | ModernHero</title>
   
 
 
@@ -223,7 +226,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#R%E8%AF%AD%E8%A8%80%E9%87%8C%E9%9D%A2%E7%9A%84%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="nav-text">R语言里面的循环结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81for%E5%BE%AA%E7%8E%AF"><span class="nav-text">1、for循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81while%E5%BE%AA%E7%8E%AF"><span class="nav-text">2、while循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81repeat%E5%BE%AA%E7%8E%AF"><span class="nav-text">3、repeat循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="nav-text">4、循环控制语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R%E8%AF%AD%E8%A8%80%E9%87%8C%E9%9D%A2%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="nav-text">R语言里面的条件结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81if%E6%9D%A1%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="nav-text">1、if条件结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81if-else-%E6%9D%A1%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="nav-text">2、if-else 条件结构</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87simulation%E6%9D%A5%E8%AE%A1%E7%AE%97-%CE%A0-%E7%9A%84%E5%80%BC"><span class="nav-text">通过simulation来计算 Π 的值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF"><span class="nav-text">基本思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E7%9A%843-sigma-%E6%B3%95%E5%88%99"><span class="nav-text">验证正态分布的3$ \sigma $法则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF-1"><span class="nav-text">基本思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="nav-text">代码</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -306,7 +309,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/1fed6c701996">
+    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/posts/68292e6b8acc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.png">
@@ -322,7 +325,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          R语言中的条件与循环结构
+          R语言简单的simulation
         </h1>
 
         <div class="post-meta-container">
@@ -332,10 +335,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">创建于</span>
-      
 
-      <time title="创建时间：2020-11-02 15:05:26 / 修改时间：15:10:56" itemprop="dateCreated datePublished" datetime="2020-11-02T15:05:26+08:00">2020-11-02</time>
+      <time title="创建时间：2020-11-23 11:05:15" itemprop="dateCreated datePublished" datetime="2020-11-23T11:05:15+08:00">2020-11-23</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-11-29 16:00:09" itemprop="dateModified" datetime="2020-11-29T16:00:09+08:00">2020-11-29</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -346,7 +355,7 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categorys/R%E8%AF%AD%E8%A8%80/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+          <a href="/categorys/R%E8%AF%AD%E8%A8%80/%E7%BB%9F%E8%AE%A1%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">统计应用</span></a>
         </span>
     </span>
 
@@ -359,8 +368,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/1fed6c701996#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/1fed6c701996" itemprop="commentCount"></span>
+    <a title="valine" href="/posts/68292e6b8acc/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/68292e6b8acc/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -370,7 +379,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.6k</span>
+      <span>1.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -388,32 +397,33 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>编程语言的执行顺序一般都是从上到下依次执行，但是在日常使用的过程中我们要可能需要一些其他的语句执行顺序，如循环结构与条件结构。</p>
+        <p>R语言提供了很多的概率分布的函数以及产生随机数的函数，通过这些函数我们可以做一些简单的simulation。</p>
 <a id="more"></a>
-<h2 id="R语言里面的循环结构"><a href="#R语言里面的循环结构" class="headerlink" title="R语言里面的循环结构"></a>R语言里面的循环结构</h2><h3 id="1、for循环"><a href="#1、for循环" class="headerlink" title="1、for循环"></a>1、for循环</h3><p>for 可以重复执行语句，而且重复的次数是可以直接控制的。</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">for</span> (variable <span class="keyword">in</span> <span class="built_in">vector</span>) &#123;</span><br><span class="line">  <span class="built_in">content</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">variable:为循环的参数</span><br><span class="line"><span class="built_in">vector</span>：为循环参数的取值</span><br><span class="line">在<span class="built_in">content</span>：输入要循环的语句</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>例如通过下面的语句输出斐波拉契数列的前三十个值</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fseq &lt;- c(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line"><span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:<span class="number">28</span>) &#123;</span><br><span class="line">  fseq[i+<span class="number">2</span>]=fseq[i]+fseq[i+<span class="number">1</span>]</span><br><span class="line">&#125;</span><br><span class="line">fseq</span><br></pre></td></tr></table></figure>
-<h3 id="2、while循环"><a href="#2、while循环" class="headerlink" title="2、while循环"></a>2、while循环</h3><p>while 循环当给定条件为 TRUE 时就会一直循环直到判断条件为 FALSE，这种循环需要知道循环的条件。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">while</span><span class="params">(condition)</span></span>&#123;</span><br><span class="line">  如果条件满足则执行的语句</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>例如通过while循环来输出斐波拉契数列前三十个</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">1</span></span><br><span class="line">fseq &lt;- c(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line"><span class="keyword">while</span>(i&lt;=<span class="number">28</span>)&#123;</span><br><span class="line">  fseq[i+<span class="number">2</span>] = fseq[i]+fseq[i+<span class="number">1</span>] </span><br><span class="line">  i=i+<span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line">fseq</span><br></pre></td></tr></table></figure>
-<h3 id="3、repeat循环"><a href="#3、repeat循环" class="headerlink" title="3、repeat循环"></a>3、repeat循环</h3><p>repeat 循环会一直的执行语句，直到 break 之后循环停止。因此 repeat 循环经常与 break 语句连用。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">repeat&#123;</span><br><span class="line">  content</span><br><span class="line">  <span class="function"><span class="title">if</span>(<span class="params">condition</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在上面的语句中一直执行 content 中的代码，直到满足条件 break。例如通过 repeat 循环去输出斐波拉契数列的前三十项</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">i=<span class="number">1</span></span><br><span class="line">fseq &lt;- c(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">repeat&#123;</span><br><span class="line">     fseq[i+<span class="number">2</span>] = fseq[i+<span class="number">1</span>]+fseq[i]</span><br><span class="line">     i=i+<span class="number">1</span></span><br><span class="line">     <span class="keyword">if</span>(i == <span class="number">29</span>)&#123;</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
-<h3 id="4、循环控制语句"><a href="#4、循环控制语句" class="headerlink" title="4、循环控制语句"></a>4、循环控制语句</h3><p><strong>break语句</strong></p>
-<p>break 语句用于循环体中，作用是直接退出当前的循环体，执行循环下面的语句<strong>或者是执行外层的循环</strong>。例如上面的例子中，当 i 的取值等于29时，就停止 repeat 的循环。</p>
-<p><strong>next语句</strong></p>
-<p>这个语句和 break 语句有一些区别，它是跳过某次循环，执行下次循环，整个循环体还是在继续执行。例如一个字符串 <code>c(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;)</code> 。用循环语句依次输出每一个元素，但是跳过 b。</p>
-<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A = c(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>)</span><br><span class="line"><span class="function"><span class="title">for</span><span class="params">(i in <span class="number">1</span>:<span class="number">3</span>)</span>&#123;</span></span><br><span class="line"><span class="function">  <span class="title">if</span><span class="params">(A[i] == <span class="string">&quot;b&quot;</span>)</span> <span class="title">next</span></span></span><br><span class="line"><span class="function">  <span class="title">print</span><span class="params">(A[i])</span> </span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="R语言里面的条件结构"><a href="#R语言里面的条件结构" class="headerlink" title="R语言里面的条件结构"></a>R语言里面的条件结构</h2><h3 id="1、if条件结构"><a href="#1、if条件结构" class="headerlink" title="1、if条件结构"></a>1、if条件结构</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">if</span>(<span class="params">expression</span>)</span>&#123;</span><br><span class="line">  若expression为<span class="literal">true</span>则执行</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>例如下面的例子，判断数是否大于5</p>
-<figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">x</span> &lt;- <span class="number">6</span></span><br><span class="line"><span class="function"><span class="title">if</span>(<span class="variable">x</span>&gt;<span class="number">5</span>)&#123;</span></span><br><span class="line"><span class="function">  <span class="title">print</span>(<span class="string">&quot;x is greater than 5&quot;</span>)</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2、if-else-条件结构"><a href="#2、if-else-条件结构" class="headerlink" title="2、if-else 条件结构"></a>2、if-else 条件结构</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">if</span>(<span class="params">expression</span>)</span>&#123;</span><br><span class="line">  若expression为<span class="literal">true</span>则执行</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  若expression为<span class="literal">false</span>则执行</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>例如同样的例子：</p>
-<figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">x</span> &lt;-<span class="number">4</span></span><br><span class="line"><span class="function"><span class="title">if</span>(<span class="variable">x</span>&gt;<span class="number">5</span>)&#123;</span></span><br><span class="line"><span class="function">  <span class="title">print</span>(<span class="string">&quot;x is greater than 5&quot;</span>)</span></span><br><span class="line">&#125; <span class="variable"><span class="keyword">else</span></span> &#123;</span><br><span class="line">  <span class="function"><span class="title">print</span>(<span class="string">&quot;x is not greater than 5&quot;</span>)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在上面的结构中会先去判断 if 后面的条件，如果不满足则执行 else 语句后面的代码。</p>
+<h3 id="通过simulation来计算-Π-的值"><a href="#通过simulation来计算-Π-的值" class="headerlink" title="通过simulation来计算 Π 的值"></a>通过simulation来计算 Π 的值</h3><p>我们通过在R语言中通过simulation的方法近似的去估计 Π 的数值。</p>
+<h4 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h4><ul>
+<li>生成从一个 x 属于(-1,1) , y 属于(-1,1)的正方形中产生大量的随机点N。</li>
+<li>计算产生的大量的随机点在圆心位于圆点，半径为1的点的个数M。</li>
+<li>基于大数定律当N趋于无穷大时有下面的等式成立：</li>
+</ul>
+<script type="math/tex; mode=display">
+\frac{n}{N} = \frac{\pi \cdot r^2}{4}</script><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">N</span> &lt;- <span class="number">100000</span></span><br><span class="line"><span class="attribute">x</span> &lt;- runif(N,min = -<span class="number">1</span>,max = <span class="number">1</span>)</span><br><span class="line"><span class="attribute">y</span> &lt;- runif(N,min = -<span class="number">1</span>,max = <span class="number">1</span>)</span><br><span class="line"><span class="comment">#产生100000个随机点。</span></span><br><span class="line"><span class="attribute">z</span> &lt;- sum(x^<span class="number">2</span>+y^<span class="number">2</span>&lt;=<span class="number">1</span>)</span><br><span class="line"><span class="comment">#统计100000个随机点中位于圆中的个数。</span></span><br><span class="line"><span class="attribute">pai</span> &lt;- z/N*<span class="number">4</span></span><br><span class="line"><span class="comment">#计算pai的数值</span></span><br></pre></td></tr></table></figure>
+<p><img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gl0dsirz0vj30lj0lkmzj.jpg" alt="图一" style="zoom:50%;" /></p>
+<p>上面就是简单的simulation计算 Π 的估计值。</p>
+<h3 id="验证正态分布的3-sigma-法则"><a href="#验证正态分布的3-sigma-法则" class="headerlink" title="验证正态分布的3$ \sigma $法则"></a>验证正态分布的3$ \sigma $法则</h3><p>在统计学上存在一个3$ \sigma $法则：</p>
+<p><blockquote class="quoteback" darkmode="" data-title="%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99%EF%BC%88%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%89_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91" data-author="" cite="https://baike.baidu.com/item/%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99%EF%BC%88%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%89">
+                      经验规则是统计规律，指出了在正态分布，几乎所有数据都将落在均值的三倍标准差内。所述经验规则表明，68%的数据将分布在的第一个标准偏差之内，95%将落在第二个标准差之内，和99.7%将落在均值的前三个标准偏差之内。
+                      <footer> <cite><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99%EF%BC%88%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%89">https://baike.baidu.com/item/%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99%EF%BC%88%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%89</a></cite></footer>
+                      </blockquote><script note="" src="https://cdn.jsdelivr.net/gh/Blogger-Peer-Review/quotebacks@1/quoteback.js"></script></p>
+<p>我们可以对这个法则进行简单的 simulation。</p>
+<h4 id="基本思路-1"><a href="#基本思路-1" class="headerlink" title="基本思路"></a>基本思路</h4><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plot(<span class="name">x</span>,y,pch=<span class="string">&quot;.&quot;</span>)</span><br><span class="line">lines(<span class="name">seq</span>(<span class="name">-2</span>,<span class="number">2</span>,length=500),dnorm(<span class="name">seq</span>(<span class="name">-2</span>,<span class="number">2</span>,length=500)),col=<span class="string">&quot;red&quot;</span>)</span><br><span class="line">abline(<span class="name">v=c</span>(<span class="name">-2</span>,<span class="number">2</span>),col=<span class="string">&quot;red&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gl0cwutxy5j30if07n3yh.jpg" alt="图二"></p>
+<ul>
+<li>如上图二所示，我们在产生在2$ \sigma $长的长方形中大量的随机点N个</li>
+<li>计算位于正态分布下部的点的个数m</li>
+<li>通过下面的式子可以计算是否大致符合经验法则</li>
+</ul>
+<script type="math/tex; mode=display">
+\frac{m}{N}\cdot 2 \cdot dnorm(0) \simeq 0.9544</script><h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">N</span> &lt;- <span class="number">1000000</span></span><br><span class="line"></span><br><span class="line">#一个标准差</span><br><span class="line"></span><br><span class="line">x &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = -<span class="number">1</span>,<span class="built_in">max</span> = <span class="number">1</span>)</span><br><span class="line">y &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = <span class="number">0</span>,<span class="built_in">max</span> = dnorm(<span class="number">0</span>))</span><br><span class="line"><span class="symbol">z1</span> &lt;- <span class="built_in">sum</span>(y&lt;dnorm(x))/<span class="built_in">N</span>*(<span class="number">2</span>*dnorm(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#两个标准差</span><br><span class="line"></span><br><span class="line">x &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = -<span class="number">2</span>,<span class="built_in">max</span> = <span class="number">2</span>)</span><br><span class="line">y &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = <span class="number">0</span>,<span class="built_in">max</span> = dnorm(<span class="number">0</span>))</span><br><span class="line"><span class="symbol">z2</span> &lt;- <span class="built_in">sum</span>(y&lt;dnorm(x))/<span class="built_in">N</span>*(<span class="number">4</span>*dnorm(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">#三个标准差</span><br><span class="line"></span><br><span class="line">x &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = -<span class="number">3</span>,<span class="built_in">max</span> = <span class="number">3</span>)</span><br><span class="line">y &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = <span class="number">0</span>,<span class="built_in">max</span> = dnorm(<span class="number">0</span>))</span><br><span class="line"><span class="symbol">z3</span> &lt;- <span class="built_in">sum</span>(y&lt;dnorm(x))/<span class="built_in">N</span>*(<span class="number">6</span>*dnorm(<span class="number">0</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -432,7 +442,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://modernhero.cc/1fed6c701996" title="R语言中的条件与循环结构">https://modernhero.cc/1fed6c701996</a>
+      <a href="https://modernhero.cc/posts/68292e6b8acc/" title="R语言简单的simulation">https://modernhero.cc/posts/68292e6b8acc/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -491,13 +501,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/477b9749ba74" rel="prev" title="R语言数据创建与导入">
-                  <i class="fa fa-chevron-left"></i> R语言数据创建与导入
+                <a href="/posts/bc461404efbf/" rel="prev" title="高风险的穷人">
+                  <i class="fa fa-chevron-left"></i> 高风险的穷人
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/f00e7696b050" rel="next" title="真的有理想的工作吗？">
-                  真的有理想的工作吗？ <i class="fa fa-chevron-right"></i>
+                <a href="/posts/33a1d18818db/" rel="next" title="学校食堂的感想">
+                  学校食堂的感想 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -696,7 +706,7 @@ NexT.utils.loadComments('#valine-comments', () => {
   NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
     new Valine(Object.assign({
       el  : '#valine-comments',
-      path: "/1fed6c701996",
+      path: "/posts/68292e6b8acc/",
     }, {"enable":true,"appId":"OqcLraGyUGkWL0MAnPAp6sNn-MdYXbMMI","appKey":"8RfHAJOzCSRCM7gFgw1JQHzv","placeholder":"大师留言，小丑靠边！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":false,"recordIP":false,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
     ));
   }, window.Valine);
