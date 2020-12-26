@@ -529,8 +529,7 @@ E(X) = \int_a^b {xf(x)dx}</script><p>对于随机变量 Y ，Y为 $g(x)$ ，所�
 E(X) = \int_c^d {g(x)f(x)dx}</script><p>而根据大数定理，我们可以产生 M 个独立同分布（i.i.d) 的样本 X :</p>
 <script type="math/tex; mode=display">
 X_1,X_2,X_3,······X_M</script><p>当 M 的个数足够大时，样本的均值为：</p>
-<script type="math/tex; mode=display">
-\overline X  = (1/M)\sum</script><p>样本的均值依概率收敛于总体的均值 $E(X)$。</p>
+<script type="math/tex; mode=display">\overline X  = (1/M)\sum {({X_i})}</script><p>样本的均值依概率收敛于总体的均值 $E(X)$。</p>
 <p>所以对于任意可积函数有下面的式子成立：</p>
 <script type="math/tex; mode=display">
 E[g(x)/f(x)] = \int {[g(x)/f(x)]f(x)dx} ......(1)</script><p>其中 $f(x)$ 可以算作随机变量 $x$ 的概率密度函数。</p>
