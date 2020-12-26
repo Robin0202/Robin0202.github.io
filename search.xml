@@ -470,7 +470,7 @@
 </li>
 </ul>
 <h2 id="常用的随机变量的仿真"><a href="#常用的随机变量的仿真" class="headerlink" title="常用的随机变量的仿真"></a>常用的随机变量的仿真</h2><h3 id="伯努利随机变量"><a href="#伯努利随机变量" class="headerlink" title="伯努利随机变量"></a>伯努利随机变量</h3><p>伯努利随机变量是建立在伯努利试验的基础之上的一个随机变量，伯努利试验是一种只有两种结果的试验，例如随机的抛一枚硬币，要么是正面在上，要么是反面在上，结果只有两个。</p>
-<p>伯努利变量的仿真可以通过均匀分布来进行 </p>
+<mark class="label [danger]">伯努利变量的仿真可以通过均匀分布来进行</mark> 
 <p>例如某个班级有50名学生，这些学生要回答同一个问题，而且每一位学生的回答正确率为20%，错误率为80%，这时，这个班级回答问题的成绩可以通过均匀分布来做模拟</p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span>.seed(<span class="number">23333</span>)</span><br><span class="line">a &lt; - runif(<span class="number">50</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h3 id="二项分布随机变量"><a href="#二项分布随机变量" class="headerlink" title="二项分布随机变量"></a>二项分布随机变量</h3><p>二项分布是同样是在伯努利试验的基础之上构建的，在 n 次独立重复的伯努利试验中，成功的次数 x 服从二项分布。</p>
