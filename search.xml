@@ -483,7 +483,7 @@
   </entry>
   <entry>
     <title>R语言的向量与矩阵</title>
-    <url>//posts/undefined/</url>
+    <url>//posts/0011/</url>
     <content><![CDATA[<h1 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h1><h2 id="建立向量"><a href="#建立向量" class="headerlink" title="建立向量"></a>建立向量</h2><p>在R语言中，建立向量的方式有很多，常见的方式有：</p>
 <ul>
 <li>使用 <code>c( )</code> 函数创建向量</li>
