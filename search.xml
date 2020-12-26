@@ -504,7 +504,7 @@
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">&gt; a &lt;- rexp(<span class="number">10000</span>,<span class="number">1</span>/<span class="number">55</span>)</span><br><span class="line">&gt; mean(a)</span><br><span class="line"><span class="string">[1]</span> <span class="number">55.10442</span></span><br></pre></td></tr></table></figure>
 <p>对于指数分布的相关概率分布函数 <code>xxexp( )</code> 函数中的参数 <code>rate</code> 为下面形式的概率密度函数的lamda 的值：</p>
 <script type="math/tex; mode=display">
-f(x) = \lambda {e^{ - \lambda x}}</script><p>所以对应的均值与方差为：</p>
+f(x) = \lambda {e^{ - \lambda x}}</script><mark class="label [danger]">所以对应的均值与方差为：</mark>
 <script type="math/tex; mode=display">
 \left\{ \begin{array}{l}
 mean = 1/rate\\
