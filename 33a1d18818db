@@ -28,7 +28,7 @@
   <meta name="description" content="几乎和昨天一样，中午小憩一会休息好之后，蹭着食堂人少悠哉游哉的去食堂吃饭，今天中午吃麻辣烫，吃麻辣烫的这家店铺不单单有麻辣烫还可以吃饭，这家店铺的生意在食堂里面是非常不错的！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学校食堂的感想">
-<meta property="og:url" content="https://modernhero.cc/posts/0009/index.html">
+<meta property="og:url" content="https://modernhero.cc/33a1d18818db">
 <meta property="og:site_name" content="ModernHero">
 <meta property="og:description" content="几乎和昨天一样，中午小憩一会休息好之后，蹭着食堂人少悠哉游哉的去食堂吃饭，今天中午吃麻辣烫，吃麻辣烫的这家店铺不单单有麻辣烫还可以吃饭，这家店铺的生意在食堂里面是非常不错的！">
 <meta property="og:locale">
@@ -39,7 +39,7 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://modernhero.cc/posts/0009/">
+<link rel="canonical" href="https://modernhero.cc/33a1d18818db">
 
 
 <script class="page-configurations">
@@ -305,7 +305,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/posts/0009/">
+    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/33a1d18818db">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.png">
@@ -358,8 +358,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/posts/0009/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/0009/" itemprop="commentCount"></span>
+    <a title="valine" href="/33a1d18818db#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/33a1d18818db" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -411,7 +411,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://modernhero.cc/posts/0009/" title="学校食堂的感想">https://modernhero.cc/posts/0009/</a>
+      <a href="https://modernhero.cc/33a1d18818db" title="学校食堂的感想">https://modernhero.cc/33a1d18818db</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -470,13 +470,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/0008/" rel="prev" title="R语言简单的simulation">
+                <a href="/68292e6b8acc" rel="prev" title="R语言简单的simulation">
                   <i class="fa fa-chevron-left"></i> R语言简单的simulation
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/8/" rel="next" title="R语言的向量与矩阵">
-                  R语言的向量与矩阵 <i class="fa fa-chevron-right"></i>
+                <a href="/55497e597af8" rel="next" title="R语言与蒙特卡洛仿真">
+                  R语言与蒙特卡洛仿真 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -675,7 +675,7 @@ NexT.utils.loadComments('#valine-comments', () => {
   NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
     new Valine(Object.assign({
       el  : '#valine-comments',
-      path: "/posts/0009/",
+      path: "/33a1d18818db",
     }, {"enable":true,"appId":"OqcLraGyUGkWL0MAnPAp6sNn-MdYXbMMI","appKey":"8RfHAJOzCSRCM7gFgw1JQHzv","placeholder":"大师留言，小丑靠边！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":false,"recordIP":false,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
     ));
   }, window.Valine);

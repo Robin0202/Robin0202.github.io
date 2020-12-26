@@ -25,21 +25,21 @@
     var CONFIG = {"hostname":"modernhero.cc","root":"/","scheme":"Mist","version":"8.0.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="最理想的一个工作状态就是我可以去做我想做的事情，你不要去问我想做什么，因为我自己也不知道。   今天周末休息半天，没事在吃饭的时候边吃边在看 YouTube 上的一个系列视频 — 。一句话简单的评价就是这是一个很接地气的视频节目。">
+  <meta name="description" content="在书中有一章名为：“赤脚的对冲基金经理”，毫无疑问这应该是这本书这让我影响深刻的一个标题：穷人在某种程度上与基金经理一样几乎无时无刻不面临着非常高的风险，但是他们所面临高风险并没有给他们带来相应的高收益。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="真的有理想的工作吗？">
-<meta property="og:url" content="https://modernhero.cc/posts/5/index.html">
+<meta property="og:title" content="高风险的穷人">
+<meta property="og:url" content="https://modernhero.cc/bc461404efbf">
 <meta property="og:site_name" content="ModernHero">
-<meta property="og:description" content="最理想的一个工作状态就是我可以去做我想做的事情，你不要去问我想做什么，因为我自己也不知道。   今天周末休息半天，没事在吃饭的时候边吃边在看 YouTube 上的一个系列视频 — 。一句话简单的评价就是这是一个很接地气的视频节目。">
+<meta property="og:description" content="在书中有一章名为：“赤脚的对冲基金经理”，毫无疑问这应该是这本书这让我影响深刻的一个标题：穷人在某种程度上与基金经理一样几乎无时无刻不面临着非常高的风险，但是他们所面临高风险并没有给他们带来相应的高收益。">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-11-07T05:43:17.000Z">
-<meta property="article:modified_time" content="2020-11-07T14:32:46.273Z">
+<meta property="article:published_time" content="2020-11-14T13:22:05.000Z">
+<meta property="article:modified_time" content="2020-12-26T03:50:39.905Z">
 <meta property="article:author" content="Robin Li">
-<meta property="article:tag" content="日常生活">
+<meta property="article:tag" content="经济学">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://modernhero.cc/posts/5/">
+<link rel="canonical" href="https://modernhero.cc/bc461404efbf">
 
 
 <script class="page-configurations">
@@ -52,7 +52,7 @@
   };
 </script><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <title>真的有理想的工作吗？ | ModernHero</title>
+  <title>高风险的穷人 | ModernHero</title>
   
 
 
@@ -211,7 +211,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -223,6 +223,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%81%E4%BA%BA%E5%A4%84%E7%90%86%E5%8A%9E%E6%B3%95"><span class="nav-text">私人处理办法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E8%A7%84%E7%9A%84%E9%A3%8E%E9%99%A9%E5%B8%82%E5%9C%BA"><span class="nav-text">正规的风险市场</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%BE%E4%BB%A5%E6%8A%95%E4%BF%9D"><span class="nav-text">难以投保</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%BE%E4%BB%A5%E6%99%AE%E5%8F%8A"><span class="nav-text">难以普及</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -305,7 +306,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/posts/5/">
+    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/bc461404efbf">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.png">
@@ -321,7 +322,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          真的有理想的工作吗？
+          高风险的穷人
         </h1>
 
         <div class="post-meta-container">
@@ -331,21 +332,27 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">创建于</span>
-      
 
-      <time title="创建时间：2020-11-07 13:43:17 / 修改时间：22:32:46" itemprop="dateCreated datePublished" datetime="2020-11-07T13:43:17+08:00">2020-11-07</time>
+      <time title="创建时间：2020-11-14 21:22:05" itemprop="dateCreated datePublished" datetime="2020-11-14T21:22:05+08:00">2020-11-14</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-12-26 11:50:39" itemprop="dateModified" datetime="2020-12-26T11:50:39+08:00">2020-12-26</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categorys/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">闲言碎语</span></a>
+          <a href="/categorys/%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/" itemprop="url" rel="index"><span itemprop="name">书籍阅读</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categorys/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/%E7%A4%BE%E4%BC%9A/" itemprop="url" rel="index"><span itemprop="name">社会</span></a>
+          <a href="/categorys/%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E8%B4%AB%E7%A9%B7%E7%9A%84%E6%9C%AC%E8%B4%A8/" itemprop="url" rel="index"><span itemprop="name">贫穷的本质</span></a>
         </span>
     </span>
 
@@ -358,8 +365,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/posts/5/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/5/" itemprop="commentCount"></span>
+    <a title="valine" href="/bc461404efbf#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/bc461404efbf" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -369,14 +376,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.2k</span>
+      <span>1.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -387,32 +394,31 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <blockquote class="blockquote-center">
-<p>最理想的一个工作状态就是我可以去做我想做的事情，你不要去问我想做什么，因为我自己也不知道。</p>
-
-</blockquote>
-<p>今天周末休息半天，没事在吃饭的时候边吃边在看 YouTube 上的一个系列视频 — 。一句话简单的评价就是这是一个很接地气的视频节目。</p>
+        <p>在书中有一章名为：“赤脚的对冲基金经理”，毫无疑问这应该是这本书这让我影响深刻的一个标题：穷人在某种程度上与基金经理一样几乎无时无刻不面临着非常高的风险，但是他们所面临高风险并没有给他们带来相应的高收益。</p>
 <a id="more"></a>
-<p>在这些视频中有一个视频是采访几个90后的“打工人”，询问他们是否对自己的工作状态感到满意，他们理想的工作状态是上面呢？虽然自己还没有到他们那一步但是看了感到莫名的触动！</p>
-<p>通过他们采访的回答，很容易的发现他们存在很多的共同点：</p>
-<ol>
-<li>他们由于各种各样的原因对自己的工作状态表示不满意；有的认为工作很辛苦，有的认为工作的人际关系复杂，所谓的<strong>办公室政治</strong>（头一次听到，很有意思的一个词语）。总而言之是不满意。</li>
-<li>当问他们的理想的工作状态的时候，有一个女孩的回答就是前面引用的那句话，而其他几个的回答也几乎是差不多的想去做自己喜欢做的事情。</li>
-</ol>
-<p>我很喜欢那个女孩的回答，她的回答是一类人的回答，仔细想想或许以后也会是自己的回答吧！我不禁的思考为什么很多人想去做自己想做的事情，却有的时候竟然不知道自己想做的是什么呢？</p>
-<p>我的思绪飘到了前一段时间听的项飙的一个关于“内卷”化的访谈。在节目中项飙认为我们现在之所以存在如此严重的所谓的“内卷”化的现象是有原因的：</p>
-<p><strong>高度一体化的竞争机制。</strong></p>
+<p>由于高风险的存在，穷人自然也会去使用各种各样的方式去应对风险：</p>
+<h3 id="私人处理办法"><a href="#私人处理办法" class="headerlink" title="私人处理办法"></a>私人处理办法</h3><p>例如在书中提到的：</p>
+<p>他们面临失业与工资水平下降时，穷人往往会加大他们的工作量，想通过更多的工作去弥补由于可能的失业与低工资给自己带来的损失，尽管从某种意义上来说这种行为是无效的，因为过多的劳动供给只会导致工资的进一步下滑，但这也是穷人面对时的一种处理办法。</p>
+<p>他们在面对可能的风险的时候，也会想基金经理一样，采取多元化的策略，“不把所有的鸡蛋放在同一个篮子里”，他们会同时从事多项职业：同一个家庭中的不同的成员会从事不同的职业，同一个家庭成员会从事多种职业。通过这种<strong>多元化</strong>的策略，可以有效的规避由类似于<strong>非系统性风险</strong>所带来的损失。</p>
+<p>而这种应对风险的办法也会导致一些问题，他们将面对多元化与专业化的替代选择问题，在多元化的身兼数职的时候，他们可能是以效率作为代价的。</p>
+<p>他们在面对可能的风险的时候，还可以通过临时性的搬迁来有规避风险，将家庭的成员分散在不同的地区，一部分留守在老家、一部分去向城市。而穷人的这种临时性的搬迁似乎也会考虑到<strong>“比较优势的原理”</strong>：</p>
 <blockquote>
-<p>全国人民朝着一个目标去，要多赚钱，买一百多平的房子，要买车，一定要成家。一定年龄做一定的事情是等等。这个线是规划的非常好的，大家高度一体化的，都要在这样一个市场里面争夺一样东西，是高度一体的。<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
+<p>通常情况下，选择迁居的家庭成员大多为印度或墨西哥的男人或十几岁的男孩，还有中国、菲律宾及泰国的女孩，其他人则留在家里</p>
 </blockquote>
-<p>我们存在生活于一个由这样的机制所主导的社会中，计划每个人都通过相同的竞争方式（不断的考核）接受相同的价值评价体系去获得那高度相同的社会目标。</p>
-<p><strong>缺乏退出机制</strong></p>
-<p>我们会想，既然存在如此可怕的竞争机制，那我退出不好吗？问题是你一但进入（准确的说是一出生）这种竞争的机制，你几乎很难在从这个机制中退出来。你会面临很多来自各个方面的压力，这些压力会阻止你退出这个机制，就像节目中的那个女孩说的一样，有时你会感到你在无法控制的往自己讨厌的方向前进。</p>
-<p>现在或许自己找到了那个答案。我们从小被教育要在学校好好“学习”。学校是一个典型的高度一体化的象征。相同的目标（高分），相同的价值评价体系（考题做对），相同的竞争方式（没完没了的考试），几乎什么都是相同的，甚至是各个科目的老师所教的都是一样的，并不是如何学习，而是如何学习考试，不同的科目教不同的考试方法。</p>
-<p>对于很多人在进入社会后，迎接你的还是一个高度一体化的社会。你能想象在这种高度一致的生活中，你能有时间去思考自己真的想要的是什么吗？自己真的想要去做的是什么吗？或许晚上躺在床上在想着“生活不只有眼前的苟且，还有诗和远方的生活”，第二天还是要进入现实的洪波中，由不得你。</p>
-<hr>
-<p>想了那么多，思考了那么多有用吗？这个回答不过是对“理想”的工作状态的回答。但是现实是：在现实社会是否真的还存在足够的空间，能够让一个普通的人，在完全坚持自己的理想的道理上顺畅的走下去呢？</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;"><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI2ODU4MDM1Mg==&amp;mid=2247484400&amp;idx=1&amp;sn=92e164d86a19f06e144e42a75fb3c792&amp;chksm=eaec209fdd9ba989ed6f9cd8e14dd6ccc8d2fa9dbd68fce905dd296aa90049c3e5e15985844d#rd">项飙访谈：内卷是一种不允许失败和退出的竞争</a></span><a href="#fnref:1" rev="footnote"> ↩</a></li></ol></div></div>
+<p>在一些地方，一些家庭甚至会利用通婚的方式来分散风险，婚姻的双方成为链接两个大的家庭的纽带，形成一个更大的往往处于不同地方的更大的家庭，在某种程度上也增强了对风险的抵抗能力。</p>
+<p>当我们生活在一个熟人社会中，我们还可以通过<strong>互相帮助</strong>的方式来应对风险，在一个关系网络中，当某一个家庭出现问题的时候，其他的家庭可以向他提高帮助。当另外的家庭出现问题的时候，我们并向另外的家庭提高帮助，毕竟现实中谁也不能保障自己将一帆风顺。</p>
+<p>从理论上来讲，基于这种思路出发的互帮互助是一种非常高效的非正式保险，可以有效的应对风险。但是事实上这种应对风险的方式是存在很大的缺陷的，而缺陷存在的原因可能就是我们对于这种互相帮助的初心都没有高清楚，或许人们很多时候并不是出于希望得到别人的帮助而进行帮助只是出于人道主义对那些特别困难的人提供微不足道的救助，当出现更严重的问题的时候，这种帮助往往就无法发挥有效的作用了。</p>
+<p>上面几种在风险面前应对风险“很自然的”的一些方式，这些方式中没有支政府、没有市场的参与。但是这些方式在面对风险的时候或多或少的都存在一些问题。</p>
+<h3 id="正规的风险市场"><a href="#正规的风险市场" class="headerlink" title="正规的风险市场"></a>正规的风险市场</h3><p>对于大多数人，应对风险的方式都是通过向保险公司购买保险，对于在日常生活中面临巨大风险穷人来理论上也该如此，他们的需求也会比很多富人更大。但是事实上现实中，穷人的保险市场似乎并没有像想象中的那样存在，之所以出现这种情况是有原因的：</p>
+<h4 id="难以投保"><a href="#难以投保" class="headerlink" title="难以投保"></a>难以投保</h4><p>对于保险市场来说，很多险种存在难以避免的一些问题：典型的像医疗保险、车险等所面临的逆向选择与道德风险问题。除此之外如果在一些贫困地区缺乏对保险市场的管理，还存在很多的明目张胆的欺诈行为：</p>
+<p>例如书中印度的“牛险”就是一个例子，我们很多时候无法确定牛的状态是死是活，投保人在投保之后在牛状态良好的情况下也会向保险公司寻求理赔，后来保险公司规定理赔需要死牛耳朵，但这无非是促进了另外一个牛耳朵市场的繁荣，诈骗的行为仍然存在。</p>
+<p>这一些问题的存在都使得现实中很多险种难以投保。</p>
+<h4 id="难以普及"><a href="#难以普及" class="headerlink" title="难以普及"></a>难以普及</h4><p>现实中有些保险是不存在上面所说的逆向选择或者道德风险等问题，但是很多时候穷人的参保率确实非常的低，参保的群体中所缴纳的保费往往是非常的低的。从某种意义上来说似乎穷人并不愿意买保险，显然不是这样的，如果是这样在前面他们采用的种种的规避风险的措施也是没有存在的道理的。但是为什么穷人不愿意购买保险公司的保险呢？</p>
+<p><strong>政府的参与</strong></p>
+<p>因为对于很多穷人可能认为在自己面对巨大的风险后面有政府进行兜底，政府与一些非盈利的结构的存在对市场造成了破坏。导致穷人不会从市场中购买保险。</p>
+<p><strong>可信度</strong></p>
+<p>保险需要投保人预先支付一笔保费，而可能的收益是未来的一个不确定性的事故所带来的。所有在很多贫困地区人们对保险存有质疑的态度。</p>
+
     </div>
 
     
@@ -431,7 +437,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://modernhero.cc/posts/5/" title="真的有理想的工作吗？">https://modernhero.cc/posts/5/</a>
+      <a href="https://modernhero.cc/bc461404efbf" title="高风险的穷人">https://modernhero.cc/bc461404efbf</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -479,7 +485,7 @@
   </div>
 
           <div class="post-tags">
-              <a href="/tags/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/" rel="tag"><i class="fa fa-tag"></i> 日常生活</a>
+              <a href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag"><i class="fa fa-tag"></i> 经济学</a>
           </div>
 
         
@@ -490,13 +496,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/3/" rel="prev" title="R语言中的条件与循环结构">
-                  <i class="fa fa-chevron-left"></i> R语言中的条件与循环结构
+                <a href="/89d8c3cf1fb6" rel="prev" title="R语言中有关于概率分布的函数">
+                  <i class="fa fa-chevron-left"></i> R语言中有关于概率分布的函数
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/6/" rel="next" title="R语言中有关于概率分布的函数">
-                  R语言中有关于概率分布的函数 <i class="fa fa-chevron-right"></i>
+                <a href="/68292e6b8acc" rel="next" title="R语言简单的simulation">
+                  R语言简单的simulation <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -695,7 +701,7 @@ NexT.utils.loadComments('#valine-comments', () => {
   NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
     new Valine(Object.assign({
       el  : '#valine-comments',
-      path: "/posts/5/",
+      path: "/bc461404efbf",
     }, {"enable":true,"appId":"OqcLraGyUGkWL0MAnPAp6sNn-MdYXbMMI","appKey":"8RfHAJOzCSRCM7gFgw1JQHzv","placeholder":"大师留言，小丑靠边！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":false,"recordIP":false,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
     ));
   }, window.Valine);

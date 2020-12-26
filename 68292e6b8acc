@@ -25,22 +25,24 @@
     var CONFIG = {"hostname":"modernhero.cc","root":"/","scheme":"Mist","version":"8.0.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="基于Rvest的爬虫">
-<meta property="og:url" content="https://modernhero.cc/posts/rvest/index.html">
+  <meta name="description" content="R语言提供了很多的概率分布的函数以及产生随机数的函数，通过这些函数我们可以做一些简单的simulation。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R语言简单的simulation">
+<meta property="og:url" content="https://modernhero.cc/68292e6b8acc">
 <meta property="og:site_name" content="ModernHero">
+<meta property="og:description" content="R语言提供了很多的概率分布的函数以及产生随机数的函数，通过这些函数我们可以做一些简单的simulation。">
 <meta property="og:locale">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007DtFxUly1gk9qsre6j9j306o07qmxq.jpg">
-<meta property="article:published_time" content="2020-11-01T06:33:39.000Z">
-<meta property="article:modified_time" content="2020-11-07T07:07:44.076Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/007DtFxUly1gl0dsirz0vj30lj0lkmzj.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/007DtFxUly1gl0cwutxy5j30if07n3yh.jpg">
+<meta property="article:published_time" content="2020-11-23T03:05:15.000Z">
+<meta property="article:modified_time" content="2020-11-29T08:00:09.307Z">
 <meta property="article:author" content="Robin Li">
 <meta property="article:tag" content="R语言">
-<meta property="article:tag" content="爬虫">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/007DtFxUly1gk9qsre6j9j306o07qmxq.jpg">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/007DtFxUly1gl0dsirz0vj30lj0lkmzj.jpg">
 
 
-<link rel="canonical" href="https://modernhero.cc/posts/rvest/">
+<link rel="canonical" href="https://modernhero.cc/68292e6b8acc">
 
 
 <script class="page-configurations">
@@ -53,7 +55,7 @@
   };
 </script><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <title>基于Rvest的爬虫 | ModernHero</title>
+  <title>R语言简单的simulation | ModernHero</title>
   
 
 
@@ -224,7 +226,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Ervest%E5%8C%85"><span class="nav-text">关于rvest包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96%E6%AD%A5%E9%AA%A4"><span class="nav-text">数据爬取步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#xpath%E5%AE%9A%E4%BD%8D"><span class="nav-text">xpath定位</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87simulation%E6%9D%A5%E8%AE%A1%E7%AE%97-%CE%A0-%E7%9A%84%E5%80%BC"><span class="nav-text">通过simulation来计算 Π 的值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF"><span class="nav-text">基本思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E7%9A%843-sigma-%E6%B3%95%E5%88%99"><span class="nav-text">验证正态分布的3$ \sigma $法则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF-1"><span class="nav-text">基本思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="nav-text">代码</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -307,7 +309,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/posts/rvest/">
+    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/68292e6b8acc">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.png">
@@ -323,7 +325,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          基于Rvest的爬虫
+          R语言简单的simulation
         </h1>
 
         <div class="post-meta-container">
@@ -334,14 +336,14 @@
       </span>
       <span class="post-meta-item-text">创建于</span>
 
-      <time title="创建时间：2020-11-01 14:33:39" itemprop="dateCreated datePublished" datetime="2020-11-01T14:33:39+08:00">2020-11-01</time>
+      <time title="创建时间：2020-11-23 11:05:15" itemprop="dateCreated datePublished" datetime="2020-11-23T11:05:15+08:00">2020-11-23</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-11-07 15:07:44" itemprop="dateModified" datetime="2020-11-07T15:07:44+08:00">2020-11-07</time>
+        <time title="修改时间：2020-11-29 16:00:09" itemprop="dateModified" datetime="2020-11-29T16:00:09+08:00">2020-11-29</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -353,7 +355,7 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categorys/R%E8%AF%AD%E8%A8%80/%E7%88%AC%E8%99%AB/" itemprop="url" rel="index"><span itemprop="name">爬虫</span></a>
+          <a href="/categorys/R%E8%AF%AD%E8%A8%80/%E7%BB%9F%E8%AE%A1%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">统计应用</span></a>
         </span>
     </span>
 
@@ -366,8 +368,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/posts/rvest/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/rvest/" itemprop="commentCount"></span>
+    <a title="valine" href="/68292e6b8acc#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/68292e6b8acc" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -377,14 +379,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.1k</span>
+      <span>1.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
@@ -395,39 +397,33 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gk9qsre6j9j306o07qmxq.jpg" width="20%" height="20%" title="◎ rvest" alt="rvest"/></p>
+        <p>R语言提供了很多的概率分布的函数以及产生随机数的函数，通过这些函数我们可以做一些简单的simulation。</p>
 <a id="more"></a>
-<h2 id="关于rvest包"><a href="#关于rvest包" class="headerlink" title="关于rvest包"></a>关于rvest包</h2><p><code>rvest</code> 包是Hadley Wickham开发的一个能够非常容易的从网页获取数据的包，这个包使用起来非常的容易，<code>rvest</code>的灵感来源于<code>BeautifulSoup</code>（<code>python</code>中的一个非常有名的解析库）。</p>
-<p>但是我的理解是这个包实际上不能直接从网络中获取<code>HTML</code>文件，而是通过<code>xml2</code> 包中的<code>read_html()</code> 获取<code>HTML</code>文件或者是通过其他的方式获取了<code>html</code>文件之后再转给<code>rvest</code>，用<code>rvest</code>包中的函数来非常方便的去提取数据。加载<code>rvest</code>的同时也会加载<code>xml2</code>包。</p>
-<p><code>read_html()</code> 函数：</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">read_html(x, encoding = <span class="string">&quot;&quot;</span>, ..., options = <span class="built_in">c</span>(<span class="string">&quot;RECOVER&quot;</span>, <span class="string">&quot;NOERROR&quot;</span>, <span class="string">&quot;NOBLANKS&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个函数可以从互联网中获取网页内容，x为网页的URL，encoding是指定网页的编码方式。</span></span><br></pre></td></tr></table></figure>
-<p>这个函数获取<code>html</code>文件的功能是非常的有限的，因为他没有伪装，无法获取动态网页的全部内容，有些网页中存在异步加载，文件中包含js脚本，浏览器可以通过加载js脚本去更新数据，但是用R这种方式获取<code>html</code>文件是无法获取所有的内容的。必须要使用<code>rselenium</code>包通过虚拟浏览器的方式去进行获取。</p>
-<p><code>rvest</code>包中存在下面这些函数：</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">back	History navigation tools</span><br><span class="line">encoding	Guess and repair faulty character encoding.</span><br><span class="line">follow_link	Navigate to a new url.</span><br><span class="line">google_form	Make link to google form given id</span><br><span class="line">guess_encoding	Guess and repair faulty character encoding.</span><br><span class="line">html	Parse an HTML page.</span><br><span class="line">html_attr	Extract attributes, text and tag name from html.</span><br><span class="line">html_attrs	Extract attributes, text and tag name from html.</span><br><span class="line">html_children	Extract attributes, text and tag name from html.</span><br><span class="line">html_form	Parse forms <span class="keyword">in</span> a page.</span><br><span class="line">html_name	Extract attributes, text and tag name from html.</span><br><span class="line">html_node	Select nodes from an HTML document</span><br><span class="line">html_nodes	Select nodes from an HTML document</span><br><span class="line">html_session	Simulate a session <span class="keyword">in</span> an html browser.</span><br><span class="line">html_table	Parse an html table into a data frame.</span><br><span class="line">html_text	Extract attributes, text and tag name from html.</span><br><span class="line">is.session	Simulate a session <span class="keyword">in</span> an html browser.</span><br><span class="line">jump_to	Navigate to a new url.</span><br><span class="line">pluck	Extract elements of a <span class="built_in">list</span> by position.</span><br><span class="line">read_xml.session	Parse an HTML page.</span><br><span class="line">repair_encoding	Guess and repair faulty character encoding.</span><br><span class="line">session_history	History navigation tools</span><br><span class="line">set_values	Set values <span class="keyword">in</span> a form.</span><br><span class="line">submit_form	Submit a form back to the server.</span><br></pre></td></tr></table></figure>
-<p><code>rvest</code>包中经常使用的有下面几个：</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">html_nodes(x, css, xpath)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个函数用于从html文件中去定位到需要的内容的节点的位置；</span></span><br><span class="line"><span class="comment">#定位的方式有两种一种是通过xpath定位一种是通过css进行定位</span></span><br><span class="line"></span><br><span class="line">html_node(x, css, xpath)</span><br><span class="line"></span><br><span class="line"><span class="comment">#只是输出一个元素</span></span><br><span class="line">----</span><br><span class="line">html_text(x, trim = <span class="literal">FALSE</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个包用来获取html文件中的文本数据。x是定位到的文本所在的节点；trim参数可以去掉文本前后的空格</span></span><br><span class="line"></span><br><span class="line">----</span><br><span class="line">html_table(x, header = <span class="literal">NA</span>, trim = <span class="literal">TRUE</span>, fill = <span class="literal">FALSE</span>, dec = <span class="string">&quot;.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个函数用来读取网页中的表格，转化为数据框</span></span><br><span class="line"><span class="comment">#x：一个html文件、或者是一个节点、节点集。 </span></span><br><span class="line"><span class="comment">#header：是否将第一行设为表头？如果为NA，则默认的是当含有&lt;th&gt;标签时，将以第一行作为表头。</span></span><br><span class="line"><span class="comment">#trim：去掉内容中前后的空格</span></span><br><span class="line"><span class="comment">#fill：缺失值是否自动填充</span></span><br><span class="line"><span class="comment">#dec：转化为十进制</span></span><br><span class="line"></span><br><span class="line">----</span><br><span class="line">html_attr(x, name, default = <span class="literal">NA_character_</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取属性内容，x是节点，name获取节点中哪个属性的值。</span></span><br></pre></td></tr></table></figure>
-<h2 id="数据爬取步骤"><a href="#数据爬取步骤" class="headerlink" title="数据爬取步骤"></a>数据爬取步骤</h2><p><code>rvest</code>爬取数据的步骤非常的简单，一般来说是三步：</p>
-<ol>
-<li>读取网页：借助<code>read_html()</code>函数去读取网页</li>
-<li>爬取内容：从读取下来的网页中获取想要的内容：<ol>
-<li>定位：从html节点文件中找到目标数据的位置，用<code>html_nodes()</code> 读取节点</li>
-<li>解析，获取数据：用html_text()等函数获取定位到的节点的数据。</li>
-</ol>
-</li>
-</ol>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#爬取静态网站pubmed示例</span></span><br><span class="line"><span class="comment">#调用包</span></span><br><span class="line">library(<span class="string">&quot;rvest&quot;</span>)</span><br><span class="line"><span class="comment">#第一步、读取网页。</span></span><br><span class="line">page_content &lt;- read_html( x= <span class="string">&quot;&lt;http://www.stats.gov.cn/tjsj/zxfb/202010/t20201027_1796416.html&gt;&quot;</span> )</span><br><span class="line"><span class="comment">#第二步、爬取内容。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#2.1、定位</span></span><br><span class="line"><span class="comment">#xpath:使用xpat定位</span></span><br><span class="line"><span class="comment">#css：优点：简洁 缺点：定位可能不精确。</span></span><br><span class="line">node &lt;- <span class="string">&#x27;//*[@id=&quot;search-results&quot;]/section/div[1]/div/article[1]/div[2]/div[1]/a&#x27;</span></span><br><span class="line">nodes_content &lt;- html_nodes(x = page_content,xpath = node)</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.2、爬起数据</span></span><br><span class="line">html_text(x = nodes_content,trim = <span class="built_in">T</span>)</span><br></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a> 是一个免费的搜索引擎，提供生物医学方面的论文搜索以及摘要。</p>
-<p>上面用的是<code>xpath</code> 进行定位，也可以使用<code>css</code>进行定位；这两种定位各有各的优缺点。</p>
-<h3 id="xpath定位"><a href="#xpath定位" class="headerlink" title="xpath定位"></a>xpath定位</h3><p><code>xpath</code>简单的来说是直接通过路径来进行定位，如：</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//*[@id=<span class="string">&quot;search-results&quot;</span>]/section/div[<span class="number">1</span>]/div/article[<span class="number">1</span>]/div[<span class="number">2</span>]/div[<span class="number">1</span>]/a</span><br></pre></td></tr></table></figure>
-<p>这种形式就类似于我们文件夹中的路径，有两种路径：</p>
-<ol>
-<li>绝对路径：路径以<code>/</code>符号分隔，非常精确的定位到节点所在的位置</li>
-<li>相对路径：路径中用<code>//</code> 来进行表示相对的路径</li>
-</ol>
-<p>例如有两个小区，每个小区两栋楼一单元与二单元，每一栋楼有五层。</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">一号小区/一单元/二楼  </span><br><span class="line"><span class="comment">#绝对定位，一号小区一单元二楼</span></span><br><span class="line"></span><br><span class="line">一号小区//二楼</span><br><span class="line"><span class="comment">#采用了相对路径，一号小区所有的二楼，既包括一单元的也包括二单元的二楼</span></span><br><span class="line"></span><br><span class="line">//二楼</span><br><span class="line"><span class="comment">#相对路径，各个小区各个单元的二楼</span></span><br></pre></td></tr></table></figure>
-<p>在谷歌浏览器中可以直接在浏览器中检查源代码（F12），定位到节点复制xpath地址，使用起来非常的简单。</p>
+<h3 id="通过simulation来计算-Π-的值"><a href="#通过simulation来计算-Π-的值" class="headerlink" title="通过simulation来计算 Π 的值"></a>通过simulation来计算 Π 的值</h3><p>我们通过在R语言中通过simulation的方法近似的去估计 Π 的数值。</p>
+<h4 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h4><ul>
+<li>生成从一个 x 属于(-1,1) , y 属于(-1,1)的正方形中产生大量的随机点N。</li>
+<li>计算产生的大量的随机点在圆心位于圆点，半径为1的点的个数M。</li>
+<li>基于大数定律当N趋于无穷大时有下面的等式成立：</li>
+</ul>
+<script type="math/tex; mode=display">
+\frac{n}{N} = \frac{\pi \cdot r^2}{4}</script><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">N</span> &lt;- <span class="number">100000</span></span><br><span class="line"><span class="attribute">x</span> &lt;- runif(N,min = -<span class="number">1</span>,max = <span class="number">1</span>)</span><br><span class="line"><span class="attribute">y</span> &lt;- runif(N,min = -<span class="number">1</span>,max = <span class="number">1</span>)</span><br><span class="line"><span class="comment">#产生100000个随机点。</span></span><br><span class="line"><span class="attribute">z</span> &lt;- sum(x^<span class="number">2</span>+y^<span class="number">2</span>&lt;=<span class="number">1</span>)</span><br><span class="line"><span class="comment">#统计100000个随机点中位于圆中的个数。</span></span><br><span class="line"><span class="attribute">pai</span> &lt;- z/N*<span class="number">4</span></span><br><span class="line"><span class="comment">#计算pai的数值</span></span><br></pre></td></tr></table></figure>
+<p><img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gl0dsirz0vj30lj0lkmzj.jpg" alt="图一" style="zoom:50%;" /></p>
+<p>上面就是简单的simulation计算 Π 的估计值。</p>
+<h3 id="验证正态分布的3-sigma-法则"><a href="#验证正态分布的3-sigma-法则" class="headerlink" title="验证正态分布的3$ \sigma $法则"></a>验证正态分布的3$ \sigma $法则</h3><p>在统计学上存在一个3$ \sigma $法则：</p>
+<p><blockquote class="quoteback" darkmode="" data-title="%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99%EF%BC%88%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%89_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91" data-author="" cite="https://baike.baidu.com/item/%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99%EF%BC%88%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%89">
+                      经验规则是统计规律，指出了在正态分布，几乎所有数据都将落在均值的三倍标准差内。所述经验规则表明，68%的数据将分布在的第一个标准偏差之内，95%将落在第二个标准差之内，和99.7%将落在均值的前三个标准偏差之内。
+                      <footer> <cite><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99%EF%BC%88%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%89">https://baike.baidu.com/item/%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99%EF%BC%88%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%89</a></cite></footer>
+                      </blockquote><script note="" src="https://cdn.jsdelivr.net/gh/Blogger-Peer-Review/quotebacks@1/quoteback.js"></script></p>
+<p>我们可以对这个法则进行简单的 simulation。</p>
+<h4 id="基本思路-1"><a href="#基本思路-1" class="headerlink" title="基本思路"></a>基本思路</h4><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plot(<span class="name">x</span>,y,pch=<span class="string">&quot;.&quot;</span>)</span><br><span class="line">lines(<span class="name">seq</span>(<span class="name">-2</span>,<span class="number">2</span>,length=500),dnorm(<span class="name">seq</span>(<span class="name">-2</span>,<span class="number">2</span>,length=500)),col=<span class="string">&quot;red&quot;</span>)</span><br><span class="line">abline(<span class="name">v=c</span>(<span class="name">-2</span>,<span class="number">2</span>),col=<span class="string">&quot;red&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><img data-src="http://ww1.sinaimg.cn/large/007DtFxUly1gl0cwutxy5j30if07n3yh.jpg" alt="图二"></p>
+<ul>
+<li>如上图二所示，我们在产生在2$ \sigma $长的长方形中大量的随机点N个</li>
+<li>计算位于正态分布下部的点的个数m</li>
+<li>通过下面的式子可以计算是否大致符合经验法则</li>
+</ul>
+<script type="math/tex; mode=display">
+\frac{m}{N}\cdot 2 \cdot dnorm(0) \simeq 0.9544</script><h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">N</span> &lt;- <span class="number">1000000</span></span><br><span class="line"></span><br><span class="line">#一个标准差</span><br><span class="line"></span><br><span class="line">x &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = -<span class="number">1</span>,<span class="built_in">max</span> = <span class="number">1</span>)</span><br><span class="line">y &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = <span class="number">0</span>,<span class="built_in">max</span> = dnorm(<span class="number">0</span>))</span><br><span class="line"><span class="symbol">z1</span> &lt;- <span class="built_in">sum</span>(y&lt;dnorm(x))/<span class="built_in">N</span>*(<span class="number">2</span>*dnorm(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#两个标准差</span><br><span class="line"></span><br><span class="line">x &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = -<span class="number">2</span>,<span class="built_in">max</span> = <span class="number">2</span>)</span><br><span class="line">y &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = <span class="number">0</span>,<span class="built_in">max</span> = dnorm(<span class="number">0</span>))</span><br><span class="line"><span class="symbol">z2</span> &lt;- <span class="built_in">sum</span>(y&lt;dnorm(x))/<span class="built_in">N</span>*(<span class="number">4</span>*dnorm(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">#三个标准差</span><br><span class="line"></span><br><span class="line">x &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = -<span class="number">3</span>,<span class="built_in">max</span> = <span class="number">3</span>)</span><br><span class="line">y &lt;- runif(<span class="built_in">N</span>,<span class="built_in">min</span> = <span class="number">0</span>,<span class="built_in">max</span> = dnorm(<span class="number">0</span>))</span><br><span class="line"><span class="symbol">z3</span> &lt;- <span class="built_in">sum</span>(y&lt;dnorm(x))/<span class="built_in">N</span>*(<span class="number">6</span>*dnorm(<span class="number">0</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -435,25 +431,6 @@
     
     
       
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\6\" rel="bookmark">R语言中有关于概率分布的函数</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\3\" rel="bookmark">R语言中的条件与循环结构</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\1\" rel="bookmark">R语言数据创建与导入</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\0008\" rel="bookmark">R语言简单的simulation</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\9\" rel="bookmark">R语言与蒙特卡洛仿真</a></div>
-    </li>
-  </ul>
-
 
     <footer class="post-footer">
           
@@ -465,7 +442,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://modernhero.cc/posts/rvest/" title="基于Rvest的爬虫">https://modernhero.cc/posts/rvest/</a>
+      <a href="https://modernhero.cc/68292e6b8acc" title="R语言简单的simulation">https://modernhero.cc/68292e6b8acc</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -514,7 +491,6 @@
 
           <div class="post-tags">
               <a href="/tags/R%E8%AF%AD%E8%A8%80/" rel="tag"><i class="fa fa-tag"></i> R语言</a>
-              <a href="/tags/%E7%88%AC%E8%99%AB/" rel="tag"><i class="fa fa-tag"></i> 爬虫</a>
           </div>
 
         
@@ -525,10 +501,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/bc461404efbf" rel="prev" title="高风险的穷人">
+                  <i class="fa fa-chevron-left"></i> 高风险的穷人
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2/" rel="next" title="理想中的学者">
-                  理想中的学者 <i class="fa fa-chevron-right"></i>
+                <a href="/33a1d18818db" rel="next" title="学校食堂的感想">
+                  学校食堂的感想 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -727,7 +706,7 @@ NexT.utils.loadComments('#valine-comments', () => {
   NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
     new Valine(Object.assign({
       el  : '#valine-comments',
-      path: "/posts/rvest/",
+      path: "/68292e6b8acc",
     }, {"enable":true,"appId":"OqcLraGyUGkWL0MAnPAp6sNn-MdYXbMMI","appKey":"8RfHAJOzCSRCM7gFgw1JQHzv","placeholder":"大师留言，小丑靠边！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":false,"recordIP":false,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
     ));
   }, window.Valine);
