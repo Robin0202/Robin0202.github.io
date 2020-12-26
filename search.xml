@@ -524,9 +524,17 @@ mean = 1/rate\\
 <h2 id="蒙特卡洛积分"><a href="#蒙特卡洛积分" class="headerlink" title="蒙特卡洛积分"></a>蒙特卡洛积分</h2><p>蒙特卡洛积分就是通过蒙特卡洛模拟的方式去计算函数的积分，依据的原理就是大数定理：</p>
 <p>对于连续性随机变量 $X$ 服从在区间 [a,b] 概率密度为 $f(x)$ 的分布，所以它的均值可以表示为：</p>
 <script type="math/tex; mode=display">
-mean(X) = \int_a^b {xf(x)dx}</script><p>对于随机变量 Y ，Y为 $g(x)$ ，所以随机变量 Y 的均值为：</p>
+E(X) = \int_a^b {xf(x)dx}</script><p>对于随机变量 Y ，Y为 $g(x)$ ，所以随机变量 Y 的均值为：</p>
 <script type="math/tex; mode=display">
-mean(X) = \int_c^d {g(x)f(x)dx}</script><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+E(X) = \int_c^d {g(x)f(x)dx}</script><p>而根据大数定理，我们可以产生 M 个独立同分布（i.i.d) 的样本 X :</p>
+<script type="math/tex; mode=display">
+X_1,X_2,X_3,······X_M</script><p>当 M 的个数足够大时，样本的均值为：</p>
+<script type="math/tex; mode=display">
+\overline X  = (1/M)\sum </script><p>样本的均值依概率收敛于总体的均值 $E(X)$。</p>
+<p>所以对于任意可积函数有下面的式子成立：</p>
+<script type="math/tex; mode=display">
+E[g(x)/f(x)] = \int {[g(x)/f(x)]f(x)dx}</script><p>其中 $f(x)$ 可以算作随机变量 $x$ 的概率密度函数。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>R语言</category>
         <category>统计应用</category>
