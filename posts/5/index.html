@@ -25,22 +25,21 @@
     var CONFIG = {"hostname":"modernhero.cc","root":"/","scheme":"Mist","version":"8.0.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="在统计学中，很多统计的过程都是建立在随机变量的抽样分布的基础之上的，对于一个随机变量的抽样分布，我们需要知道它的一些统计量如：参数，一些特别的分位数等等，在现实中一些复杂的分布的统计量无法简单的获得，我们可以通过计算机仿真的方法去计算。">
+  <meta name="description" content="最理想的一个工作状态就是我可以去做我想做的事情，你不要去问我想做什么，因为我自己也不知道。   今天周末休息半天，没事在吃饭的时候边吃边在看 YouTube 上的一个系列视频 — 。一句话简单的评价就是这是一个很接地气的视频节目。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="R语言与蒙特卡洛仿真">
-<meta property="og:url" content="https://modernhero.cc/posts/55497e597af8/index.html">
+<meta property="og:title" content="真的有理想的工作吗？">
+<meta property="og:url" content="https://modernhero.cc/posts/5/index.html">
 <meta property="og:site_name" content="ModernHero">
-<meta property="og:description" content="在统计学中，很多统计的过程都是建立在随机变量的抽样分布的基础之上的，对于一个随机变量的抽样分布，我们需要知道它的一些统计量如：参数，一些特别的分位数等等，在现实中一些复杂的分布的统计量无法简单的获得，我们可以通过计算机仿真的方法去计算。">
+<meta property="og:description" content="最理想的一个工作状态就是我可以去做我想做的事情，你不要去问我想做什么，因为我自己也不知道。   今天周末休息半天，没事在吃饭的时候边吃边在看 YouTube 上的一个系列视频 — 。一句话简单的评价就是这是一个很接地气的视频节目。">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-12-26T02:44:24.000Z">
-<meta property="article:modified_time" content="2020-12-26T03:43:55.535Z">
+<meta property="article:published_time" content="2020-11-07T05:43:17.000Z">
+<meta property="article:modified_time" content="2020-11-07T14:32:46.273Z">
 <meta property="article:author" content="Robin Li">
-<meta property="article:tag" content="R语言">
-<meta property="article:tag" content="统计学">
+<meta property="article:tag" content="日常生活">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://modernhero.cc/posts/55497e597af8/">
+<link rel="canonical" href="https://modernhero.cc/posts/5/">
 
 
 <script class="page-configurations">
@@ -53,7 +52,7 @@
   };
 </script><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <title>R语言与蒙特卡洛仿真 | ModernHero</title>
+  <title>真的有理想的工作吗？ | ModernHero</title>
   
 
 
@@ -212,7 +211,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -224,7 +223,6 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E4%BB%BF%E7%9C%9F"><span class="nav-text">蒙特卡洛仿真</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="nav-text">伪随机数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E4%BB%BF%E7%9C%9F"><span class="nav-text">常用的随机变量的仿真</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%AF%E5%8A%AA%E5%88%A9%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="nav-text">伯努利随机变量</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -307,7 +305,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/posts/55497e597af8/">
+    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/posts/5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.png">
@@ -323,7 +321,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          R语言与蒙特卡洛仿真
+          真的有理想的工作吗？
         </h1>
 
         <div class="post-meta-container">
@@ -335,7 +333,7 @@
       <span class="post-meta-item-text">创建于</span>
       
 
-      <time title="创建时间：2020-12-26 10:44:24 / 修改时间：11:43:55" itemprop="dateCreated datePublished" datetime="2020-12-26T10:44:24+08:00">2020-12-26</time>
+      <time title="创建时间：2020-11-07 13:43:17 / 修改时间：22:32:46" itemprop="dateCreated datePublished" datetime="2020-11-07T13:43:17+08:00">2020-11-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -343,11 +341,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categorys/R%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">R语言</span></a>
+          <a href="/categorys/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">闲言碎语</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categorys/R%E8%AF%AD%E8%A8%80/%E7%BB%9F%E8%AE%A1%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">统计应用</span></a>
+          <a href="/categorys/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/%E7%A4%BE%E4%BC%9A/" itemprop="url" rel="index"><span itemprop="name">社会</span></a>
         </span>
     </span>
 
@@ -360,8 +358,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/posts/55497e597af8/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/55497e597af8/" itemprop="commentCount"></span>
+    <a title="valine" href="/posts/5/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/5/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -371,18 +369,17 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.1k</span>
+      <span>1.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
-            <div class="post-description">在统计学中，很多统计的过程都是建立在随机变量的抽样分布的基础之上的，对于一个随机变量的抽样分布，我们需要知道它的一些统计量如：参数，一些特别的分位数等等，在现实中一些复杂的分布的统计量无法简单的获得，我们可以通过计算机仿真的方法去计算。</div>
         </div>
       </header>
 
@@ -390,48 +387,39 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="蒙特卡洛仿真"><a href="#蒙特卡洛仿真" class="headerlink" title="蒙特卡洛仿真"></a>蒙特卡洛仿真</h2><p><blockquote class="quoteback" darkmode="" data-title="%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95%20-%20MBA%E6%99%BA%E5%BA%93%E7%99%BE%E7%A7%91" data-author="" cite="https://wiki.mbalib.com/wiki/%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95"><br><b>蒙特卡罗方法又称统计模拟法、随机抽样技术</b>，是一种随机模拟方法，以概率和统计理论方法为基础的一种计算方法，是使用随机数（或更常见的伪随机数）来解决很多计算问题的方法。将所求解的问题同一定的概率模型相联系，用电子计算机实现统计模拟或<a href="https://wiki.mbalib.com/wiki/%E6%8A%BD%E6%A0%B7" title="抽样" target="_blank" rel="noopener">抽样</a>，以获得问题的近似解。为象征性地表明这一方法的概率统计特征，故借用赌城蒙特卡罗命名。</p>
-<p><footer><cite> <a target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95">https://wiki.mbalib.com/wiki/%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95</a></cite></footer>&lt;/blockquote&gt;<script note="" src="https://cdn.jsdelivr.net/gh/Blogger-Peer-Review/quotebacks@1/quoteback.js"></script></p>
-<p>蒙特卡洛方法利用的就是数理统计中的大数定理与中心极限定理，通过产生大量的随机数来对参数进行估算的一种方法。</p>
-<h2 id="伪随机数"><a href="#伪随机数" class="headerlink" title="伪随机数"></a>伪随机数</h2><p>事实上，在计算机中我们利用各种产生随机数的函数所构造的随机数并不是一个真正意义上的随机数，这种随机数是一种伪随机数，可以人为的进行操控。</p>
-<p>在R语言种有多种产生伪随机数的方法：</p>
-<p><strong>Wichmann-Hil</strong></p>
-<blockquote>
-<p>“Wichmann-Hill”<br>The seed, .Random.seed[-1] == r[1:3] is an integer vector of length 3, where each r[i] is in 1:(p[i] - 1), where p is the length 3 vector of primes, p = (30269, 30307, 30323). The Wichmann–Hill generator has a cycle length of 6.9536e12 (= prod(p-1)/4, see Applied Statistics (1984) 33, 123 which corrects the original article).</p>
+        <blockquote class="blockquote-center">
+<p>最理想的一个工作状态就是我可以去做我想做的事情，你不要去问我想做什么，因为我自己也不知道。</p>
+
 </blockquote>
-<p><strong>Marsaglia-Multicarry</strong></p>
+<p>今天周末休息半天，没事在吃饭的时候边吃边在看 YouTube 上的一个系列视频 — 。一句话简单的评价就是这是一个很接地气的视频节目。</p>
+<a id="more"></a>
+<p>在这些视频中有一个视频是采访几个90后的“打工人”，询问他们是否对自己的工作状态感到满意，他们理想的工作状态是上面呢？虽然自己还没有到他们那一步但是看了感到莫名的触动！</p>
+<p>通过他们采访的回答，很容易的发现他们存在很多的共同点：</p>
+<ol>
+<li>他们由于各种各样的原因对自己的工作状态表示不满意；有的认为工作很辛苦，有的认为工作的人际关系复杂，所谓的<strong>办公室政治</strong>（头一次听到，很有意思的一个词语）。总而言之是不满意。</li>
+<li>当问他们的理想的工作状态的时候，有一个女孩的回答就是前面引用的那句话，而其他几个的回答也几乎是差不多的想去做自己喜欢做的事情。</li>
+</ol>
+<p>我很喜欢那个女孩的回答，她的回答是一类人的回答，仔细想想或许以后也会是自己的回答吧！我不禁的思考为什么很多人想去做自己想做的事情，却有的时候竟然不知道自己想做的是什么呢？</p>
+<p>我的思绪飘到了前一段时间听的项飙的一个关于“内卷”化的访谈。在节目中项飙认为我们现在之所以存在如此严重的所谓的“内卷”化的现象是有原因的：</p>
+<p><strong>高度一体化的竞争机制。</strong></p>
 <blockquote>
-<p>“Marsaglia-Multicarry”:<br>A multiply-with-carry RNG is used, as recommended by George Marsaglia in his post to the mailing list ‘sci.stat.math’. It has a period of more than 2^60 and has passed all tests (according to Marsaglia). The seed is two integers (all values allowed).</p>
+<p>全国人民朝着一个目标去，要多赚钱，买一百多平的房子，要买车，一定要成家。一定年龄做一定的事情是等等。这个线是规划的非常好的，大家高度一体化的，都要在这样一个市场里面争夺一样东西，是高度一体的。<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
 </blockquote>
-<p><strong>Super-Duper</strong></p>
-<blockquote>
-<p>“Super-Duper”:<br>Marsaglia’s famous Super-Duper from the 70’s. This is the original version which does not pass the MTUPLE test of the Diehard battery. It has a period of about 4.6*10^18 for most initial seeds. The seed is two integers (all values allowed for the first seed: the second must be odd).</p>
-<p>We use the implementation by Reeds et al (1982–84).</p>
-<p>The two seeds are the Tausworthe and congruence long integers, respectively. A one-to-one mapping to S’s .Random.seed[1:12] is possible but we will not publish one, not least as this generator is not exactly the same as that in recent versions of S-PLUS.</p>
-</blockquote>
-<p><strong>Mersenne-Twister</strong></p>
-<blockquote>
-<p>“Mersenne-Twister”:<br>From Matsumoto and Nishimura (1998); code updated in 2002. A twisted GFSR with period 2^19937 - 1 and equidistribution in 623 consecutive dimensions (over the whole period). The ‘seed’ is a 624-dimensional set of 32-bit integers plus a current position in that set.</p>
-<p>R uses its own initialization method due to B. D. Ripley and is not affected by the initialization issue in the 1998 code of Matsumoto and Nishimura addressed in a 2002 update.</p>
-</blockquote>
-<p>……</p>
-<p>在R语言中可以通过 <code>set.seed( )</code> 函数来设定产生随机数的种子</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">set.seed(seed,</span> <span class="string">kind</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">,</span> <span class="string">normal.kind</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">,</span> <span class="string">sample.kind</span> <span class="string">=</span> <span class="literal">NULL</span><span class="string">)</span></span><br></pre></td></tr></table></figure>
-<p><code>kind</code> 参数可以指定随机数产生的方法。</p>
-<p>在R语言中种子产生的方法一般有两种：</p>
-<ul>
-<li><p>一种是产生不可预测的序列的种子，电脑可以使用内部的时钟，当前分钟过去了多少秒来作为初始值。</p>
-</li>
-<li><p>我们也可以通过上面的函数来自定义一个随机数的种子，这时我们产生的随机序列是一个可以复现的随机序列，在同一种子下，用同种方法可以产生一个相同的序列。</p>
-</li>
-</ul>
-<h2 id="常用的随机变量的仿真"><a href="#常用的随机变量的仿真" class="headerlink" title="常用的随机变量的仿真"></a>常用的随机变量的仿真</h2><h3 id="伯努利随机变量"><a href="#伯努利随机变量" class="headerlink" title="伯努利随机变量"></a>伯努利随机变量</h3>
+<p>我们存在生活于一个由这样的机制所主导的社会中，计划每个人都通过相同的竞争方式（不断的考核）接受相同的价值评价体系去获得那高度相同的社会目标。</p>
+<p><strong>缺乏退出机制</strong></p>
+<p>我们会想，既然存在如此可怕的竞争机制，那我退出不好吗？问题是你一但进入（准确的说是一出生）这种竞争的机制，你几乎很难在从这个机制中退出来。你会面临很多来自各个方面的压力，这些压力会阻止你退出这个机制，就像节目中的那个女孩说的一样，有时你会感到你在无法控制的往自己讨厌的方向前进。</p>
+<p>现在或许自己找到了那个答案。我们从小被教育要在学校好好“学习”。学校是一个典型的高度一体化的象征。相同的目标（高分），相同的价值评价体系（考题做对），相同的竞争方式（没完没了的考试），几乎什么都是相同的，甚至是各个科目的老师所教的都是一样的，并不是如何学习，而是如何学习考试，不同的科目教不同的考试方法。</p>
+<p>对于很多人在进入社会后，迎接你的还是一个高度一体化的社会。你能想象在这种高度一致的生活中，你能有时间去思考自己真的想要的是什么吗？自己真的想要去做的是什么吗？或许晚上躺在床上在想着“生活不只有眼前的苟且，还有诗和远方的生活”，第二天还是要进入现实的洪波中，由不得你。</p>
+<hr>
+<p>想了那么多，思考了那么多有用吗？这个回答不过是对“理想”的工作状态的回答。但是现实是：在现实社会是否真的还存在足够的空间，能够让一个普通的人，在完全坚持自己的理想的道理上顺畅的走下去呢？</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;"><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI2ODU4MDM1Mg==&amp;mid=2247484400&amp;idx=1&amp;sn=92e164d86a19f06e144e42a75fb3c792&amp;chksm=eaec209fdd9ba989ed6f9cd8e14dd6ccc8d2fa9dbd68fce905dd296aa90049c3e5e15985844d#rd">项飙访谈：内卷是一种不允许失败和退出的竞争</a></span><a href="#fnref:1" rev="footnote"> ↩</a></li></ol></div></div>
     </div>
 
     
     
     
       
+
 
     <footer class="post-footer">
           
@@ -443,7 +431,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://modernhero.cc/posts/55497e597af8/" title="R语言与蒙特卡洛仿真">https://modernhero.cc/posts/55497e597af8/</a>
+      <a href="https://modernhero.cc/posts/5/" title="真的有理想的工作吗？">https://modernhero.cc/posts/5/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -491,8 +479,7 @@
   </div>
 
           <div class="post-tags">
-              <a href="/tags/R%E8%AF%AD%E8%A8%80/" rel="tag"><i class="fa fa-tag"></i> R语言</a>
-              <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/" rel="tag"><i class="fa fa-tag"></i> 统计学</a>
+              <a href="/tags/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/" rel="tag"><i class="fa fa-tag"></i> 日常生活</a>
           </div>
 
         
@@ -503,13 +490,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/33a1d18818db/" rel="prev" title="学校食堂的感想">
-                  <i class="fa fa-chevron-left"></i> 学校食堂的感想
+                <a href="/posts/3/" rel="prev" title="R语言中的条件与循环结构">
+                  <i class="fa fa-chevron-left"></i> R语言中的条件与循环结构
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/b2ddbedc4063/" rel="next" title="R语言的向量与矩阵">
-                  R语言的向量与矩阵 <i class="fa fa-chevron-right"></i>
+                <a href="/posts/6/" rel="next" title="R语言中有关于概率分布的函数">
+                  R语言中有关于概率分布的函数 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -708,7 +695,7 @@ NexT.utils.loadComments('#valine-comments', () => {
   NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
     new Valine(Object.assign({
       el  : '#valine-comments',
-      path: "/posts/55497e597af8/",
+      path: "/posts/5/",
     }, {"enable":true,"appId":"OqcLraGyUGkWL0MAnPAp6sNn-MdYXbMMI","appKey":"8RfHAJOzCSRCM7gFgw1JQHzv","placeholder":"大师留言，小丑靠边！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":false,"recordIP":false,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
     ));
   }, window.Valine);

@@ -25,21 +25,21 @@
     var CONFIG = {"hostname":"modernhero.cc","root":"/","scheme":"Mist","version":"8.0.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="几乎和昨天一样，中午小憩一会休息好之后，蹭着食堂人少悠哉游哉的去食堂吃饭，今天中午吃麻辣烫，吃麻辣烫的这家店铺不单单有麻辣烫还可以吃饭，这家店铺的生意在食堂里面是非常不错的！">
+  <meta name="description" content="编程语言的执行顺序一般都是从上到下依次执行，但是在日常使用的过程中我们要可能需要一些其他的语句执行顺序，如循环结构与条件结构。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学校食堂的感想">
-<meta property="og:url" content="https://modernhero.cc/posts/33a1d18818db/index.html">
+<meta property="og:title" content="R语言中的条件与循环结构">
+<meta property="og:url" content="https://modernhero.cc/posts/3/index.html">
 <meta property="og:site_name" content="ModernHero">
-<meta property="og:description" content="几乎和昨天一样，中午小憩一会休息好之后，蹭着食堂人少悠哉游哉的去食堂吃饭，今天中午吃麻辣烫，吃麻辣烫的这家店铺不单单有麻辣烫还可以吃饭，这家店铺的生意在食堂里面是非常不错的！">
+<meta property="og:description" content="编程语言的执行顺序一般都是从上到下依次执行，但是在日常使用的过程中我们要可能需要一些其他的语句执行顺序，如循环结构与条件结构。">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-11-29T11:35:01.000Z">
-<meta property="article:modified_time" content="2020-11-29T12:27:58.141Z">
+<meta property="article:published_time" content="2020-11-02T07:05:26.000Z">
+<meta property="article:modified_time" content="2020-11-02T07:10:56.548Z">
 <meta property="article:author" content="Robin Li">
-<meta property="article:tag" content="食品卫生">
+<meta property="article:tag" content="R语言">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://modernhero.cc/posts/33a1d18818db/">
+<link rel="canonical" href="https://modernhero.cc/posts/3/">
 
 
 <script class="page-configurations">
@@ -52,7 +52,7 @@
   };
 </script><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <title>学校食堂的感想 | ModernHero</title>
+  <title>R语言中的条件与循环结构 | ModernHero</title>
   
 
 
@@ -211,7 +211,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -223,6 +223,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#R%E8%AF%AD%E8%A8%80%E9%87%8C%E9%9D%A2%E7%9A%84%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="nav-text">R语言里面的循环结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81for%E5%BE%AA%E7%8E%AF"><span class="nav-text">1、for循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81while%E5%BE%AA%E7%8E%AF"><span class="nav-text">2、while循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81repeat%E5%BE%AA%E7%8E%AF"><span class="nav-text">3、repeat循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="nav-text">4、循环控制语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R%E8%AF%AD%E8%A8%80%E9%87%8C%E9%9D%A2%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="nav-text">R语言里面的条件结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81if%E6%9D%A1%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="nav-text">1、if条件结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81if-else-%E6%9D%A1%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="nav-text">2、if-else 条件结构</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -305,7 +306,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/posts/33a1d18818db/">
+    <link itemprop="mainEntityOfPage" href="https://modernhero.cc/posts/3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.png">
@@ -321,7 +322,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          学校食堂的感想
+          R语言中的条件与循环结构
         </h1>
 
         <div class="post-meta-container">
@@ -333,7 +334,7 @@
       <span class="post-meta-item-text">创建于</span>
       
 
-      <time title="创建时间：2020-11-29 19:35:01 / 修改时间：20:27:58" itemprop="dateCreated datePublished" datetime="2020-11-29T19:35:01+08:00">2020-11-29</time>
+      <time title="创建时间：2020-11-02 15:05:26 / 修改时间：15:10:56" itemprop="dateCreated datePublished" datetime="2020-11-02T15:05:26+08:00">2020-11-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -341,11 +342,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categorys/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">闲言碎语</span></a>
+          <a href="/categorys/R%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">R语言</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categorys/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
+          <a href="/categorys/R%E8%AF%AD%E8%A8%80/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
         </span>
     </span>
 
@@ -358,8 +359,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/posts/33a1d18818db/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/33a1d18818db/" itemprop="commentCount"></span>
+    <a title="valine" href="/posts/3/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/3/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -369,7 +370,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>297</span>
+      <span>1.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -387,11 +388,32 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>几乎和昨天一样，中午小憩一会休息好之后，蹭着食堂人少悠哉游哉的去食堂吃饭，今天中午吃麻辣烫，吃麻辣烫的这家店铺不单单有麻辣烫还可以吃饭，这家店铺的生意在食堂里面是非常不错的！</p>
+        <p>编程语言的执行顺序一般都是从上到下依次执行，但是在日常使用的过程中我们要可能需要一些其他的语句执行顺序，如循环结构与条件结构。</p>
 <a id="more"></a>
-<p>不一会，我的午餐就好了，我去出餐处去取自己的午餐回到自己的餐桌上，几乎同时一个女生拿着餐盘从餐桌走向取餐处，看了一眼没怎么在意，因为我急着吃午饭。</p>
-<p>可是不一会女生和店员就开始理论起来了，双方你一句我一句，说话的同时不忘拿着筷子在那个女生的餐盘中翻翻点点，饭里面有一下“乱七八糟”的东西。看着他们互相理论一会之后，双方拿出手机，店员扫了对方的二维码，似乎是退会这一餐的饭钱，然后就这样结束了！</p>
-<p>你们理论的停止确实我思考的开始！</p>
+<h2 id="R语言里面的循环结构"><a href="#R语言里面的循环结构" class="headerlink" title="R语言里面的循环结构"></a>R语言里面的循环结构</h2><h3 id="1、for循环"><a href="#1、for循环" class="headerlink" title="1、for循环"></a>1、for循环</h3><p>for 可以重复执行语句，而且重复的次数是可以直接控制的。</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">for</span> (variable <span class="keyword">in</span> <span class="built_in">vector</span>) &#123;</span><br><span class="line">  <span class="built_in">content</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">variable:为循环的参数</span><br><span class="line"><span class="built_in">vector</span>：为循环参数的取值</span><br><span class="line">在<span class="built_in">content</span>：输入要循环的语句</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>例如通过下面的语句输出斐波拉契数列的前三十个值</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fseq &lt;- c(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line"><span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:<span class="number">28</span>) &#123;</span><br><span class="line">  fseq[i+<span class="number">2</span>]=fseq[i]+fseq[i+<span class="number">1</span>]</span><br><span class="line">&#125;</span><br><span class="line">fseq</span><br></pre></td></tr></table></figure>
+<h3 id="2、while循环"><a href="#2、while循环" class="headerlink" title="2、while循环"></a>2、while循环</h3><p>while 循环当给定条件为 TRUE 时就会一直循环直到判断条件为 FALSE，这种循环需要知道循环的条件。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">while</span><span class="params">(condition)</span></span>&#123;</span><br><span class="line">  如果条件满足则执行的语句</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>例如通过while循环来输出斐波拉契数列前三十个</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">1</span></span><br><span class="line">fseq &lt;- c(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line"><span class="keyword">while</span>(i&lt;=<span class="number">28</span>)&#123;</span><br><span class="line">  fseq[i+<span class="number">2</span>] = fseq[i]+fseq[i+<span class="number">1</span>] </span><br><span class="line">  i=i+<span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line">fseq</span><br></pre></td></tr></table></figure>
+<h3 id="3、repeat循环"><a href="#3、repeat循环" class="headerlink" title="3、repeat循环"></a>3、repeat循环</h3><p>repeat 循环会一直的执行语句，直到 break 之后循环停止。因此 repeat 循环经常与 break 语句连用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">repeat&#123;</span><br><span class="line">  content</span><br><span class="line">  <span class="function"><span class="title">if</span>(<span class="params">condition</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在上面的语句中一直执行 content 中的代码，直到满足条件 break。例如通过 repeat 循环去输出斐波拉契数列的前三十项</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">i=<span class="number">1</span></span><br><span class="line">fseq &lt;- c(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">repeat&#123;</span><br><span class="line">     fseq[i+<span class="number">2</span>] = fseq[i+<span class="number">1</span>]+fseq[i]</span><br><span class="line">     i=i+<span class="number">1</span></span><br><span class="line">     <span class="keyword">if</span>(i == <span class="number">29</span>)&#123;</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+<h3 id="4、循环控制语句"><a href="#4、循环控制语句" class="headerlink" title="4、循环控制语句"></a>4、循环控制语句</h3><p><strong>break语句</strong></p>
+<p>break 语句用于循环体中，作用是直接退出当前的循环体，执行循环下面的语句<strong>或者是执行外层的循环</strong>。例如上面的例子中，当 i 的取值等于29时，就停止 repeat 的循环。</p>
+<p><strong>next语句</strong></p>
+<p>这个语句和 break 语句有一些区别，它是跳过某次循环，执行下次循环，整个循环体还是在继续执行。例如一个字符串 <code>c(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;)</code> 。用循环语句依次输出每一个元素，但是跳过 b。</p>
+<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A = c(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>)</span><br><span class="line"><span class="function"><span class="title">for</span><span class="params">(i in <span class="number">1</span>:<span class="number">3</span>)</span>&#123;</span></span><br><span class="line"><span class="function">  <span class="title">if</span><span class="params">(A[i] == <span class="string">&quot;b&quot;</span>)</span> <span class="title">next</span></span></span><br><span class="line"><span class="function">  <span class="title">print</span><span class="params">(A[i])</span> </span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="R语言里面的条件结构"><a href="#R语言里面的条件结构" class="headerlink" title="R语言里面的条件结构"></a>R语言里面的条件结构</h2><h3 id="1、if条件结构"><a href="#1、if条件结构" class="headerlink" title="1、if条件结构"></a>1、if条件结构</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">if</span>(<span class="params">expression</span>)</span>&#123;</span><br><span class="line">  若expression为<span class="literal">true</span>则执行</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>例如下面的例子，判断数是否大于5</p>
+<figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">x</span> &lt;- <span class="number">6</span></span><br><span class="line"><span class="function"><span class="title">if</span>(<span class="variable">x</span>&gt;<span class="number">5</span>)&#123;</span></span><br><span class="line"><span class="function">  <span class="title">print</span>(<span class="string">&quot;x is greater than 5&quot;</span>)</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2、if-else-条件结构"><a href="#2、if-else-条件结构" class="headerlink" title="2、if-else 条件结构"></a>2、if-else 条件结构</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">if</span>(<span class="params">expression</span>)</span>&#123;</span><br><span class="line">  若expression为<span class="literal">true</span>则执行</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  若expression为<span class="literal">false</span>则执行</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>例如同样的例子：</p>
+<figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">x</span> &lt;-<span class="number">4</span></span><br><span class="line"><span class="function"><span class="title">if</span>(<span class="variable">x</span>&gt;<span class="number">5</span>)&#123;</span></span><br><span class="line"><span class="function">  <span class="title">print</span>(<span class="string">&quot;x is greater than 5&quot;</span>)</span></span><br><span class="line">&#125; <span class="variable"><span class="keyword">else</span></span> &#123;</span><br><span class="line">  <span class="function"><span class="title">print</span>(<span class="string">&quot;x is not greater than 5&quot;</span>)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在上面的结构中会先去判断 if 后面的条件，如果不满足则执行 else 语句后面的代码。</p>
 
     </div>
 
@@ -399,6 +421,24 @@
     
     
       
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\6\" rel="bookmark">R语言中有关于概率分布的函数</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\1\" rel="bookmark">R语言数据创建与导入</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\0008\" rel="bookmark">R语言简单的simulation</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\rvest\" rel="bookmark">基于Rvest的爬虫</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\9\" rel="bookmark">R语言与蒙特卡洛仿真</a></div>
+    </li>
+  </ul>
 
 
     <footer class="post-footer">
@@ -411,7 +451,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://modernhero.cc/posts/33a1d18818db/" title="学校食堂的感想">https://modernhero.cc/posts/33a1d18818db/</a>
+      <a href="https://modernhero.cc/posts/3/" title="R语言中的条件与循环结构">https://modernhero.cc/posts/3/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -459,7 +499,7 @@
   </div>
 
           <div class="post-tags">
-              <a href="/tags/%E9%A3%9F%E5%93%81%E5%8D%AB%E7%94%9F/" rel="tag"><i class="fa fa-tag"></i> 食品卫生</a>
+              <a href="/tags/R%E8%AF%AD%E8%A8%80/" rel="tag"><i class="fa fa-tag"></i> R语言</a>
           </div>
 
         
@@ -470,13 +510,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/68292e6b8acc/" rel="prev" title="R语言简单的simulation">
-                  <i class="fa fa-chevron-left"></i> R语言简单的simulation
+                <a href="/posts/1/" rel="prev" title="R语言数据创建与导入">
+                  <i class="fa fa-chevron-left"></i> R语言数据创建与导入
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/55497e597af8/" rel="next" title="R语言与蒙特卡洛仿真">
-                  R语言与蒙特卡洛仿真 <i class="fa fa-chevron-right"></i>
+                <a href="/posts/5/" rel="next" title="真的有理想的工作吗？">
+                  真的有理想的工作吗？ <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -675,7 +715,7 @@ NexT.utils.loadComments('#valine-comments', () => {
   NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
     new Valine(Object.assign({
       el  : '#valine-comments',
-      path: "/posts/33a1d18818db/",
+      path: "/posts/3/",
     }, {"enable":true,"appId":"OqcLraGyUGkWL0MAnPAp6sNn-MdYXbMMI","appKey":"8RfHAJOzCSRCM7gFgw1JQHzv","placeholder":"大师留言，小丑靠边！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":false,"recordIP":false,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
     ));
   }, window.Valine);
