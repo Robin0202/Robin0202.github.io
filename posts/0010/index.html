@@ -33,7 +33,7 @@
 <meta property="og:description" content="在统计学中，很多统计的过程都是建立在随机变量的抽样分布的基础之上的，对于一个随机变量的抽样分布，我们需要知道它的一些统计量如：参数，一些特别的分位数等等，在现实中一些复杂的分布的统计量无法简单的获得，我们可以通过计算机仿真的方法去计算。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-12-26T02:44:24.000Z">
-<meta property="article:modified_time" content="2020-12-26T06:59:17.667Z">
+<meta property="article:modified_time" content="2020-12-26T13:09:29.072Z">
 <meta property="article:author" content="Robin Li">
 <meta property="article:tag" content="R语言">
 <meta property="article:tag" content="统计学">
@@ -224,7 +224,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E4%BB%BF%E7%9C%9F"><span class="nav-text">蒙特卡洛仿真</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="nav-text">伪随机数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E4%BB%BF%E7%9C%9F"><span class="nav-text">常用的随机变量的仿真</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%AF%E5%8A%AA%E5%88%A9%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="nav-text">伯努利随机变量</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E4%BB%BF%E7%9C%9F"><span class="nav-text">蒙特卡洛仿真</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="nav-text">伪随机数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E4%BB%BF%E7%9C%9F"><span class="nav-text">常用的随机变量的仿真</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%AF%E5%8A%AA%E5%88%A9%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="nav-text">伯努利随机变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="nav-text">二项分布随机变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%8A%E6%9D%BE%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="nav-text">泊松随机变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="nav-text">指数分布随机变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%A4%AA%E5%88%86%E5%B8%83%E7%9A%84%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="nav-text">正太分布的随机变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E7%A7%AF%E5%88%86"><span class="nav-text">蒙特卡洛积分</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -335,7 +335,7 @@
       <span class="post-meta-item-text">创建于</span>
       
 
-      <time title="创建时间：2020-12-26 10:44:24 / 修改时间：14:59:17" itemprop="dateCreated datePublished" datetime="2020-12-26T10:44:24+08:00">2020-12-26</time>
+      <time title="创建时间：2020-12-26 10:44:24 / 修改时间：21:09:29" itemprop="dateCreated datePublished" datetime="2020-12-26T10:44:24+08:00">2020-12-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -371,14 +371,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.1k</span>
+      <span>3.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -390,9 +390,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="蒙特卡洛仿真"><a href="#蒙特卡洛仿真" class="headerlink" title="蒙特卡洛仿真"></a>蒙特卡洛仿真</h2><p><blockquote class="quoteback" darkmode="" data-title="%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95%20-%20MBA%E6%99%BA%E5%BA%93%E7%99%BE%E7%A7%91" data-author="" cite="https://wiki.mbalib.com/wiki/%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95"><br><b>蒙特卡罗方法又称统计模拟法、随机抽样技术</b>，是一种随机模拟方法，以概率和统计理论方法为基础的一种计算方法，是使用随机数（或更常见的伪随机数）来解决很多计算问题的方法。将所求解的问题同一定的概率模型相联系，用电子计算机实现统计模拟或<a href="https://wiki.mbalib.com/wiki/%E6%8A%BD%E6%A0%B7" title="抽样" target="_blank" rel="noopener">抽样</a>，以获得问题的近似解。为象征性地表明这一方法的概率统计特征，故借用赌城蒙特卡罗命名。</p>
-<p><footer><cite> <a target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95">https://wiki.mbalib.com/wiki/%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95</a></cite></footer>&lt;/blockquote&gt;<script note="" src="https://cdn.jsdelivr.net/gh/Blogger-Peer-Review/quotebacks@1/quoteback.js"></script></p>
-<p>蒙特卡洛方法利用的就是数理统计中的大数定理与中心极限定理，通过产生大量的随机数来对参数进行估算的一种方法。</p>
+        <h2 id="蒙特卡洛仿真"><a href="#蒙特卡洛仿真" class="headerlink" title="蒙特卡洛仿真"></a>蒙特卡洛仿真</h2><p>蒙特卡洛方法利用的就是数理统计中的大数定理与中心极限定理，通过产生大量的随机数来对参数进行估算的一种方法。</p>
 <h2 id="伪随机数"><a href="#伪随机数" class="headerlink" title="伪随机数"></a>伪随机数</h2><p>事实上，在计算机中我们利用各种产生随机数的函数所构造的随机数并不是一个真正意义上的随机数，这种随机数是一种伪随机数，可以人为的进行操控。</p>
 <p>在R语言种有多种产生伪随机数的方法：</p>
 <p><strong>Wichmann-Hil</strong></p>
@@ -425,7 +423,52 @@
 <li><p>我们也可以通过上面的函数来自定义一个随机数的种子，这时我们产生的随机序列是一个可以复现的随机序列，在同一种子下，用同种方法可以产生一个相同的序列。</p>
 </li>
 </ul>
-<h2 id="常用的随机变量的仿真"><a href="#常用的随机变量的仿真" class="headerlink" title="常用的随机变量的仿真"></a>常用的随机变量的仿真</h2><h3 id="伯努利随机变量"><a href="#伯努利随机变量" class="headerlink" title="伯努利随机变量"></a>伯努利随机变量</h3>
+<h2 id="常用的随机变量的仿真"><a href="#常用的随机变量的仿真" class="headerlink" title="常用的随机变量的仿真"></a>常用的随机变量的仿真</h2><h3 id="伯努利随机变量"><a href="#伯努利随机变量" class="headerlink" title="伯努利随机变量"></a>伯努利随机变量</h3><p>伯努利随机变量是建立在伯努利试验的基础之上的一个随机变量，伯努利试验是一种只有两种结果的试验，例如随机的抛一枚硬币，要么是正面在上，要么是反面在上，结果只有两个。</p>
+<p>伯努利变量的仿真可以通过均匀分布来进行：</p>
+<p>例如某个班级有50名学生，这些学生要回答同一个问题，而且每一位学生的回答正确率为20%，错误率为80%，这时，这个班级回答问题的成绩可以通过均匀分布来做模拟</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>.seed(<span class="number">23333</span>)</span><br><span class="line">a &lt; - runif(<span class="number">50</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="二项分布随机变量"><a href="#二项分布随机变量" class="headerlink" title="二项分布随机变量"></a>二项分布随机变量</h3><p>二项分布是同样是在伯努利试验的基础之上构建的，在 n 次独立重复的伯努利试验中，成功的次数 x 服从二项分布。</p>
+<p><strong>题目：</strong></p>
+<p>生成 10000 个二项分布的伪随机数，其参数为20与0.3，将这些生成的随机数复制给变量binsim，假设 X 是一个参数为（20，0.3）的随机变量。用仿真的方法来生成随机数去估算下面的数值：</p>
+<ul>
+<li>P(X &lt;= 5)</li>
+<li>P(x=5)</li>
+<li>E(X)</li>
+<li>Var(x)</li>
+<li>位于95%分位数处的X，（可以使用quantile( )函数)</li>
+<li>位于99%分位数处的X。</li>
+</ul>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt; binsim &lt;- rbinom(<span class="number">10000</span>,<span class="number">20</span>,<span class="number">0.3</span>)</span><br><span class="line">&gt; P1 &lt;- sum(binsim&lt;=<span class="number">5</span>)/<span class="number">10000</span></span><br><span class="line">&gt; P2 &lt;- sum(binsim==<span class="number">5</span>)/<span class="number">10000</span></span><br><span class="line">&gt; mean(binsim)</span><br><span class="line"><span class="string">[1]</span> <span class="number">6.0034</span></span><br><span class="line">&gt; var(binsim)</span><br><span class="line"><span class="string">[1]</span> <span class="number">4.141003</span></span><br><span class="line">&gt; quantile(binsim,<span class="number">0.95</span>)</span><br><span class="line"><span class="number">95</span>% </span><br><span class="line">  <span class="number">9</span> </span><br><span class="line">&gt; quantile(binsim,<span class="number">0.99</span>)</span><br><span class="line"><span class="number">99</span>% </span><br><span class="line"> <span class="number">11</span> </span><br></pre></td></tr></table></figure>
+<h3 id="泊松随机变量"><a href="#泊松随机变量" class="headerlink" title="泊松随机变量"></a>泊松随机变量</h3><p>泊松分布也是一种离散型随机分布，这种分布具有参数 lamda ，这种分布具有很大的用途，通常使用在计数的模型中，用来计算在一段时间内某种事件发生的次数。例如在足球比赛中，某段时间内某个队伍的进球数。</p>
+<p><strong>题目：</strong></p>
+<p>假定平均每年发生车祸2.8次，请用泊松模型来模拟15年内，每年发生车祸的次数：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; rpois(<span class="number">15</span>,<span class="number">2.8</span>)</span><br><span class="line"><span class="string"> [1]</span> <span class="number">3</span> <span class="number">2</span> <span class="number">5</span> <span class="number">1</span> <span class="number">6</span> <span class="number">2</span> <span class="number">5</span> <span class="number">2</span> <span class="number">2</span> <span class="number">4</span> <span class="number">4</span> <span class="number">3</span> <span class="number">1</span> <span class="number">0</span> <span class="number">6</span></span><br></pre></td></tr></table></figure>
+<p>假定每辆轿车表面有1.2个瑕疵，请模拟20辆车总共有多少个表面瑕疵？</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; rpois(<span class="number">20</span>,<span class="number">1.2</span>)</span><br><span class="line"><span class="string"> [1]</span> <span class="number">4</span> <span class="number">1</span> <span class="number">3</span> <span class="number">3</span> <span class="number">1</span> <span class="number">3</span> <span class="number">3</span> <span class="number">1</span> <span class="number">2</span> <span class="number">0</span> <span class="number">4</span> <span class="number">1</span> <span class="number">2</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h3 id="指数分布随机变量"><a href="#指数分布随机变量" class="headerlink" title="指数分布随机变量"></a>指数分布随机变量</h3><p>指数分布随机变量是一种连续型的随机变量，经常被使用去模拟某种器械失效的时间。</p>
+<p><strong>题目：</strong></p>
+<p>模拟50000个参数为3的指数分布随机数。</p>
+<ul>
+<li>这些数据中，小于1的个数占比多少。与理论值比较</li>
+<li>这些数据的平均数是多少，与理论值做比较</li>
+<li>这个样本的方差是多少，与理论值做比较</li>
+</ul>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt; mydata &lt;- rexp(<span class="number">50000</span>,<span class="number">3</span>)</span><br><span class="line">&gt; head(mydata)</span><br><span class="line"><span class="string">[1]</span> <span class="number">0.03311698</span> <span class="number">1.06162879</span> <span class="number">0.20924285</span> <span class="number">0.13179698</span> <span class="number">0.15026130</span> <span class="number">1.26152333</span></span><br><span class="line">&gt; p1 &lt;- sum(mydata&lt;<span class="number">1</span>)/<span class="number">50000</span></span><br><span class="line">&gt; p1</span><br><span class="line"><span class="string">[1]</span> <span class="number">0.9507</span></span><br><span class="line">&gt; pexp(<span class="number">1</span>,rate = <span class="number">3</span>)</span><br><span class="line"><span class="string">[1]</span> <span class="number">0.9502129</span></span><br><span class="line">&gt; mean(mydata)</span><br><span class="line"><span class="string">[1]</span> <span class="number">0.3319391</span></span><br><span class="line">&gt; var(mydata)</span><br><span class="line"><span class="string">[1]</span> <span class="number">0.1108731</span></span><br></pre></td></tr></table></figure>
+<p>假设某种品牌的电池寿命符合平均值为55个小时的指数分布，用仿真模拟估算这种电池的平均寿命和方差并与理论值进行比较。</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; a &lt;- rexp(<span class="number">10000</span>,<span class="number">1</span>/<span class="number">55</span>)</span><br><span class="line">&gt; mean(a)</span><br><span class="line"><span class="string">[1]</span> <span class="number">55.10442</span></span><br></pre></td></tr></table></figure>
+<h3 id="正太分布的随机变量"><a href="#正太分布的随机变量" class="headerlink" title="正太分布的随机变量"></a>正太分布的随机变量</h3><p>正太分布是统计学上使用最广泛最基本的一种分布类型。</p>
+<p><strong>题目：</strong></p>
+<p>模拟100次均值为51，标准差为5.2的正太分布随机变量，估算这些仿真结果的方差与均值，并且与理论值进行比较</p>
+<p>模拟1000次标准正太分布随机变量z，然后用仿真结果做下面的计算：</p>
+<ul>
+<li>P(Z&gt;2.5)</li>
+<li>P(0&lt;Z&lt;1.645)</li>
+<li>P(1.2&lt;Z&lt;1.45)</li>
+<li>P(-1.2&lt;Z&lt;1.3)</li>
+</ul>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt; mydata &lt;- rnorm(<span class="number">1000</span>)</span><br><span class="line">&gt; P1 &lt;- sum(mydata&gt;<span class="number">2.5</span>)/<span class="number">1000</span></span><br><span class="line">&gt; P1</span><br><span class="line"><span class="string">[1]</span> <span class="number">0.005</span></span><br><span class="line">&gt; P2 &lt;- sum(mydata&lt;<span class="number">1.645</span>&amp;mydata&gt;<span class="number">0</span>)/<span class="number">1000</span></span><br><span class="line">&gt; P2</span><br><span class="line"><span class="string">[1]</span> <span class="number">0.458</span></span><br><span class="line">&gt; P3 &lt;- sum(mydata&lt;<span class="number">1.45</span>&amp;mydata&gt;<span class="number">1.2</span>)/<span class="number">1000</span></span><br><span class="line">&gt; P3</span><br><span class="line"><span class="string">[1]</span> <span class="number">0.038</span></span><br><span class="line">&gt; P4 &lt;- sum(mydata&lt;<span class="number">1.3</span>&amp;mydata&gt;<span class="number">-1.2</span>)/<span class="number">1000</span></span><br><span class="line">&gt; P4</span><br><span class="line"><span class="string">[1]</span> <span class="number">0.791</span></span><br></pre></td></tr></table></figure>
+<h2 id="蒙特卡洛积分"><a href="#蒙特卡洛积分" class="headerlink" title="蒙特卡洛积分"></a>蒙特卡洛积分</h2><p>蒙特卡洛积分就是通过蒙特卡洛模拟的方式去计算函数的积分，依据的原理就是大数定理：</p>
+
     </div>
 
     
@@ -588,13 +631,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">28k</span>
+    <span title="站点总字数">29k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">25 分钟</span>
+    <span title="站点阅读时长">27 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
