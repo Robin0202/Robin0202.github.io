@@ -6,7 +6,7 @@
   <link href="https://modernhero.cc/atom.xml" rel="self"/>
   
   <link href="https://modernhero.cc/"/>
-  <updated>2020-12-26T03:34:18.875Z</updated>
+  <updated>2020-12-26T03:39:06.158Z</updated>
   <id>https://modernhero.cc/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>R语言与蒙特卡洛仿真</title>
-    <link href="https://modernhero.cc/posts/8/"/>
-    <id>https://modernhero.cc/posts/8/</id>
+    <link href="https://modernhero.cc/posts/9/"/>
+    <id>https://modernhero.cc/posts/9/</id>
     <published>2020-12-26T02:44:24.000Z</published>
-    <updated>2020-12-26T03:34:18.875Z</updated>
+    <updated>2020-12-26T03:39:06.158Z</updated>
     
     
     <summary type="html">在统计学中，很多统计的过程都是建立在随机变量的抽样分布的基础之上的，对于一个随机变量的抽样分布，我们需要知道它的一些统计量如：参数，一些特别的分位数等等，在现实中一些复杂的分布的统计量无法简单的获得，我们可以通过计算机仿真的方法去计算。</summary>
@@ -41,10 +41,10 @@
   
   <entry>
     <title>R语言的向量与矩阵</title>
-    <link href="https://modernhero.cc/posts/0009/"/>
-    <id>https://modernhero.cc/posts/0009/</id>
+    <link href="https://modernhero.cc/posts/8/"/>
+    <id>https://modernhero.cc/posts/8/</id>
     <published>2020-12-25T13:07:27.000Z</published>
-    <updated>2020-12-26T03:23:27.415Z</updated>
+    <updated>2020-12-26T03:39:03.764Z</updated>
     
     
     <summary type="html">“向量与矩阵是R语言中基本的两个数据结构，我们在使用R的过程中经常需要建立一些特定的向量与矩阵，并且对矩阵与向量进行相应的操作。”</summary>
