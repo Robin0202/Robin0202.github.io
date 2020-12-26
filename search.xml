@@ -435,7 +435,7 @@
   </entry>
   <entry>
     <title>R语言与蒙特卡洛仿真</title>
-    <url>//posts/9/</url>
+    <url>//posts/0010/</url>
     <content><![CDATA[<h2 id="蒙特卡洛仿真"><a href="#蒙特卡洛仿真" class="headerlink" title="蒙特卡洛仿真"></a>蒙特卡洛仿真</h2><p><blockquote class="quoteback" darkmode="" data-title="%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95%20-%20MBA%E6%99%BA%E5%BA%93%E7%99%BE%E7%A7%91" data-author="" cite="https://wiki.mbalib.com/wiki/%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95"><br><b>蒙特卡罗方法又称统计模拟法、随机抽样技术</b>，是一种随机模拟方法，以概率和统计理论方法为基础的一种计算方法，是使用随机数（或更常见的伪随机数）来解决很多计算问题的方法。将所求解的问题同一定的概率模型相联系，用电子计算机实现统计模拟或<a href="https://wiki.mbalib.com/wiki/%E6%8A%BD%E6%A0%B7" title="抽样" target="_blank" rel="noopener">抽样</a>，以获得问题的近似解。为象征性地表明这一方法的概率统计特征，故借用赌城蒙特卡罗命名。</p>
 <p><footer><cite> <a href="https://wiki.mbalib.com/wiki/%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95">https://wiki.mbalib.com/wiki/%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95</a></cite></footer>&lt;/blockquote&gt;<script note="" src="https://cdn.jsdelivr.net/gh/Blogger-Peer-Review/quotebacks@1/quoteback.js"></script></p>
 <p>蒙特卡洛方法利用的就是数理统计中的大数定理与中心极限定理，通过产生大量的随机数来对参数进行估算的一种方法。</p>
