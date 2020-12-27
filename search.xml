@@ -547,7 +547,7 @@ E[g(x)/f(x)] = \int {[g(x)/f(x)]f(x)dx} ......(1)</script><p>其中 $f(x)$ 可�
 <script type="math/tex; mode=display">
 \int_{\rm{0}}^\infty x^4dx</script><p>对于上面的积分由于是从 0 到正无穷的积分，所以我们不能再去构造均匀分布的随机变量，我们可以使用指数分布的变量去求蒙特卡洛积分，所以有下面的式子成立：</p>
 <script type="math/tex; mode=display">
-\int_{\rm{0}}^\infty  [x^4/f(x)]f(x)dx = E[x^4/f(x)]</script><p>所以上面的积分就等于：</p>
+\int_\rm0^\infty  [x^4/f(x)]f(x)dx = E[x^4/f(x)]</script><p>所以上面的积分就等于：</p>
 <script type="math/tex; mode=display">
 E(x^4/f(x))</script><figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line">&gt; <span class="variable">mydata</span> &lt;- <span class="function"><span class="title">rexp</span>(<span class="number">10000</span>)</span></span><br><span class="line">&gt; <span class="function"><span class="title">mean</span>(<span class="variable">mydata</span>^<span class="number">4</span>/<span class="title">dexp</span>(<span class="variable">mydata</span>))</span></span><br><span class="line">[<span class="number">1</span>] <span class="number">26393.4</span></span><br></pre></td></tr></table></figure>
 ]]></content>
