@@ -33,7 +33,7 @@
 <meta property="og:description" content="在统计学中，很多统计的过程都是建立在随机变量的抽样分布的基础之上的，对于一个随机变量的抽样分布，我们需要知道它的一些统计量如：参数，一些特别的分位数等等，在现实中一些复杂的分布的统计量无法简单的获得，我们可以通过计算机仿真的方法去计算。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-12-26T02:44:24.000Z">
-<meta property="article:modified_time" content="2020-12-27T01:13:09.230Z">
+<meta property="article:modified_time" content="2020-12-27T14:19:34.909Z">
 <meta property="article:author" content="Robin Li">
 <meta property="article:tag" content="R语言">
 <meta property="article:tag" content="统计学">
@@ -341,7 +341,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-12-27 09:13:09" itemprop="dateModified" datetime="2020-12-27T09:13:09+08:00">2020-12-27</time>
+        <time title="修改时间：2020-12-27 22:19:34" itemprop="dateModified" datetime="2020-12-27T22:19:34+08:00">2020-12-27</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -377,7 +377,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.7k</span>
+      <span>4.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -504,6 +504,12 @@ E[g(x)/f(x)] = \int {[g(x)/f(x)]f(x)dx} ......(1)</script><p>其中 $f(x)$ 可�
 2*E(x^2)</script><p>其中 $x$  服从在 [1,3] 上的均匀分布。</p>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; mydata &lt;- runif(<span class="number">10000</span>,<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line">&gt; mean(mydata^<span class="number">2</span>)*<span class="number">2</span></span><br><span class="line"><span class="string">[1]</span> <span class="number">8.703573</span></span><br></pre></td></tr></table></figure>
 <p>二、计算积分：</p>
+<script type="math/tex; mode=display">
+\int_{\rm{0}}^\infty x^4dx</script><p>对于上面的积分由于是从 0 到正无穷的积分，所以我们不能再去构造均匀分布的随机变量，我们可以使用指数分布的变量去求蒙特卡洛积分，所以有下面的式子成立：</p>
+<script type="math/tex; mode=display">
+\int_{\rm{0}}^\infty  [x^4/f(x)]f(x)dx = E[x^4/f(x)]</script><p>所以上面的积分就等于：</p>
+<script type="math/tex; mode=display">
+E(x^4/f(x))</script><figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="variable">mydata</span> &lt;- <span class="function"><span class="title">rexp</span>(<span class="number">10000</span>)</span></span><br><span class="line">&gt; <span class="function"><span class="title">mean</span>(<span class="variable">mydata</span>^<span class="number">4</span>/<span class="title">dexp</span>(<span class="variable">mydata</span>))</span></span><br><span class="line">[<span class="number">1</span>] <span class="number">26393.4</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -673,7 +679,7 @@ E[g(x)/f(x)] = \int {[g(x)/f(x)]f(x)dx} ......(1)</script><p>其中 $f(x)$ 可�
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">27 分钟</span>
+    <span title="站点阅读时长">28 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
