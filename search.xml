@@ -537,7 +537,7 @@ E[g(x)/f(x)] = \int {[g(x)/f(x)]f(x)dx} ......(1)</script><p>其中 $f(x)$ 可�
 <p><strong>题目：</strong></p>
 <p>一、计算积分</p>
 <script type="math/tex; mode=display">
-\int_1^3 dx</script><p>对于上面的积分可以写成：</p>
+\int_1^3 x^2dx</script><p>对于上面的积分可以写成：</p>
 <script type="math/tex; mode=display">
 \int_1^3 {[x^2/\frac{1}2]\frac{1}2dx}  = E[x^2/\frac{1}2]</script><p>所以上面的 积分的结果为：</p>
 <script type="math/tex; mode=display">
